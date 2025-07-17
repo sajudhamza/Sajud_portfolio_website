@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Linkedin, Github, Mail, ChevronRight, Image } from 'lucide-react';
+import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Linkedin, Github, Mail, ChevronRight, Image, Tv, PlayCircle, Mic, Newspaper } from 'lucide-react';
 
 // Data
-import { publications, articles, judgingExperiences, photos } from './data/portfolioData';
+import { publications, articles, judgingExperiences, photos, mediaAppearances } from './data/portfolioData';
+import MediaCard from './components/MediaCard';
 
 // Components
 import IntroScreen from './components/IntroScreen';
@@ -109,6 +110,7 @@ const App = () => {
           <NavItem label="Publications" onClick={() => scrollToSection('publications')} />
           <NavItem label="Articles" onClick={() => scrollToSection('articles')} />
           <NavItem label="Judging" onClick={() => scrollToSection('judging')} />
+          <NavItem label="Media" onClick={() => scrollToSection('media')} />
           <NavItem label="Photos" onClick={() => scrollToSection('photos')} />
         </nav>
 
@@ -185,6 +187,14 @@ const App = () => {
 
         <Section id="articles" ref={el => sectionsRef.current[3] = el} title="Articles" icon={<Feather size={40} className="text-purple-400" />}>
           <ArticleCarousel articles={articles} />
+        </Section>
+
+        <Section id="media" ref={el => sectionsRef.current[6] = el} title="Media Appearances" icon={<Newspaper size={40} className="text-purple-400" />}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {mediaAppearances.map((item, index) => (
+              <MediaCard key={index} item={item} />
+            ))}
+          </div>
         </Section>
 
         <Section id="judging" ref={el => sectionsRef.current[4] = el} title="Judging & Mentorship" icon={<Gavel size={40} className="text-purple-400" />}>

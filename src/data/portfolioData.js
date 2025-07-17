@@ -24,18 +24,18 @@ export const publications = [
   
   export const articles = [
     {
-      title: "The Rise of MLOps: Bridging the Gap Between ML and Operations",
-      platform: "Medium",
-      date: "Jan 15, 2024",
-      summary: "Discussed the importance of MLOps practices for successful machine learning model deployment and management.",
-      link: "https://medium.com/your-profile/mlops-rise"
+      title: "The Great Digital Gatekeeper: Social Media Background Checks for Safer Schools",
+      platform: "HakerNoon",
+      date: "May 29, 2023",
+      summary: "Discussed the importance of Social Media Screening in todays world with the Help of Data Analytics",
+      link: "https://hackernoon.com/the-great-digital-gatekeeper-social-media-background-checks-for-safer-schools"
     },
     {
-      title: "Understanding Generative AI: From GANs to Transformers",
-      platform: "Personal Blog",
-      date: "Nov 20, 2023",
-      summary: "A comprehensive overview of generative AI models and their applications in various domains.",
-      link: "https://yourblog.com/generative-ai"
+      title: "Intelligent background verification: The potential of machine learning and predictive analytics",
+      platform: "BreakThrough",
+      date: "May 20, 2023",
+      summary: "A comprehensive overview of how Machine learning and predictive analytics is transforming the background checking process for employers",
+      link: "https://breakthrough.neliti.com/background-verification-machine-learning-predictive-analytics/"
     },
     {
       title: "Data Governance Best Practices for Modern Data Stacks",
@@ -43,6 +43,41 @@ export const publications = [
       date: "Sep 5, 2023",
       summary: "Outlined key strategies for implementing effective data governance in cloud-native data architectures.",
       link: "https://linkedin.com/in/yourprofile/articles/data-governance"
+    }
+  ];
+
+  export const mediaAppearances = [
+    {
+      title: "Cleaning Up The Web With Machine Learning And Data Analytics",
+      platform: "Tech Times",
+      date: "Aug 03, 2023",
+      type: "Media Article",
+      description: "A deep dive into how Data Analytics is reshaping the Social Media Screening landscape.",
+      link: "https://www.techtimes.com/articles/294646/20230803/cleaning-up-web-machine-learning-data-analytics.htm"
+    },
+    {
+      title: "Revolutionising Workplace Safety: The Hero of Social Media Background Screening",
+      platform: "Latestly",
+      date: "Sep 25, 2023",
+      type: "Media Article",
+      description: "An Article on how Social Media Screening is helping making the Workplaces Safe.",
+      link: "https://www.latestly.com/technology/revolutionising-workplace-safety-the-hero-of-social-media-background-screening-5438174.html#google_vignette"
+    },
+    {
+      title: "Sajud Hamza Elinjulliparambil making schools safe again",
+      platform: "IBT TIMES",
+      date: "Feb 14, 2024",
+      type: "Media Article",
+      description: "Article about how to make Schools in America safe with the help of Data and AI.",
+      link: "#"
+    },
+    {
+      title: "A Look At American Safety Through The Work Of Sajud Hamza Elinjulliparambil",
+      platform: "Benzinga",
+      date: "Aug 9, 2024",
+      type: "Media Article",
+      description: "How Technology keep the American people safe from frauds and the Role of Data and AI in it",
+      link: "https://www.benzinga.com/partner/general/24/08/40289096/a-look-at-american-safety-through-the-work-of-sajud-hamza-elinjulliparambi"
     }
   ];
   
