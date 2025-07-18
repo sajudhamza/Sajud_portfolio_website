@@ -219,9 +219,9 @@ const App = () => {
         <footer className="bg-black/80 backdrop-blur-sm p-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
           <div className="flex justify-center space-x-6 mt-4">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-200"><Linkedin size={28} /></a>
-            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-200"><Github size={28} /></a>
-            <a href="mailto:your.email@example.com" className="hover:text-purple-400 transition-colors duration-200"><Mail size={28} /></a>
+            <a href="https://www.linkedin.com/in/sajud-hamza/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-200"><Linkedin size={28} /></a>
+            <a href="https://github.com/sajudhamza" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-200"><Github size={28} /></a>
+            <a href="mailto:sajudhamza@gmail.com" className="hover:text-purple-400 transition-colors duration-200"><Mail size={28} /></a>
           </div>
         </footer>
       </div>
