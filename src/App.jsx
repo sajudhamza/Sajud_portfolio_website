@@ -197,7 +197,7 @@ const App = () => {
           </div>
         </Section>
 
-        <Section id="judging" ref={el => sectionsRef.current[4] = el} title="Judging & Mentorship" icon={<Gavel size={40} className="text-purple-400" />}>
+        <Section id="judging" ref={el => sectionsRef.current[4] = el} title="Judging & Peer Reviews" icon={<Gavel size={40} className="text-purple-400" />}>
           <div className="relative border-l-2 border-purple-600 pl-8 py-4">
             {judgingExperiences.map((experience, index) => (
               <div key={index} className="mb-8 last:mb-0 relative">

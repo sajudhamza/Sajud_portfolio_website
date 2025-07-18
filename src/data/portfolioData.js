@@ -83,22 +83,22 @@ export const publications = [
   
   export const judgingExperiences = [
     {
-      title: "Lead Judge - AI Innovation Hackathon",
-      organization: "Global Tech Summit",
+      title: "Panel Judge - Business & Tech",
+      organization: "Titan Awards",
       date: "Oct 2023",
-      description: "Evaluated and mentored teams developing AI-powered solutions across various industries. Focused on technical feasibility, innovation, and business impact."
+      description: "Was a Panel Judge for Business Awards 2023 where i judged over 50 enteries about inoovative tech business ideas for Titan Awards 2023."
     },
     {
-      title: "Panel Judge - Data Science Challenge",
-      organization: "University of Data Science",
+      title: "Panel Judge - Tech and AI",
+      organization: "Globee Awards",
       date: "Apr 2023",
-      description: "Assessed student projects on predictive modeling and data visualization. Provided feedback on methodology and presentation."
+      description: "Panel Judge for Globee awards and judged over 30 enteries for the most advanced AI Ideas for the Globee awards with 3 stages"
     },
     {
-      title: "Mentor & Judge - Startup Weekend AI",
-      organization: "Local Entrepreneurship Hub",
+      title: "Mentor & Judge - Undergradute Computer Science",
+      organization: "Future Engineers",
       date: "Mar 2022",
-      description: "Guiding aspiring entrepreneurs in developing their AI product ideas from concept to prototype. Judged final pitches based on scalability and market potential."
+      description: "Guiding aspiring Undergraduate students in developing their Tech prototype to mould their minds and get into a competitve world of technology and judged their creative ideas to shape the future Engineers"
     }
   ];
   
