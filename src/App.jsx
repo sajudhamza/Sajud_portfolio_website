@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Linkedin, Github, Mail, ChevronRight, Image, Tv, PlayCircle, Mic, Newspaper } from 'lucide-react';
+import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Lightbulb, Linkedin, Github, Mail, ChevronRight, Image, Tv, PlayCircle, Mic, Newspaper,Award } from 'lucide-react';
 
 // Data
-import { publications, articles, judgingExperiences, photos, mediaAppearances } from './data/portfolioData';
+import { publications, articles, judgingExperiences, photos, mediaAppearances, patents } from './data/portfolioData';
 import MediaCard from './components/MediaCard';
 
 // Components
@@ -17,6 +17,7 @@ import FlipCard from './components/FlipCard';
 import ArticleCarousel from './components/ArticleCarousel';
 import PhotoGallery from './components/PhotoGallery';
 import profileImage from './assets/sajud4.png';
+import PatentCard from './components/PatentCard';
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -107,6 +108,7 @@ const App = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm shadow-lg p-4 flex justify-center space-x-6 md:space-x-12">
           <NavItem label="Home" onClick={() => scrollToSection('home')} />
           <NavItem label="Qualifications" onClick={() => scrollToSection('qualifications')} />
+          <NavItem label="Patents" onClick={() => scrollToSection('patents')} />
           <NavItem label="Publications" onClick={() => scrollToSection('publications')} />
           <NavItem label="Articles" onClick={() => scrollToSection('articles')} />
           <NavItem label="Judging" onClick={() => scrollToSection('judging')} />
@@ -177,6 +179,22 @@ const App = () => {
           </div>
         </Section>
 
+        <Section id="patents" ref={el => sectionsRef.current[2] = el} title="Patents" icon={<Lightbulb size={40} className="text-purple-400" />}>
+  {/* This new structure matches the Judging & Mentorship section */}
+  <div className="relative border-l-2 border-purple-600 pl-8 py-4">
+    {patents.map((patent, index) => (
+      <div key={index} className="mb-8 last:mb-0 relative">
+        <div className="absolute -left-3.5 top-0 w-7 h-7 bg-purple-600 rounded-full flex items-center justify-center z-10">
+          <Lightbulb size={16} className="text-white" />
+        </div>
+        {/* We are now rendering the PatentCard component inside the timeline */}
+        <PatentCard patent={patent} />
+      </div>
+    ))}
+  </div>
+</Section>
+
+
         <Section id="publications" ref={el => sectionsRef.current[2] = el} title="Publications" icon={<BookOpen size={40} className="text-purple-400" />}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {publications.map((pub, index) => (
@@ -201,11 +219,23 @@ const App = () => {
           <div className="relative border-l-2 border-purple-600 pl-8 py-4">
             {judgingExperiences.map((experience, index) => (
               <div key={index} className="mb-8 last:mb-0 relative">
-                <div className="absolute -left-3.5 top-0 w-7 h-7 bg-purple-600 rounded-full flex items-center justify-center"><Gavel size={16} className="text-white" /></div>
+                <div className="absolute -left-3.5 top-0 w-7 h-7 bg-purple-600 rounded-full flex items-center justify-center z-10"><Gavel size={16} className="text-white" /></div>
                 <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02]">
                   <h3 className="text-xl font-bold text-blue-300 mb-2">{experience.title}</h3>
                   <p className="text-gray-400 text-sm mb-2">{experience.organization} | {experience.date}</p>
                   <p className="text-gray-300 text-sm">{experience.description}</p>
+                  {/* 3. Add the conditional link for the certificate */}
+              {experience.certificateLink && (
+                <a 
+                  href={experience.certificateLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center mt-4 text-sm text-purple-400 hover:text-purple-300 font-semibold transition-colors"
+                >
+                  <Award size={16} className="mr-2" />
+                  View Certificate
+                </a>
+              )}
                 </div>
               </div>
             ))}

@@ -83,22 +83,46 @@ export const publications = [
   
   export const judgingExperiences = [
     {
+      title: "Panel Judge - Tech Innovations",
+      organization: "QS Reimagine Awards",
+      date: "Mar 2022",
+      description: "Was in the Judge Panel for QS Reimagine Awards 2023 to judge more than 40 entries about novel Unicorn start-up Ideas.",
+      certificateLink: "https://qsrea.evessiocloud.com/Awards2024/en/node/judgeprofile-sajud-e"
+    },
+    {
       title: "Panel Judge - Business & Tech",
       organization: "Titan Awards",
       date: "Oct 2023",
-      description: "Was a Panel Judge for Business Awards 2023 where i judged over 50 enteries about inoovative tech business ideas for Titan Awards 2023."
+      description: "Was a Panel Judge for Business Awards 2023 where i judged over 50 enteries about inoovative tech business ideas for Titan Awards 2023.",
+      certificateLink: "https://thetitanawards.com/our-judge.php#:~:text=technical%20award%20events.-,United%20States,Data%20Analyst/Fullstack%20Developer%2C%20Consultadd%20INC,-Sajud%20Hamza%20Elinjulliparambil"
     },
     {
       title: "Panel Judge - Tech and AI",
       organization: "Globee Awards",
       date: "Apr 2023",
-      description: "Panel Judge for Globee awards and judged over 30 enteries for the most advanced AI Ideas for the Globee awards with 3 stages"
+      description: "Panel Judge for Globee awards and judged over 30 enteries for the most advanced AI Ideas for the Globee awards with 3 stages",
+      certificateLink: "www.google.com"
     },
     {
       title: "Mentor & Judge - Undergradute Computer Science",
       organization: "Future Engineers",
       date: "Mar 2022",
-      description: "Guiding aspiring Undergraduate students in developing their Tech prototype to mould their minds and get into a competitve world of technology and judged their creative ideas to shape the future Engineers"
+      description: "Guiding aspiring Undergraduate students in developing their Tech prototype to mould their minds and get into a competitve world of technology and judged their creative ideas to shape the future Engineers",
+      certificateLink: "#"
+    },
+    {
+      title: "Panel Judge - Business Intelligence",
+      organization: "Business Intelligence",
+      date: "Mar 2022",
+      description: "Was in the Judge Panel for Business Intelligence Awards 2023 to judge more than 40 entries about novel Business Intelligence Ideas.",
+      certificateLink: "https://www.bintelligence.com/judge/sajud-p"
+    },
+    {
+      title: "Panel Judge - Design Awards",
+      organization: "NY Product Design Awards",
+      date: "Mar 2022",
+      description: "Was in the Judge Panel for NY Product Design Awards 2023 to judge more than 20 entries about Product designs.",
+      certificateLink: "https://nydesignawards.com/our-judge.php#:~:text=United%20States-,Sajud%20E.,-Data%20Analyst/Fullstack"
     }
   ];
   
@@ -112,3 +136,16 @@ export const publications = [
     { src: "https://placehold.co/400x300/EE82EE/FFFFFF?text=Workshop", title: "Coding Workshop", description: "Leading a hands-on coding workshop." },
     { src: "https://placehold.co/400x300/DDA0DD/FFFFFF?text=Networking", title: "Networking Event", "description": "Connecting with industry leaders." },
   ];
+
+  // Add this new array to your portfolioData.js file
+
+export const patents = [
+  {
+    title: "Computing Device for Predicting and Displaying Financial Risk in Real Time",
+    patentNumber: "UK 6439245",
+    date: "Granted: July 02, 2025",
+    description: "A novel machine for Computing Device for Predicting and Displaying Financial Risk in Real Time.",
+    pdfPath: "/patents/VS UK 002 - GRANT CERTIFICATE.pdf", // This path works because the file is in the public folder
+    externalLink: "https://www.registered-design.service.gov.uk/find/6439245" // Replace with your actual link to Google Patents, etc.
+  }
+];
