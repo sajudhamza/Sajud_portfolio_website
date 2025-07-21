@@ -16,7 +16,7 @@ import SkillBubble from './components/SkillBubble';
 import FlipCard from './components/FlipCard';
 import ArticleCarousel from './components/ArticleCarousel';
 import PhotoGallery from './components/PhotoGallery';
-import profileImage from './assets/sajud4.png';
+import profileImage from './assets/sajud5.png';
 import PatentCard from './components/PatentCard';
 
 const App = () => {
