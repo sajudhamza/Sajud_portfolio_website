@@ -87,42 +87,85 @@ export const publications = [
       organization: "QS Reimagine Awards",
       date: "Mar 2022",
       description: "Was in the Judge Panel for QS Reimagine Awards 2023 to judge more than 40 entries about novel Unicorn start-up Ideas.",
-      certificateLink: "https://qsrea.evessiocloud.com/Awards2024/en/node/judgeprofile-sajud-e"
+      judgeFeature: { 
+        text: "View Featured Judge", 
+        url: "https://qsrea.evessiocloud.com/Awards2024/en/node/judgeprofile-sajud-e" // Your external URL
+      }
     },
     {
       title: "Panel Judge - Business & Tech",
       organization: "Titan Awards",
       date: "Oct 2023",
       description: "Was a Panel Judge for Business Awards 2023 where i judged over 50 enteries about inoovative tech business ideas for Titan Awards 2023.",
-      certificateLink: "https://thetitanawards.com/our-judge.php#:~:text=technical%20award%20events.-,United%20States,Data%20Analyst/Fullstack%20Developer%2C%20Consultadd%20INC,-Sajud%20Hamza%20Elinjulliparambil"
+      certificateLinks: [
+        { name: "Titan Awards Certificate", url: "/membercert/Sajud Hamza Elinjulliparambil_Endorsement [TBA].pdf" }
+    ],
+      judgeFeature: { 
+        text: "View Featured Judge", 
+        url:  "https://thetitanawards.com/our-judge.php#:~:text=technical%20award%20events.-,United%20States,Data%20Analyst/Fullstack%20Developer%2C%20Consultadd%20INC,-Sajud%20Hamza%20Elinjulliparambil" // Your external URL
+      }
     },
     {
       title: "Panel Judge - Tech and AI",
       organization: "Globee Awards",
       date: "Apr 2023",
       description: "Panel Judge for Globee awards and judged over 30 enteries for the most advanced AI Ideas for the Globee awards with 3 stages",
-      certificateLink: "www.google.com"
+      judgeFeature: { 
+        text: "View Featured Judge", 
+        url:   "www.google.com" // Your external URL
+      }
     },
     {
       title: "Mentor & Judge - Undergradute Computer Science",
       organization: "Future Engineers",
       date: "Mar 2022",
       description: "Guiding aspiring Undergraduate students in developing their Tech prototype to mould their minds and get into a competitve world of technology and judged their creative ideas to shape the future Engineers",
-      certificateLink: "#"
+      judgeFeature: { 
+        text: "View Featured Judge", 
+        url:   "www.google.com" // Your external URL
+      }
     },
     {
       title: "Panel Judge - Business Intelligence",
       organization: "Business Intelligence",
       date: "Mar 2022",
       description: "Was in the Judge Panel for Business Intelligence Awards 2023 to judge more than 40 entries about novel Business Intelligence Ideas.",
-      certificateLink: "https://www.bintelligence.com/judge/sajud-p"
+      certificateLinks: [
+        { name: "Sratus Certificate", url: "/membercert/judge-certificate-stratus-2023.png" },
+        { name: "Fortress Certificate", url: "/membercert/Slide4.PNG" }
+    ],
+      judgeFeature: { 
+        text: "View Featured Judge", 
+        url:   "https://www.bintelligence.com/judge/sajud-p"// Your external URL
+      }
     },
     {
       title: "Panel Judge - Design Awards",
       organization: "NY Product Design Awards",
       date: "Mar 2022",
       description: "Was in the Judge Panel for NY Product Design Awards 2023 to judge more than 20 entries about Product designs.",
-      certificateLink: "https://nydesignawards.com/our-judge.php#:~:text=United%20States-,Sajud%20E.,-Data%20Analyst/Fullstack"
+      judgeFeature: { 
+        text: "View Featured Judge", 
+        url:   "https://nydesignawards.com/our-judge.php#:~:text=United%20States-,Sajud%20E.,-Data%20Analyst/Fullstack"// Your external URL
+      }
+    },
+    {
+      title: "Peer Review - IEM - ICDC 2025 ",
+      organization: "International Conference on Computational Intelligence, Data Science & Cloud Computing ",
+      date: "Apr 2025",
+      description: "Peer Reviewed Multiple Research papers for the 3rd International Conference on Computational Intelligence, Data Science & Cloud Computing by Institute of Engineering & Management, Kolkata ", 
+      certificateLinks: [
+        { name: "IEM-ICDC 2025 Certificate", url: "/membercert/ICDC2025.jpeg" }
+    ]
+    },
+    {
+      title: "Peer Review - ICDSA 2025 ",
+      organization: "International Conference on Data Science & Applications ",
+      date: "Jul 2025",
+      description: "Peer Reviewed Multiple Research papers for the 6th International Conference on Data Science & Applications by Malaviya National Institute of Technology Jaipur, India ", 
+      certificateLinks: [
+        { name: "ICDSA 2025 Certificate", url: "/membercert/ICDSA 2025 TPC Certificate-346.pdf" }
+    ]
     }
   ];
   
@@ -148,4 +191,68 @@ export const patents = [
     pdfPath: "/patents/VS UK 002 - GRANT CERTIFICATE.pdf", // This path works because the file is in the public folder
     externalLink: "https://www.registered-design.service.gov.uk/find/6439245" // Replace with your actual link to Google Patents, etc.
   }
+];
+
+export const memberships = [
+  {
+    name: "Growth Hackers",
+    logoUrl: "/memberships/growth_hackers.png", 
+    certificateUrl: "/membercert/growth hackers.png"
+  },
+  {
+    name: "Harvard Business Review",
+    logoUrl: "/memberships/harvard_bussiness_review.jpg",
+    certificateUrl: "/membercert/harvard business review.jpg"
+  },
+  {
+    name: "International Society of Applied Computing",
+    logoUrl: "/memberships/ISAC.png",
+    certificateUrl: "/membercert/ISAC Membership Certificate-Sajud E..pdf"
+  },
+  {
+    name: "Vation Venture Technology Practitioner Council",
+    logoUrl: "/memberships/vation ventures.jpg",
+    certificateUrl: "/membercert/vation ventures.jpg"
+  },
+  // Add other memberships here...
+];
+
+export const testimonials = [
+  {
+    id: 'Bharat-Bhate', // A unique ID for the URL
+    name: "Bharat Bhate",
+    title: "Founder/President of Consultadd Inc",
+    imageUrl: "/Testimonial/Bharat.png",
+    linkedinUrl: "https://www.linkedin.com/in/bhate/",
+    description: "Sajud's expertise in building scalable data pipelines is unmatched. He was instrumental in redesigning our entire data infrastructure, which led to a 40% improvement in our data processing speeds. His ability to tackle complex problems with innovative solutions makes him a tremendous asset to any team.",
+    pdfUrl: "/assets/testimonials/pdfs/john-doe-testimonial.pdf"
+  },
+  {
+    id: 'Brendten-Eickstaedt',
+    name: "Brendten Eickstaedt",
+    title: "Cheif Technology Officer at Fama Technologies",
+    imageUrl: "/Testimonial/Brendten Eickstaedt.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/brendteneickstaedt/",
+    description: "I had the pleasure of collaborating with Sajud on a cutting-edge machine learning project. His deep understanding of both theoretical concepts and practical implementation was key to our success. He is a dedicated and brilliant engineer who consistently delivers high-quality work.",
+    pdfUrl: "/assets/testimonials/pdfs/jane-smith-testimonial.pdf"
+  },
+  {
+    id: 'Amir-Mirza',
+    name: "Amir Mirza",
+    title: "Monitoring Services Lead at Blenheim Chalcot",
+    imageUrl: "/Testimonial/Amir Mirza.JPG",
+    linkedinUrl: "https://www.linkedin.com/in/amir-m-951b43141/",
+    description: "I had the pleasure of collaborating with Sajud on a cutting-edge machine learning project. His deep understanding of both theoretical concepts and practical implementation was key to our success. He is a dedicated and brilliant engineer who consistently delivers high-quality work.",
+    pdfUrl: "/assets/testimonials/pdfs/jane-smith-testimonial.pdf"
+  },
+  {
+    id: 'Okpara-Uche',
+    name: "Okpara Uche",
+    title: "Principal AI Architext / ML Engineer",
+    imageUrl: "/Testimonial/Okpara Uche.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/uche-okpara-phd-pe-86a89516/",
+    description: "I had the pleasure of collaborating with Sajud on a cutting-edge machine learning project. His deep understanding of both theoretical concepts and practical implementation was key to our success. He is a dedicated and brilliant engineer who consistently delivers high-quality work.",
+    pdfUrl: "/assets/testimonials/pdfs/jane-smith-testimonial.pdf"
+  }
+  // Add more testimonials here...
 ];
