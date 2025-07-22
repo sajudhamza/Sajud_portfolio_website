@@ -119,7 +119,10 @@ export const publications = [
       title: "Mentor & Judge - Undergradute Computer Science",
       organization: "Future Engineers",
       date: "Mar 2022",
-      description: "Guiding aspiring Undergraduate students in developing their Tech prototype to mould their minds and get into a competitve world of technology and judged their creative ideas to shape the future Engineers",
+      description: "Guiding aspiring Undergraduate students in developing their toy prototype to mould their minds and get into a competitve world of Science and judged their creative ideas to shape the future Engineers",
+      certificateLinks: [
+        { name: "Future Awards Certificate", url: "/membercert/inventionchallenge.pdf" }
+    ],
       judgeFeature: { 
         text: "View Featured Judge", 
         url:   "www.google.com" // Your external URL
@@ -311,6 +314,11 @@ export const protectedFiles = [
         name: "Vation Ventures Membership Email",
         type: "PDF",
         url: "/protected_files/Email Evidences/Vation Ventures Platform.pdf"
+      },
+      {
+        name: "BI Judging Email",
+        type: "PDF",
+        url: "/protected_files/Email Evidences/2023 Stratus award.pdf"
       }
     ]
   },
@@ -331,6 +339,206 @@ export const protectedFiles = [
         name: "Brendten Eickstaedt Recommendation",
         type: "PDF",
         url: "/protected_files/Letter of Recommendation/Brendten Recommendation.jpg"
+      }
+    ]
+  },
+  {
+    folderName: "i-20 Documents",
+    files: [
+      {
+        name: "i-20 2018 sept",
+        type: "PDF",
+        url: "/protected_files/i-20/i-20 First.pdf"
+      },
+      {
+        name: "i-20 2019 june",
+        type: "PDF",
+        url: "/protected_files/i-20/I20-CPT1.pdf"
+      },
+      {
+        name: "i-20 2019 Aug",
+        type: "PDF",
+        url: "/protected_files/i-20/I20-CPT2.pdf"
+      },
+      {
+        name: "i-20 2020 Apr",
+        type: "PDF",
+        url: "/protected_files/i-20/i20-OPT.pdf"
+      },
+      {
+        name: "i-20 2020 Aug",
+        type: "PDF",
+        url: "/protected_files/i-20/I-20 After Reporting OPT Employment Consultadd.pdf"
+      },
+      {
+        name: "i-20 2021 Jul",
+        type: "PDF",
+        url: "/protected_files/i-20/Stem Opt Resquested Consultadd Electronic.pdf"
+      },
+      {
+        name: "i-20 2021 Dec",
+        type: "PDF",
+        url: "/protected_files/i-20/2021 OPT Travel Signed Form I-20.pdf"
+      },
+      {
+        name: "i-20 2022 Oct",
+        type: "PDF",
+        url: "/protected_files/i-20/2022 i-20 Travel Signature.pdf"
+      },
+      {
+        name: "i-20 2023 Apr",
+        type: "PDF",
+        url: "/protected_files/i-20/Elinjulliparambil STEM OPT Employer Update I-20.pdf"
+      },
+      {
+        name: "i-20 2023 Jul",
+        type: "PDF",
+        url: "/protected_files/i-20/Phd initial i-20.pdf"
+      },
+      {
+        name: "i-20 2023 Oct",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Fall 23 Form I-20.pdf"
+      },
+      {
+        name: "i-20 2023 Dec",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Winter 23 Form I-20.pdf"
+      },
+      {
+        name: "i-20 2024 Jan",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Spring 2024 Form i-20.pdf"
+      },
+      {
+        name: "i-20 2024 May",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Summer 2024 Form I-20.pdf"
+      },
+      {
+        name: "i-20 2024 Dec",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Winter 2024 Form I-20.pdf"
+      },
+      {
+        name: "i-20 2025 Feb",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Spring 25 I-20.pdf"
+      },
+      {
+        name: "i-20 2025 May",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Summer 2025 Form I-20.pdf"
+      },
+    ]
+  },
+  {
+    folderName: "Judging & Membership Evidence",
+    files: [
+      {
+        name: "BI Stratus award certificate",
+        type: "PNG",
+        url: "/protected_files/Judging & Membership/judge-certificate-stratus-2023.png"
+      },
+      {
+        name: "BI Sustainability award certificate",
+        type: "PNG",
+        url: "/protected_files/Judging & Membership/Business Intelligent Sustainability awards 2024.PNG"
+      },
+      {
+        name: "Growth Hacker Membership proof",
+        type: "PNG",
+        url: "/protected_files/Judging & Membership/Growth Hackers Member.PNG"
+      },
+      {
+        name: "Future Engineers Awards Certificate",
+        type: "PDF",
+        url: "/protected_files/Judging & Membership/inventionchallenge.pdf"
+      },
+      {
+        name: "ISAC Membership Certificate",
+        type: "PDF",
+        url: "/protected_files/Judging & Membership/ISAC Membership Certificate-Sajud E..pdf"
+      },
+      {
+        name: "BI Fortress Awards Certificate",
+        type: "PNG",
+        url: "/protected_files/Judging & Membership/Judge-certificate-Cyber Security-2024.PNG"
+      },
+      {
+        name: "Titan Awards Certificate",
+        type: "PDF",
+        url: "/protected_files/Judging & Membership/Sajud Hamza Elinjulliparambil_Endorsement [TBA].pdf"
+      },
+      {
+        name: "Titan Panel Proof",
+        type: "PNG",
+        url: "/protected_files/Judging & Membership/Titan Judge Panel.PNG"
+      },
+      {
+        name: "Vation Ventures Acknowledgement",
+        type: "PNG",
+        url: "/protected_files/Judging & Membership/Vation Ventures Technology Prectitioners.PNG"
+      },
+    ]
+  },
+  {
+    folderName: "Paystubs",
+    files: [
+      {
+        name: "Apr 2024",
+        type: "PDF",
+        url: "/protected_files/pay-stubs/Statement for Apr 30, 2024.pdf"
+      },
+      {
+        name: "May 2024",
+        type: "PDF",
+        url: "/protected_files/pay-stubs/Statement for May 31, 2024.pdf"
+      },
+      {
+        name: "Jun 2024",
+        type: "PDF",
+        url: "/protected_files/pay-stubs/Statement for Jun 28, 2024.pdf"
+      }
+    ]
+  },
+  {
+    folderName: "W-2's",
+    files: [
+      {
+        name: "W-2 2019",
+        type: "PDF",
+        url: "/protected_files/W-2's/W-2 2019.pdf"
+      },
+      {
+        name: "W-2 2020",
+        type: "PDF",
+        url: "/protected_files/W-2's/W-2 2020.pdf"
+      },
+      {
+        name: "W-2 2021",
+        type: "PDF",
+        url: "/protected_files/W-2's/W-2 2021.pdf"
+      },
+      {
+        name: "W-2 2022",
+        type: "PDF",
+        url: "/protected_files/W-2's/W-2 2022.pdf"
+      },
+      {
+        name: "W-2 2023",
+        type: "PDF",
+        url: "/protected_files/W-2's/W2-2023.pdf"
+      },
+      {
+        name: "W-2 2023 Matlen Silver",
+        type: "PDF",
+        url: "/protected_files/W-2's/W-2 2023 Matlen Silver.pdf"
+      },
+      {
+        name: "W-2 2024",
+        type: "PDF",
+        url: "/protected_files/W-2's/W-2 2024.pdf"
       }
     ]
   }
