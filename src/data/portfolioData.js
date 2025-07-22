@@ -131,8 +131,9 @@ export const publications = [
       date: "Mar 2022",
       description: "Was in the Judge Panel for Business Intelligence Awards 2023 to judge more than 40 entries about novel Business Intelligence Ideas.",
       certificateLinks: [
-        { name: "Sratus Certificate", url: "/membercert/judge-certificate-stratus-2023.png" },
-        { name: "Fortress Certificate", url: "/membercert/Slide4.PNG" }
+        { name: "Sratus Awards Judge Certificate", url: "/membercert/judge-certificate-stratus-2023.png" },
+        { name: "Fortress Awards Judge Certificate", url: "/membercert/Slide4.PNG" },
+        { name: "Sustainability Award Judge Certificate", url: "/membercert/Business Intelligent Sustainability awards 2024.PNG" }
     ],
       judgeFeature: { 
         text: "View Featured Judge", 
@@ -212,7 +213,7 @@ export const memberships = [
   {
     name: "Vation Venture Technology Practitioner Council",
     logoUrl: "/memberships/vation ventures.jpg",
-    certificateUrl: "/membercert/vation ventures.jpg"
+    certificateUrl: "/membercert/Vation Ventures.png"
   },
   // Add other memberships here...
 ];
@@ -224,8 +225,8 @@ export const testimonials = [
     title: "Founder/President of Consultadd Inc",
     imageUrl: "/Testimonial/Bharat.png",
     linkedinUrl: "https://www.linkedin.com/in/bhate/",
-    description: "Sajud's expertise in building scalable data pipelines is unmatched. He was instrumental in redesigning our entire data infrastructure, which led to a 40% improvement in our data processing speeds. His ability to tackle complex problems with innovative solutions makes him a tremendous asset to any team.",
-    pdfUrl: "/assets/testimonials/pdfs/john-doe-testimonial.pdf"
+    description: "I am pleased to write this letter to confirm Mr. Sajud Elinjulliparambil’s critical employment at Consultadd Inc. Mr. Elinjulliparambil is a distinguished expert in his field who plays a crucial role at ConsultAdd. As Senior Data Engineer, his technical skills and innovative approach were instrumental in shaping our client’s success and driving its growth ",
+    pdfUrl: "/Testimonial/pdfs/LOR Bharat Bhate Sajud.pdf"
   },
   {
     id: 'Brendten-Eickstaedt',
@@ -233,17 +234,17 @@ export const testimonials = [
     title: "Cheif Technology Officer at Fama Technologies",
     imageUrl: "/Testimonial/Brendten Eickstaedt.jpg",
     linkedinUrl: "https://www.linkedin.com/in/brendteneickstaedt/",
-    description: "I had the pleasure of collaborating with Sajud on a cutting-edge machine learning project. His deep understanding of both theoretical concepts and practical implementation was key to our success. He is a dedicated and brilliant engineer who consistently delivers high-quality work.",
-    pdfUrl: "/assets/testimonials/pdfs/jane-smith-testimonial.pdf"
+    description: "I first became acquainted with M.r Sajud Elinjulliparambil through his impressive work with Fama Technologies. As a Developer at ConsultAdd, he played a crucial role ni developing Fama's flagship product-an advanced Al tool designed to screen employment candidates. This cutting-edge tool sifts through data from over 10,000 online public sources to identify potential fraud indicators, illegal activities, or other risky behaviors. M.r Elinjulliparambil's expertise ni development and his innovative approach were instrumental in bringing this product to fruition.",
+    pdfUrl: "/Testimonial/pdfs/Brendten Recommendation.pdf"
   },
   {
     id: 'Amir-Mirza',
     name: "Amir Mirza",
     title: "Monitoring Services Lead at Blenheim Chalcot",
-    imageUrl: "/Testimonial/Amir Mirza.JPG",
+    imageUrl: "/Testimonial/Amir Mirza.jpg",
     linkedinUrl: "https://www.linkedin.com/in/amir-m-951b43141/",
-    description: "I had the pleasure of collaborating with Sajud on a cutting-edge machine learning project. His deep understanding of both theoretical concepts and practical implementation was key to our success. He is a dedicated and brilliant engineer who consistently delivers high-quality work.",
-    pdfUrl: "/assets/testimonials/pdfs/jane-smith-testimonial.pdf"
+    description: "I had the pleasure of collaborating with Sajud on a cutting-edge Technology. Mr. Elinjulliparambil 's role was of paramount importance, given the substantial responsibility he carried in managing high-stakes clients, including the City of London Police. In this capacity, he was entrusted with the critical task of analyzing complex system data to ensure the seamless operation of essential services.",
+    pdfUrl: "/Testimonial/pdfs/Amir Mirza - Sajud Hamza.pdf"
   },
   {
     id: 'Okpara-Uche',
@@ -255,4 +256,82 @@ export const testimonials = [
     pdfUrl: "/assets/testimonials/pdfs/jane-smith-testimonial.pdf"
   }
   // Add more testimonials here...
+];
+
+export const protectedFiles = [
+  {
+    folderName: "Resumes & CVs",
+    files: [
+      {
+        name: "GC_Resume",
+        type: "PDF",
+        url: "/protected_files/Resume/Sajud GC Resume.pdf"
+      }
+    ]
+  },
+  {
+    folderName: "Email Evidences",
+    files: [
+      {
+        name: "Golbal Undergraduate Awards Invitation",
+        type: "PDF",
+        url: "/protected_files/Email Evidences/Gmail - Invitation_ Global Undergraduate Awards.pdf"
+      },
+      {
+        name: "ISAC Membership Email",
+        type: "PDF",
+        url: "/protected_files/Email Evidences/Gmail - ISAC Membership Certificate for Sajud E_.pdf"
+      },
+      {
+        name: "QS Reimagine Judging Email",
+        type: "PDF",
+        url: "/protected_files/Email Evidences/Gmail - QSreimagine awards.pdf"
+      },
+      {
+        name: "NY Product Judging Email",
+        type: "PDF",
+        url: "/protected_files/Email Evidences/Gmail - Re_ Nomination to Judge NY Product Design Awards _ TITAN Business Awards.pdf"
+      },
+      {
+        name: "Global Undergraduate Judging Email",
+        type: "PDF",
+        url: "/protected_files/Email Evidences/Gmail - The Global Undergraduate Awards - Category Judge Thank you.pdf"
+      },
+      {
+        name: "Harvard Business Review Membership Email",
+        type: "PDF",
+        url: "/protected_files/Email Evidences/Gmail - Welcome to the HBR Advisory Council.pdf"
+      },
+      {
+        name: "Growth hackers Membership Email",
+        type: "PDF",
+        url: "/protected_files/Email Evidences/Gmail - Your Community Application Review is Completed.pdf"
+      },
+      {
+        name: "Vation Ventures Membership Email",
+        type: "PDF",
+        url: "/protected_files/Email Evidences/Vation Ventures Platform.pdf"
+      }
+    ]
+  },
+  {
+    folderName: "Letter of Recommendations",
+    files: [
+      {
+        name: "Bharat Recommendation",
+        type: "PDF",
+        url: "/protected_files/Letter of Recommendation/LOR Bharat Bhate Sajud.png"
+      },
+      {
+        name: "Amir Mirza Recommendation",
+        type: "PDF",
+        url: "/protected_files/Letter of Recommendation/Amir Mirza - Sajud Hamza.jpg"
+      },
+      {
+        name: "Brendten Eickstaedt Recommendation",
+        type: "PDF",
+        url: "/protected_files/Letter of Recommendation/Brendten Recommendation.jpg"
+      }
+    ]
+  }
 ];

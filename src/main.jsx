@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx'
 import MembershipsPage from './components/MembershipsPage.jsx';
-import TestimonialPage from './components/TestimonialPage.jsx'; // Import the new page
+import TestimonialPage from './components/TestimonialPage.jsx';
+import LoginPage from './components/LoginPage.jsx'; // Import Login page
+import FilesPage from './components/FilesPage.jsx'; // Import Files page
+import ProtectedRoute from './components/ProtectedRoute.jsx'; // Import ProtectedRoute
 import './index.css'
 
 const router = createBrowserRouter([
@@ -16,8 +19,20 @@ const router = createBrowserRouter([
     element: <MembershipsPage />,
   },
   {
-    path: "/testimonial/:id", // Add the new dynamic route
+    path: "/testimonial/:id",
     element: <TestimonialPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/files",
+    element: (
+      <ProtectedRoute>
+        <FilesPage />
+      </ProtectedRoute>
+    ),
   },
 ]);
 

@@ -260,8 +260,8 @@
 // export default App;
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
-import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Lightbulb, Linkedin, Github, Mail, ChevronRight, Image, Tv, Newspaper, Award, Star, MessageSquare } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom'; // Import Link
+import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Lightbulb, Linkedin, Github, Mail, ChevronRight, Image, Tv, Newspaper, Award, Star, MessageSquare, LogIn } from 'lucide-react';
 
 // Data
 import { publications, articles, judgingExperiences, photos, mediaAppearances, patents, testimonials } from './data/portfolioData';
@@ -286,6 +286,7 @@ import MembershipSlider from './components/MembershipSlider';
 const App = () => {
   const [showIntro, setShowIntro] = useState(true);
   const sectionsRef = useRef([]);
+  const navigate = useNavigate();
   
   const [selectedCertificateImage, setSelectedCertificateImage] = useState(null);
 
@@ -322,6 +323,9 @@ const App = () => {
           <NavItem label="Media" onClick={() => scrollToSection('media')} />
           <NavItem label="Photos" onClick={() => scrollToSection('photos')} />
           <NavItem label="Testimonials" onClick={() => scrollToSection('testimonials')} />
+          <button onClick={() => navigate('/login')} className="text-gray-300 hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-2">
+            <LogIn size={16} /> Login
+          </button>
         </nav>
 
         <section
