@@ -144,7 +144,7 @@ export const publications = [
     {
       title: "Panel Judge - Business Intelligence",
       organization: "Business Intelligence",
-      date: "Mar 2022",
+      date: "Mar 2024 | June 2024 | Aug 2024 | Feb 2025",
       description: "Was in the Judge Panel for Business Intelligence Awards 2023 to judge more than 40 entries about novel Business Intelligence Ideas.",
       certificateLinks: [
         { name: "Sratus Awards Judge Certificate", url: "/membercert/judge-certificate-stratus-2023.png" },
