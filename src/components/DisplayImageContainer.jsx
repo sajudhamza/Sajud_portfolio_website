@@ -2,8 +2,8 @@ import React from 'react';
 
 const DisplayImageContainer = ({ imageUrl }) => {
   return (
-    // UPDATED: Made smaller on mobile, larger on bigger screens
-    <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden">
+    // UPDATED: Increased the size for both mobile and larger screens
+    <div className="w-80 h-80 md:w-[29rem] md:h-[29rem] rounded-2xl overflow-hidden">
       <img
         src={imageUrl}
         alt="Profile"
