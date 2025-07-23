@@ -53,7 +53,7 @@ const TriviaGame = () => {
     return (
       <div className="flex flex-col items-center justify-center h-80">
         <h3 className="text-xl font-bold text-blue-300 mb-4">Data Science & AI Trivia</h3>
-        <p className="text-gray-300 mb-6 text-center">Answer 10 random questions!</p>
+        <p className="text-gray-300 mb-6 text-center">Answer 10 Tech questions!</p>
         <button
           onClick={() => setGameStatus('playing')}
           className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg shadow-lg"
