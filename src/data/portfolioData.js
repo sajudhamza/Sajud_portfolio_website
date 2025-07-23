@@ -116,6 +116,19 @@ export const publications = [
       }
     },
     {
+      title: "Panel Judge - Computer Science",
+      organization: "The Global Undergraduate Awards",
+      date: "Mar 2024",
+      description: "Guiding aspiring Undergraduate students in developing their toy prototype to mould their minds and get into a competitve world of Science and judged their creative ideas to shape the future Engineers",
+      certificateLinks: [
+        { name: "Undergraduate Awards Certificate", url: "/membercert/inventionchallenge.pdf" }
+    ],
+      judgeFeature: { 
+        text: "View Featured Judge", 
+        url:   "www.google.com" // Your external URL
+      }
+    },
+    {
       title: "Mentor & Judge - Undergradute Computer Science",
       organization: "Future Engineers",
       date: "Mar 2022",

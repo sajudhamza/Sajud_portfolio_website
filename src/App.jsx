@@ -1,8 +1,9 @@
 // import React, { useState, useEffect, useRef } from 'react';
-// import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Lightbulb, Linkedin, Github, Mail, ChevronRight, Image, Tv, Newspaper, Award, Star } from 'lucide-react';
+// import { Link, useNavigate } from 'react-router-dom'; // Import Link
+// import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Lightbulb, Linkedin, Github, Mail, ChevronRight, Image, Tv, Newspaper, Award, Star, MessageSquare, LogIn } from 'lucide-react';
 
 // // Data
-// import { publications, articles, judgingExperiences, photos, mediaAppearances, patents } from './data/portfolioData';
+// import { publications, articles, judgingExperiences, photos, mediaAppearances, patents, testimonials } from './data/portfolioData';
 
 // // Components
 // import IntroScreen from './components/IntroScreen';
@@ -24,8 +25,8 @@
 // const App = () => {
 //   const [showIntro, setShowIntro] = useState(true);
 //   const sectionsRef = useRef([]);
+//   const navigate = useNavigate();
   
-//   // State to manage the certificate image modal
 //   const [selectedCertificateImage, setSelectedCertificateImage] = useState(null);
 
 //   const scrollToSection = (id) => {
@@ -51,7 +52,7 @@
 //     <div className="min-h-screen text-gray-100 font-sans bg-black">
 //       <Background />
 //       <div className="relative z-10">
-//         <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm shadow-lg p-4 flex justify-center space-x-2 md:space-x-8">
+//         <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm shadow-lg p-4 flex justify-center flex-wrap space-x-2 md:space-x-4">
 //           <NavItem label="Home" onClick={() => scrollToSection('home')} />
 //           <NavItem label="Qualifications" onClick={() => scrollToSection('qualifications')} />
 //           <NavItem label="Patents" onClick={() => scrollToSection('patents')} />
@@ -60,6 +61,10 @@
 //           <NavItem label="Judging" onClick={() => scrollToSection('judging')} />
 //           <NavItem label="Media" onClick={() => scrollToSection('media')} />
 //           <NavItem label="Photos" onClick={() => scrollToSection('photos')} />
+//           <NavItem label="Testimonials" onClick={() => scrollToSection('testimonials')} />
+//           <button onClick={() => navigate('/login')} className="text-gray-300 hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-2">
+//             <LogIn size={16} /> Login
+//           </button>
 //         </nav>
 
 //         <section
@@ -182,7 +187,6 @@
 //                   </div>
 //                   <p className="text-gray-300 text-sm mt-2">{experience.description}</p>
                   
-//                   {/* UPDATED: Logic to loop through multiple certificate links */}
 //                   <div className="flex flex-wrap gap-4 mt-4">
 //                     {experience.certificateLinks && experience.certificateLinks.map((link, linkIndex) => {
 //                         const isExternal = link.url.startsWith('http');
@@ -224,6 +228,21 @@
 //           <PhotoGallery photos={photos} />
 //         </Section>
 
+//         <Section id="testimonials" ref={el => sectionsRef.current[8] = el} title="Testimonials" icon={<MessageSquare size={40} className="text-purple-400" />}>
+//           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+//             {testimonials.map((testimonial) => (
+//               <Link key={testimonial.id} to={`/testimonial/${testimonial.id}`} className="text-center group">
+//                 <img 
+//                   src={testimonial.imageUrl} 
+//                   alt={testimonial.name}
+//                   className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-gray-700 group-hover:border-purple-500 transition-colors duration-300"
+//                 />
+//                 <p className="mt-4 font-semibold text-blue-300">{testimonial.name}</p>
+//               </Link>
+//             ))}
+//           </div>
+//         </Section>
+
 //         <footer className="bg-black/80 backdrop-blur-sm p-8 text-center text-gray-400">
 //           <p>&copy; {new Date().getFullYear()} Sajud Hamza Elinjulliparambil. All rights reserved.</p>
 //           <div className="flex justify-center space-x-6 mt-4">
@@ -234,7 +253,6 @@
 //         </footer>
 //       </div>
       
-//       {/* The modal for viewing local certificate images */}
 //       {selectedCertificateImage && (
 //         <div className="fixed inset-0 bg-black bg-opacity-80 z-[100] flex items-center justify-center p-4" onClick={() => setSelectedCertificateImage(null)}>
 //           <div className="relative bg-gray-800 rounded-xl p-4 max-w-4xl max-h-[90vh] overflow-auto" onClick={(e) => e.stopPropagation()}>
@@ -260,7 +278,7 @@
 // export default App;
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link
+import { Link, useNavigate } from 'react-router-dom';
 import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Lightbulb, Linkedin, Github, Mail, ChevronRight, Image, Tv, Newspaper, Award, Star, MessageSquare, LogIn } from 'lucide-react';
 
 // Data
@@ -313,7 +331,8 @@ const App = () => {
     <div className="min-h-screen text-gray-100 font-sans bg-black">
       <Background />
       <div className="relative z-10">
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm shadow-lg p-4 flex justify-center flex-wrap space-x-2 md:space-x-4">
+        {/* UPDATED: Added flex-wrap and responsive spacing to the nav bar */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm shadow-lg p-2 flex justify-center flex-wrap gap-x-1 sm:gap-x-2 md:gap-x-4">
           <NavItem label="Home" onClick={() => scrollToSection('home')} />
           <NavItem label="Qualifications" onClick={() => scrollToSection('qualifications')} />
           <NavItem label="Patents" onClick={() => scrollToSection('patents')} />
@@ -323,7 +342,7 @@ const App = () => {
           <NavItem label="Media" onClick={() => scrollToSection('media')} />
           <NavItem label="Photos" onClick={() => scrollToSection('photos')} />
           <NavItem label="Testimonials" onClick={() => scrollToSection('testimonials')} />
-          <button onClick={() => navigate('/login')} className="text-gray-300 hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-2">
+          <button onClick={() => navigate('/login')} className="text-gray-300 hover:text-purple-400 px-2 py-1 sm:px-3 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center gap-2">
             <LogIn size={16} /> Login
           </button>
         </nav>
@@ -331,26 +350,28 @@ const App = () => {
         <section
           id="home"
           ref={el => sectionsRef.current[0] = el}
-          className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden p-6 pt-28"
+          className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden p-4 pt-32 sm:p-6 sm:pt-28"
         >
           <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center w-full">
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+            {/* UPDATED: Responsive font sizes for the main title */}
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
               Hi, I'm <span className="text-purple-400">Sajud Hamza Elinjulliparambil</span>
             </h1>
             <TypingEffect
               phrases={["Data Engineer", "AI Engineer", "Machine Learning Enthusiast", "Problem Solver"]}
-              className="text-3xl md:text-5xl font-semibold text-blue-300 mb-8"
+              className="text-2xl sm:text-3xl md:text-5xl font-semibold text-blue-300 mb-8 h-16 sm:h-auto"
             />
-            <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-gray-300">
+            <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 text-gray-300">
               Passionate about building robust data pipelines, developing intelligent AI solutions, and transforming complex data into actionable insights.
             </p>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full">
-              <div className="bg-gray-900/80 backdrop-blur-sm p-6 rounded-xl shadow-lg text-center w-full md:w-1/2">
+            {/* UPDATED: Layout stacks vertically on mobile */}
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-8 w-full">
+              <div className="bg-gray-900/80 backdrop-blur-sm p-6 rounded-xl shadow-lg text-center w-full lg:w-1/2">
                 <h3 className="text-2xl font-bold text-blue-300 mb-4">Catch Me If You Can!</h3>
                 <p className="text-gray-300 mb-6">Test your reflexes! Click my face as fast as you can to score points.</p>
                 <SimpleGame faceIcon={profileImage} />
               </div>
-              <div className="p-6 rounded-xl text-center w-full md:w-1/2 h-full flex flex-col justify-center items-center">
+              <div className="p-6 rounded-xl text-center w-full lg:w-1/2 h-full flex flex-col justify-center items-center">
                 <h3 className="text-2xl font-bold text-blue-300 mb-4">Sajud Hamza</h3>
                 <DisplayImageContainer imageUrl={profileImage} />
               </div>
@@ -366,7 +387,8 @@ const App = () => {
         <MembershipSlider />
 
         <Section id="qualifications" ref={el => sectionsRef.current[1] = el} title="My Qualifications" icon={<GraduationCap size={40} className="text-purple-400" />}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* UPDATED: Stacks vertically on mobile */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02]">
               <h3 className="text-2xl font-bold mb-4 text-blue-300 flex items-center"><Briefcase size={24} className="mr-2" /> Skills</h3>
               <div className="flex flex-wrap gap-3">
