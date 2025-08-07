@@ -341,17 +341,17 @@ export const protectedFiles = [
       {
         name: "Bharat Recommendation",
         type: "PDF",
-        url: "/protected_files/Letter of Recommendation/LOR Bharat Bhate Sajud.png"
+        url: "/protected_files/Letter of Recommendation/LOR Bharat Bhate Sajud.pdf"
       },
       {
         name: "Amir Mirza Recommendation",
         type: "PDF",
-        url: "/protected_files/Letter of Recommendation/Amir Mirza - Sajud Hamza.jpg"
+        url: "/protected_files/Letter of Recommendation/Amir Mirza - Sajud Hamza.pdf"
       },
       {
         name: "Brendten Eickstaedt Recommendation",
         type: "PDF",
-        url: "/protected_files/Letter of Recommendation/Brendten Recommendation.jpg"
+        url: "/protected_files/Letter of Recommendation/Brendten Recommendation.pdf"
       }
     ]
   },
