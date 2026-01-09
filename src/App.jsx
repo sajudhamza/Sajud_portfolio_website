@@ -1,102 +1,335 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Briefcase, GraduationCap, BookOpen, Feather, Gavel, Lightbulb, Linkedin, Github, Mail, ChevronRight, Image, Tv, Newspaper, Award, Star, MessageSquare, LogIn } from 'lucide-react';
-
-// Data
-import { publications, articles, judgingExperiences, photos, mediaAppearances, patents, testimonials, triviaQuestions } from './data/portfolioData';
-
-// Components
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Linkedin, Github, Mail, ArrowRight, Award, BookOpen, TrendingUp, Users, Sparkles, Brain, Zap, Code, Database, Cpu, Network } from 'lucide-react';
 import IntroScreen from './components/IntroScreen';
-import NavItem from './components/NavItem';
-import Section from './components/Section';
+import Navigation from './components/Navigation';
+import Background from './components/Background';
+import DisplayImageContainer from './components/DisplayImageContainer';
 import TypingEffect from './components/TypingEffect';
 import TriviaGame from './components/TriviaGame';
-import DisplayImageContainer from './components/DisplayImageContainer';
-import SkillBubble from './components/SkillBubble';
-import FlipCard from './components/FlipCard';
-import ArticleCarousel from './components/ArticleCarousel';
-import PhotoGallery from './components/PhotoGallery';
+import ContactForm from './components/ContactForm';
 import profileImage from './assets/sajud5.png';
-import PatentCard from './components/PatentCard';
-import MediaCard from './components/MediaCard';
-import Background from './components/Background';
 import MembershipSlider from './components/MembershipSlider';
+import { publications, judgingExperiences, mediaAppearances } from './data/portfolioData';
+
+// Animated Technology Icon Component
+const TechnologyIcon = ({ icon, delay }) => {
+  return (
+    <div
+      className="text-purple-400/60 hover:text-purple-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12 animate-float"
+      style={{
+        animationDelay: `${delay}ms`,
+      }}
+    >
+      {icon}
+    </div>
+  );
+};
+
+// Tech Stack Showcase Component
+const TechStackShowcase = () => {
+  const technologies = [
+    { name: 'Python', icon: '🐍' },
+    { name: 'TensorFlow', icon: '🤖' },
+    { name: 'PySpark', icon: '⚡' },
+    { name: 'AWS', icon: '☁️' },
+    { name: 'Kubernetes', icon: '⚓' },
+    { name: 'Docker', icon: '🐳' },
+    { name: 'SQL', icon: '🗄️' },
+    { name: 'ML', icon: '🧠' },
+  ];
+
+  return (
+    <div className="w-full max-w-4xl mx-auto mb-8">
+      <div className="flex flex-wrap justify-center gap-3 items-center">
+        {technologies.map((tech, index) => (
+          <div
+            key={index}
+            className="group relative bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-sm px-4 py-2 rounded-lg border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105"
+            style={{
+              animationDelay: `${index * 100}ms`,
+            }}
+          >
+            <span className="text-2xl mr-2">{tech.icon}</span>
+            <span className="text-sm font-semibold text-gray-300 group-hover:text-purple-300 transition-colors">
+              {tech.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(true);
-  const sectionsRef = useRef([]);
-  const navigate = useNavigate();
-  
-  const [selectedCertificateImage, setSelectedCertificateImage] = useState(null);
-
-  const scrollToSection = (id) => {
-    const section = sectionsRef.current.find(sec => sec && sec.id === id);
-    if (section) {
-      const navHeight = document.querySelector('nav').offsetHeight;
-      const offsetTop = section.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: offsetTop - navHeight,
-        behavior: 'smooth'
-      });
-    }
-  };
+  const [showContactForm, setShowContactForm] = useState(false);
 
   if (showIntro) {
-    return <IntroScreen onEnter={() => {
-        setShowIntro(false);
-        window.scrollTo({ top: 0, behavior: 'instant' });
-    }} />;
+    return (
+      <IntroScreen
+        onEnter={() => {
+          setShowIntro(false);
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }}
+      />
+    );
   }
+
+  // Calculate stats
+  const publicationCount = publications.length;
+  const judgingCount = judgingExperiences.length;
+  const mediaCount = mediaAppearances.length;
 
   return (
     <div className="min-h-screen text-gray-100 font-sans bg-black">
       <Background />
       <div className="relative z-10">
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm shadow-lg p-2 flex justify-center flex-wrap gap-x-1 sm:gap-x-2 md:gap-x-4">
-          <NavItem label="Home" onClick={() => scrollToSection('home')} />
-          <NavItem label="Qualifications" onClick={() => scrollToSection('qualifications')} />
-          <NavItem label="Patents" onClick={() => scrollToSection('patents')} />
-          <NavItem label="Publications" onClick={() => scrollToSection('publications')} />
-          <NavItem label="Articles" onClick={() => scrollToSection('articles')} />
-          <NavItem label="Judging" onClick={() => scrollToSection('judging')} />
-          <NavItem label="Media" onClick={() => scrollToSection('media')} />
-          <NavItem label="Photos" onClick={() => scrollToSection('photos')} />
-          <NavItem label="Testimonials" onClick={() => scrollToSection('testimonials')} />
-          <button onClick={() => navigate('/login')} className="text-gray-300 hover:text-purple-400 px-2 py-1 sm:px-3 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center gap-2">
-            <LogIn size={16} /> Login
-          </button>
-        </nav>
+        <Navigation />
 
-        <section
-          id="home"
-          ref={el => sectionsRef.current[0] = el}
-          className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden p-4 pt-32 sm:p-6 sm:pt-28"
-        >
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden p-4 pt-32 sm:p-6 sm:pt-28">
           <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center w-full">
+            {/* Animated Technology Icons */}
+            <div className="mb-8 flex items-center justify-center gap-4 flex-wrap">
+              <TechnologyIcon icon={<Brain size={40} />} delay={0} />
+              <TechnologyIcon icon={<Code size={40} />} delay={200} />
+              <TechnologyIcon icon={<Database size={40} />} delay={400} />
+              <TechnologyIcon icon={<Cpu size={40} />} delay={600} />
+              <TechnologyIcon icon={<Network size={40} />} delay={800} />
+            </div>
+
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
-              Hi, I'm <span className="text-purple-400">Sajud Hamza Elinjulliparambil</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-purple-600">
+                Sajud Hamza Elinjulliparambil
+              </span>
             </h1>
-            <TypingEffect
-              phrases={["Data Engineer", "AI Engineer", "Machine Learning Enthusiast", "Problem Solver"]}
-              className="text-2xl sm:text-3xl md:text-5xl font-semibold text-blue-300 mb-8 h-16 sm:h-auto"
-            />
-            <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 text-gray-300">
-              Passionate about building robust data pipelines, developing intelligent AI solutions, and transforming complex data into actionable insights.
+            
+            <div className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-blue-300 h-16 sm:h-20 flex items-center justify-center">
+              <TypingEffect
+                phrases={[
+                  "Senior Data Engineer",
+                  "AI & ML Researcher",
+                  "Ph.D. Candidate in Computer Science",
+                  "Award Judge & Peer Reviewer",
+                  "Published Author",
+                  "Technology Innovator"
+                ]}
+                className="text-purple-400"
+              />
+            </div>
+
+            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-300 leading-relaxed">
+              Building intelligent systems at the intersection of data engineering, machine learning, and AI innovation.
+              Transforming complex data into actionable insights and contributing to the future of technology.
             </p>
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-8 w-full">
-              <div className="bg-gray-900/80 backdrop-blur-sm p-6 rounded-xl shadow-lg text-center w-full lg:w-1/2">
-                <h3 className="text-2xl font-bold text-blue-300 mb-4">AI & Data Trivia</h3>
-                <p className="text-gray-300 mb-6">How well do you know the world of data? Test your knowledge!</p>
-                <TriviaGame />
+
+            {/* Profile Image */}
+            <div className="mb-12">
+              <DisplayImageContainer imageUrl={profileImage} />
+            </div>
+
+            {/* Tech Stack Visualization */}
+            <TechStackShowcase />
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-16 mt-12">
+              <Link
+                to="/publications"
+                className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
+              >
+                <BookOpen size={24} />
+                Explore My Work
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <button
+                onClick={() => setShowContactForm(true)}
+                className="bg-gray-800/80 hover:bg-gray-700/80 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all duration-300 border-2 border-purple-500/50 hover:border-purple-400"
+              >
+                <Mail size={24} />
+                Get in Touch
+              </button>
+            </div>
+
+            {/* Stats Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mb-12">
+              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30">
+                <BookOpen className="text-purple-400 mx-auto mb-3" size={32} />
+                <div className="text-4xl font-bold text-purple-300 mb-2">{publicationCount}+</div>
+                <div className="text-gray-300">Research Publications</div>
               </div>
-              <div className="p-6 rounded-xl text-center w-full lg:w-1/2 h-full flex flex-col justify-center items-center">
-                <h3 className="text-2xl font-bold text-blue-300 mb-4">Sajud Hamza</h3>
-                <DisplayImageContainer imageUrl={profileImage} />
+              <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30">
+                <Award className="text-blue-400 mx-auto mb-3" size={32} />
+                <div className="text-4xl font-bold text-blue-300 mb-2">{judgingCount}+</div>
+                <div className="text-gray-300">Award Judging Panels</div>
+              </div>
+              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30">
+                <TrendingUp className="text-purple-400 mx-auto mb-3" size={32} />
+                <div className="text-4xl font-bold text-purple-300 mb-2">{mediaCount}+</div>
+                <div className="text-gray-300">Media Features</div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Trivia Game Section */}
+        <section className="py-20 px-6 md:px-12 lg:px-24 relative z-10 bg-black/40">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-8">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                Test Your AI & Data Knowledge
+              </span>
+            </h2>
+            <div className="bg-gray-900/90 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-purple-500/20">
+              <TriviaGame />
+            </div>
+          </div>
+        </section>
+
+        {/* Expertise Areas */}
+        <section className="py-20 px-6 md:px-12 lg:px-24 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                Areas of Expertise
+              </span>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: <Brain size={32} className="text-purple-400" />,
+                  title: 'AI & Machine Learning',
+                  description: 'Deep dives into modern AI architectures, neural networks, and practical ML applications transforming industries.',
+                },
+                {
+                  icon: <Zap size={32} className="text-blue-400" />,
+                  title: 'Data Engineering & Big Data',
+                  description: 'Building scalable data pipelines, real-time processing systems, and cloud-native data architectures.',
+                },
+                {
+                  icon: <TrendingUp size={32} className="text-purple-400" />,
+                  title: 'AI-Powered Risk Management',
+                  description: 'How AI is revolutionizing fraud detection, background screening, and enterprise risk management.',
+                },
+                {
+                  icon: <Users size={32} className="text-blue-400" />,
+                  title: 'AI in Urban Planning',
+                  description: 'Real-time traffic monitoring, smart city initiatives, and AI-driven solutions for sustainable urban development.',
+                },
+                {
+                  icon: <Sparkles size={32} className="text-purple-400" />,
+                  title: 'Innovation & Startups',
+                  description: 'Building AI-first products, navigating the startup landscape, and scaling technical teams.',
+                },
+                {
+                  icon: <BookOpen size={32} className="text-blue-400" />,
+                  title: 'Research & Academia',
+                  description: 'Bridging the gap between research and industry, peer review insights, and academic excellence.',
+                },
+              ].map((topic, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02] border border-gray-700 hover:border-purple-500/50"
+                >
+                  <div className="mb-4">{topic.icon}</div>
+                  <h3 className="text-xl font-bold text-blue-300 mb-3">{topic.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">{topic.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* About Me / Credentials */}
+        <section className="py-20 px-6 md:px-12 lg:px-24 relative z-10 bg-black/40">
+          <div className="max-w-6xl mx-auto bg-gray-900/90 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                Research & Contributions
+              </span>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-purple-600 rounded-full p-3 flex-shrink-0">
+                    <Award className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-blue-300 mb-2">Award-Winning Expertise</h3>
+                    <p className="text-gray-300">
+                      Recognized judge for prestigious awards including QS Reimagine, Titan Awards, Globee Awards, 
+                      and Business Intelligence Awards. Peer reviewer for international conferences.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-600 rounded-full p-3 flex-shrink-0">
+                    <BookOpen className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-blue-300 mb-2">Published Researcher</h3>
+                    <p className="text-gray-300">
+                      Multiple peer-reviewed publications in AI, data engineering, and machine learning. 
+                      Contributing to the advancement of knowledge in the field.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-purple-600 rounded-full p-3 flex-shrink-0">
+                    <TrendingUp className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-blue-300 mb-2">Industry Practitioner</h3>
+                    <p className="text-gray-300">
+                      Hands-on experience building production AI systems. Currently pursuing a Ph.D. in Computer Science 
+                      while working as a Senior Data Engineer on real-world applications.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-600 rounded-full p-3 flex-shrink-0">
+                    <Users className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-blue-300 mb-2">Media Presence</h3>
+                    <p className="text-gray-300">
+                      Featured in Tech Times, Benzinga, Latestly, and IBT Times. Experienced in communicating 
+                      complex technical concepts to diverse audiences.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-purple-600 rounded-full p-3 flex-shrink-0">
+                    <Brain className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-blue-300 mb-2">Practical Insights</h3>
+                    <p className="text-gray-300">
+                      Real-world case studies from working with organizations like City of London Police, 
+                      Fama Technologies, and leading enterprises. Not just theory—proven results.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-600 rounded-full p-3 flex-shrink-0">
+                    <Sparkles className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-blue-300 mb-2">Continuous Innovation</h3>
+                    <p className="text-gray-300">
+                      Actively contributing to the field through research, publications, and peer review. 
+                      Passionate about advancing the state of AI and data engineering.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Memberships */}
         <div className="w-full flex justify-center items-center pt-12 pb-4">
           <h3 className="text-lg font-semibold text-gray-400 uppercase tracking-widest">
             Active Member at:
@@ -104,172 +337,64 @@ const App = () => {
         </div>
         <MembershipSlider />
 
-        <Section id="qualifications" ref={el => sectionsRef.current[1] = el} title="My Qualifications" icon={<GraduationCap size={40} className="text-purple-400" />}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02]">
-              <h3 className="text-2xl font-bold mb-4 text-blue-300 flex items-center"><Briefcase size={24} className="mr-2" /> Skills</h3>
-              <div className="flex flex-wrap gap-3">
-                {['Python', 'SQL', 'PySpark', 'AWS', 'Azure', 'GCP', 'Machine Learning', 'Deep Learning', 'NLP', 'ETL/ELT', 'Docker', 'Kubernetes', 'Airflow'].map((skill, index) => (
-                  <SkillBubble key={index} skill={skill} />
-                ))}
-              </div>
+        {/* Contact Section */}
+        <section className="py-20 px-6 md:px-12 lg:px-24 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                Let's Connect
+              </span>
+            </h2>
+            <p className="text-lg text-gray-300 mb-4 max-w-2xl mx-auto">
+              Open to collaborations, research discussions, and select speaking opportunities that align with my expertise.
+            </p>
+            <p className="text-sm text-gray-400 mb-8 max-w-xl mx-auto italic">
+              For speaking engagements, please reach out to discuss your event and how we can work together.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+              <button
+                onClick={() => setShowContactForm(true)}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
+              >
+                <Mail size={24} />
+                Open Contact Form
+              </button>
             </div>
-            <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02]">
-              <h3 className="text-2xl font-bold mb-4 text-blue-300 flex items-center"><GraduationCap size={24} className="mr-2" /> Education</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="font-semibold text-lg">Doctor of Philosophy Computer Science</p>
-                  <p className="text-gray-400">Pace University, New York, New York</p>
-                  <p className="text-sm text-gray-500">2023 - 2026</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-lg">Master of Science in Information Systems</p>
-                  <p className="text-gray-400">Pace University, New York, New York</p>
-                  <p className="text-sm text-gray-500">2018 - 2020</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-lg">Bachelor of Engineering</p>
-                  <p className="text-gray-400">Mumbai University, Mumbai, Maharashtra</p>
-                  <p className="text-sm text-gray-500">2010 - 2014</p>
-                </div>
-              </div>
+            <div className="flex justify-center space-x-6 mt-8">
+              <a
+                href="https://www.linkedin.com/in/sajud-hamza/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-purple-400 transition-colors duration-200"
+              >
+                <Linkedin size={32} />
+              </a>
+              <a
+                href="https://github.com/sajudhamza"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-purple-400 transition-colors duration-200"
+              >
+                <Github size={32} />
+              </a>
+              <a
+                href="mailto:sajudhamza@gmail.com"
+                className="hover:text-purple-400 transition-colors duration-200"
+              >
+                <Mail size={32} />
+              </a>
             </div>
           </div>
-        </Section>
-
-        <Section id="patents" ref={el => sectionsRef.current[2] = el} title="Patents" icon={<Lightbulb size={40} className="text-purple-400" />}>
-          <div className="relative border-l-2 border-purple-600 pl-8 py-4">
-            {patents.map((patent, index) => (
-              <div key={index} className="mb-8 last:mb-0 relative">
-                <div className="absolute -left-3.5 top-0 w-7 h-7 bg-purple-600 rounded-full flex items-center justify-center z-10">
-                  <Lightbulb size={16} className="text-white" />
-                </div>
-                <PatentCard patent={patent} />
-              </div>
-            ))}
-          </div>
-        </Section>
-        
-        <Section id="publications" ref={el => sectionsRef.current[3] = el} title="Publications" icon={<BookOpen size={40} className="text-purple-400" />}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {publications.map((pub, index) => (
-              <FlipCard key={index} frontContent={<><h4 className="text-xl font-bold text-blue-300 mb-2">{pub.title}</h4><p className="text-gray-400 text-sm mb-2">{pub.journal}</p><p className="text-gray-500 text-xs">{pub.year}</p></>} backContent={<><p className="text-gray-300 text-sm mb-3">{pub.description}</p><a href={pub.link} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center text-sm">Read More <ChevronRight size={16} className="ml-1" /></a></>} />
-            ))}
-          </div>
-        </Section>
-
-        <Section id="articles" ref={el => sectionsRef.current[4] = el} title="Articles" icon={<Feather size={40} className="text-purple-400" />}>
-          <ArticleCarousel articles={articles} />
-        </Section>
-        
-        <Section id="judging" ref={el => sectionsRef.current[5] = el} title="Judging & Peer Reviews" icon={<Gavel size={40} className="text-purple-400" />}>
-          <div className="relative border-l-2 border-purple-600 pl-8 py-4">
-            {judgingExperiences.map((experience, index) => (
-              <div key={index} className="mb-8 last:mb-0 relative">
-                <div className="absolute -left-3.5 top-0 w-7 h-7 bg-purple-600 rounded-full flex items-center justify-center z-10"><Gavel size={16} className="text-white" /></div>
-                <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02]">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
-                    <div>
-                      <h3 className="text-xl font-bold text-blue-300 mb-2">{experience.title}</h3>
-                      <p className="text-gray-400 text-sm mb-2">{experience.organization} | {experience.date}</p>
-                    </div>
-                    {experience.judgeFeature && (
-                      <a 
-                        href={experience.judgeFeature.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="flex-shrink-0 self-start mt-2 sm:mt-1 sm:ml-4 text-xs bg-yellow-500/20 text-yellow-300 font-semibold px-3 py-1 rounded-full flex items-center gap-1 hover:bg-yellow-500/30 transition-colors"
-                      >
-                        <Star size={14} />
-                        {experience.judgeFeature.text}
-                      </a>
-                    )}
-                  </div>
-                  <p className="text-gray-300 text-sm mt-2">{experience.description}</p>
-                  
-                  <div className="flex flex-wrap gap-4 mt-4">
-                    {experience.certificateLinks && experience.certificateLinks.map((link, linkIndex) => {
-                        const isExternal = link.url.startsWith('http');
-                        const isPdf = link.url.endsWith('.pdf');
-                        const commonClasses = "inline-flex items-center text-sm text-purple-400 hover:text-purple-300 font-semibold transition-colors";
-                        
-                        if (isExternal || isPdf) {
-                          return (
-                            <a key={linkIndex} href={link.url} target="_blank" rel="noopener noreferrer" className={commonClasses}>
-                              <Award size={16} className="mr-2" />
-                              {link.name}
-                            </a>
-                          );
-                        } else {
-                          return (
-                            <button key={linkIndex} onClick={() => setSelectedCertificateImage(link.url)} className={commonClasses}>
-                              <Award size={16} className="mr-2" />
-                              {link.name}
-                            </button>
-                          );
-                        }
-                    })}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        <Section id="media" ref={el => sectionsRef.current[6] = el} title="Media Appearances" icon={<Newspaper size={40} className="text-purple-400" />}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mediaAppearances.map((item, index) => (
-              <MediaCard key={index} item={item} />
-            ))}
-          </div>
-        </Section>
-
-        <Section id="photos" ref={el => sectionsRef.current[7] = el} title="My Photo Gallery" icon={<Image size={40} className="text-purple-400" />}>
-          <PhotoGallery photos={photos} />
-        </Section>
-
-        <Section id="testimonials" ref={el => sectionsRef.current[8] = el} title="Testimonials" icon={<MessageSquare size={40} className="text-purple-400" />}>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {testimonials.map((testimonial) => (
-              <Link key={testimonial.id} to={`/testimonial/${testimonial.id}`} className="text-center group">
-                <img 
-                  src={testimonial.imageUrl} 
-                  alt={testimonial.name}
-                  className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-gray-700 group-hover:border-purple-500 transition-colors duration-300"
-                />
-                <p className="mt-4 font-semibold text-blue-300">{testimonial.name}</p>
-              </Link>
-            ))}
-          </div>
-        </Section>
+        </section>
 
         <footer className="bg-black/80 backdrop-blur-sm p-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Sajud Hamza Elinjulliparambil. All rights reserved.</p>
-          <div className="flex justify-center space-x-6 mt-4">
-            <a href="https://www.linkedin.com/in/sajud-hamza/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-200"><Linkedin size={28} /></a>
-            <a href="https://github.com/sajudhamza" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-200"><Github size={28} /></a>
-            <a href="mailto:sajudhamza@gmail.com" className="hover:text-purple-400 transition-colors duration-200"><Mail size={28} /></a>
-          </div>
         </footer>
       </div>
-      
-      {selectedCertificateImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 z-[100] flex items-center justify-center p-4" onClick={() => setSelectedCertificateImage(null)}>
-          <div className="relative bg-gray-800 rounded-xl p-4 max-w-4xl max-h-[90vh] overflow-auto" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="absolute top-2 right-2 text-white text-3xl font-bold p-2 rounded-full bg-gray-700 hover:bg-gray-600 z-10"
-              onClick={() => setSelectedCertificateImage(null)}
-            >
-              &times;
-            </button>
-            <img
-              src={selectedCertificateImage}
-              alt="Certificate"
-              className="max-w-full max-h-[80vh] object-contain mx-auto rounded-lg"
-              onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/800x600/333333/FFFFFF?text=Image+Not+Found'; }}
-            />
-          </div>
-        </div>
+
+      {/* Contact Form Modal */}
+      {showContactForm && (
+        <ContactForm onClose={() => setShowContactForm(false)} />
       )}
     </div>
   );
