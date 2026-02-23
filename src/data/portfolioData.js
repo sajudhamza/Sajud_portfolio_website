@@ -7,11 +7,46 @@ export const publications = [
       link: "https://jisem-journal.com/index.php/journal/article/view/5765"
     },
     {
+      title: "The Crunchy Part Entails the Innovations Offered In Big Data Analytics and Software Engineering of Smarsh Decision-Making Systems",
+      journal: "International Journal of Engineering and Computer Science ",
+      year: "2025",
+      description: "The emergence of information based technologies had never been witnessed before and it has restructured the decision making process in industries, particularly in the attempt to combine big data analytics and software engineering solutions.",
+      link: "https://ijecs.in/index.php/ijecs/article/view/5341"
+    },
+    {
       title: "AI-Powered Risk Management in Insurance: Challenges and Best Practices",
       journal: "Journal of Information Systems Engineering and Management",
       year: "2025",
       description: "Presented a novel AI-Powered Risk Management in Insurance",
       link: "https://jisem-journal.com/index.php/journal/article/view/7055"
+    },
+    {
+      title: "THE IMPACT OF LARGE LANGUAGE MODELS ON EDUCATION AND WORKFORCE SKILLS",
+      journal: "International Journal of Engineering Technology Research & Management",
+      year: "2025",
+      description: "Large language models are fast transforming how we learn, teach, and work. In education, they work as tutors available round the clock, helping writers with their writing, promoting partner awareness in coding, or assisting with data analysis-underlying benefits: improvement in the quality of feedback, metacognition, and personalized support.",
+      link: "https://ijetrm.com/issues/files/Aug-2025-19-1755572302-AUG20.pdf"
+    },
+    {
+      title: "THE ROLE OF GENERATIVE AI IN REVOLUTIONIZING CREATIVE INDUSTRIES",
+      journal: "International Journal of Engineering Technology Research & Management",
+      year: "2025",
+      description: "At its core, generative AI is changing creative industries by enveloping, readdressing, and promoting how ideas are formulated, shaped, and channeled toward art, music, design, film, gaming, advertising, and publishing",
+      link: "https://ijetrm.com/issues/files/Aug-2025-19-1755572481-AUG21.pdf"
+    },
+    {
+      title: "ETHICAL CHALLENGES IN DEPLOYING AI FOR HEALTHCARE DIAGNOSTICS",
+      journal: "International Journal of Engineering Technology Research & Management",
+      year: "2025",
+      description: "How else can you say it than that AI is rapidly metamorphosing diagnostic offerings in healthcare, creating frontier solutions in disease detection, clinical decision support, and predictive analytics? From radiology, pathology, and ophthalmology to rare disease identification, these computer-assisted diagnostic solutions are heralded for timeliness, accuracy, and cost-effectiveness.",
+      link: "https://ijetrm.com/issues/files/Aug-2025-19-1755572691-AUG22.pdf"
+    },
+    {
+      title: "Public-Private Partnerships in Cybersecurity: A Strategic Approach to National Threat Management ",
+      journal: "Journal of Electrical Systems",
+      year: "2025",
+      description: "With the rapidly evolving profile of cyber threats, achieving national cybersecurity can no longer be solely the state's responsibility. Public-private partnerships (PPPs) have become the key mechanism for bridging the capability, intelligence, and response gap between governments and private sector actors, who wield immense influence over strategic national infrastructure",
+      link: "https://journal.esrgroups.org/jes/article/view/9148"
     },
     {
       title: "Generalist Vision Models for Any-to-Any Image-to-Video Understanding",
