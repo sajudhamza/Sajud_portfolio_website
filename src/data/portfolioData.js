@@ -14,12 +14,61 @@ export const publications = [
       link: "https://jisem-journal.com/index.php/journal/article/view/7055"
     },
     {
-      title: "Optimizing Data Lake Performance with Delta Lake",
-      journal: "Data Engineering Summit Proceedings",
-      year: "2021",
-      description: "Case study on improving data lake query performance and reliability using Delta Lake features.",
-      link: "https://example.com/publication3"
-    }
+      title: "Generalist Vision Models for Any-to-Any Image-to-Video Understanding",
+      journal: "International Journal of Emerging Trends in Computer Science and Information Technology",
+      year: "2025",
+      description: "Current developments in multimodal foundation models are driving computer vision beyond sets of task-specific systems to generalist vision models that can be used to do a large number of tasks and modalities in the same architecture.",
+      link: "https://www.ijetcsit.org/index.php/ijetcsit/article/view/528"
+    },
+    {
+      title: "Ultra-Low-Light Imaging Enhancement Using Quantum-Inspired Neural Networks",
+      journal: "International Journal of Emerging Research in Engineering and Technology",
+      year: "2025",
+      description: "Extremely low-light imaging is essential to the very diverse applications of biomedical microscopy, astronomical observation, surveillance and remote sensing, where photon-limited conditions severely impair the quality of an image.",
+      link: "https://ijeret.org/index.php/ijeret/article/view/412"
+    },
+    {
+      title: "Multiview Diffusion Models for High-Resolution Image Synthesis",
+      journal: "International Journal of Emerging Research in Engineering and Technology",
+      year: "2024",
+      description: "Multiview image synthesis aims to generate multiple coherent images of a scene from different viewpoints, a capability that is essential for applications such as 3D reconstruction, virtual reality, medical imaging, and autonomous systems.",
+      link: "https://ijeret.org/index.php/ijeret/article/view/399"
+    },
+    {
+      title: "Vision-Based Human Action Recognition Using Skeleton Graph Neural Networks",
+      journal: "International Journal of Artificial Intelligence, Data Science, and Machine Learning",
+      year: "2024",
+      description: "HAR is an essential computer vision task, which provides the machine with an automatic representation of human actions and human action classification on the basis of visual representations.",
+      link: "https://ijaidsml.org/index.php/ijaidsml/article/view/380"
+    },
+    {
+      title: "Robust Object Detection under Extreme Weather Using Physics-Aware Deep Learning",
+      journal: "American International Journal of Computer Science and Technology",
+      year: "2024",
+      description: "Weaknesses in object detection under extreme weather conditions are an important problem in the current computer vision, especially in applications in autonomous driving, surveillance, and remote sensing.",
+      link: "https://aijcst.org/index.php/aijcst/article/view/145"
+    },
+    {
+      title: "Real-Time Instance Segmentation Using Lightweight CNN-Transformer Hybrids",
+      journal: "International Journal of Emerging Trends in Computer Science and Information Technology",
+      year: "2023",
+      description: "The problem of instance segmentation is a basic computer vision problem in which localization, classification, and pixel-level localization of individual instances of objects should occur simultaneously.",
+      link: "https://www.ijetcsit.org/index.php/ijetcsit/article/view/527"
+    },
+    {
+      title: "Vision Transformers (ViT) for Small-Scale Image Classification with Token Reduction",
+      journal: "International Journal of AI, BigData, Computational and Management Studies",
+      year: "2022",
+      description: "Convolutional Neural Networks (CNNs) are no longer considered a superior choice in image classification over Vision Transformers (ViTs), which have shown to be highly effective on a large scale because they can exploit self-attention aspects in capturing long-range dependencies.",
+      link: "https://ijaibdcms.org/index.php/ijaibdcms/article/view/344"
+    },
+    {
+      title: "3D Reconstruction from Monocular Videos Using Neural Radiance Fields (NeRF)",
+      journal: "International Journal of Emerging Research in Engineering and Technology",
+      year: "2022",
+      description: "Monocular video-based 3D reconstruction has emerged as a fundamental yet challenging problem in computer vision, due to depth ambiguity, scale uncertainty, and limited viewpoint coverage. ",
+      link: "https://ijeret.org/index.php/ijeret/article/view/398"
+    },
   ];
   
   export const articles = [
