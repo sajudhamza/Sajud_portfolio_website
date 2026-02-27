@@ -28,7 +28,7 @@ const PatentsPage = () => {
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Transforming groundbreaking ideas into protected intellectual property. 
-              My innovations in AI and financial technology are making a tangible impact in the industry.
+              My innovations in AI, financial technology, and precision optical measurement systems are making a tangible impact across finance and industry.
             </p>
           </div>
         </section>
@@ -66,7 +66,7 @@ const PatentsPage = () => {
               <div className="bg-gray-800/50 p-6 rounded-xl">
                 <h3 className="text-xl font-bold text-blue-300 mb-3 flex items-center gap-2">
                   <Lightbulb className="text-yellow-400" size={24} />
-                  Financial Technology
+                  Financial Technology & Risk Intelligence
                 </h3>
                 <p className="text-gray-300">
                   Revolutionary real-time financial risk prediction systems that transform how organizations 
@@ -76,11 +76,11 @@ const PatentsPage = () => {
               <div className="bg-gray-800/50 p-6 rounded-xl">
                 <h3 className="text-xl font-bold text-blue-300 mb-3 flex items-center gap-2">
                   <TrendingUp className="text-yellow-400" size={24} />
-                  Real-Time Processing
+                  Stereo Optical Measurement & Inspection
                 </h3>
                 <p className="text-gray-300">
-                  Cutting-edge computing devices capable of predicting and displaying financial risk indicators 
-                  in real-time, enabling proactive decision-making.
+                  High-precision stereo optical measurement devices for inspecting unknown-scale objects using only two vision cameras, 
+                  enhancing dimensional accuracy, quality control, and safety in industrial and engineering environments.
                 </p>
               </div>
             </div>

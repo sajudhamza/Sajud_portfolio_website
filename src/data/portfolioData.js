@@ -298,6 +298,14 @@ export const patents = [
     description: "A novel machine for Computing Device for Predicting and Displaying Financial Risk in Real Time.",
     pdfPath: "/patents/VS UK 002 - GRANT CERTIFICATE.pdf", // This path works because the file is in the public folder
     externalLink: "https://www.registered-design.service.gov.uk/find/6439245" // Replace with your actual link to Google Patents, etc.
+  },
+  {
+    title: "Stereo Optical Measurement Device Designed For Unknown Scale Object Inspection",
+    patentNumber: "UK 6504358",
+    date: "Granted: February 20, 2026",
+    description: "A novel stereo optical device for measuring and inspecting unknown-scale objects using only two vision cameras, improving precision and reliability in industrial and engineering applications.",
+    pdfPath: "/patents/6504358 - UK Design Certificate.pdf", // This path works because the file is in the public folder
+    externalLink: "https://www.registered-design.service.gov.uk/find/6504358" // Replace with your actual link to Google Patents, etc.
   }
 ];
 
