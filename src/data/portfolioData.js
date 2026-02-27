@@ -1,6 +1,6 @@
 export const publications = [
   {
-    title: "The Role of Artificail Intelligence in Intelligent Urban Planning: From Data-Driven Insights to Sustainable City Systems",
+    title: "The Role of Artificial Intelligence in Intelligent Urban Planning: From Data-Driven Insights to Sustainable City Systems",
     journal: "International Journal of AI, BigData, Computational and Management Studies",
     year: "2026",
     description: "The high rate of urbanization has made the process of urbanization highly complex and requires smart planning systems that can coordinate the dynamics of infrastructure, resources, and sustainability.",
