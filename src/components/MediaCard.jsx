@@ -7,7 +7,7 @@ const MediaCard = ({ item }) => {
     : <Paperclip size={20} className="mr-2" />;
 
   return (
-    <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.03] flex flex-col">
+    <div className="bg-gray-800/80 p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.03] flex flex-col">
       <div className="flex-grow">
         <div className="flex items-center text-sm text-purple-400 mb-2">
           {icon}

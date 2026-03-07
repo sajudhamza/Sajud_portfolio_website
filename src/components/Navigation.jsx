@@ -27,7 +27,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm shadow-lg p-2 flex justify-center flex-wrap gap-x-1 sm:gap-x-2 md:gap-x-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 shadow-lg p-2 flex justify-center flex-wrap gap-x-1 sm:gap-x-2 md:gap-x-4">
       {navLinks.map((link) => (
         <Link
           key={link.path}

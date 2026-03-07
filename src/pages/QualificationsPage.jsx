@@ -67,17 +67,17 @@ const QualificationsPage = () => {
         <section className="py-12 px-6 bg-black/40">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30 text-center">
+              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-6 rounded-xl border border-purple-500/30 text-center">
                 <Award className="text-purple-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-purple-300 mb-2">15+</div>
                 <div className="text-gray-300">Years Experience</div>
               </div>
-              <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30 text-center">
+              <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 p-6 rounded-xl border border-blue-500/30 text-center">
                 <GraduationCap className="text-blue-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-blue-300 mb-2">3</div>
                 <div className="text-gray-300">Degrees</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30 text-center">
+              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-6 rounded-xl border border-purple-500/30 text-center">
                 <Code className="text-purple-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-purple-300 mb-2">25+</div>
                 <div className="text-gray-300">Technologies</div>
@@ -97,7 +97,7 @@ const QualificationsPage = () => {
                 <div className="absolute -left-[34px] top-0 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center border-4 border-black">
                   <Rocket size={16} className="text-white" />
                 </div>
-                <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30">
+                <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 p-6 rounded-xl border border-purple-500/30">
                   <div className="flex items-start justify-between flex-wrap gap-4">
                     <div>
                       <h3 className="text-2xl font-bold text-blue-300 mb-2">Doctor of Philosophy in Computer Science</h3>
@@ -119,7 +119,7 @@ const QualificationsPage = () => {
                 <div className="absolute -left-[34px] top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center border-4 border-black">
                   <TrendingUp size={16} className="text-white" />
                 </div>
-                <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30">
+                <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 p-6 rounded-xl border border-blue-500/30">
                   <h3 className="text-2xl font-bold text-blue-300 mb-2">Master of Science in Information Systems</h3>
                   <p className="text-purple-400 font-semibold mb-1">Pace University</p>
                   <p className="text-gray-400 mb-2">New York, New York</p>
@@ -134,7 +134,7 @@ const QualificationsPage = () => {
                 <div className="absolute -left-[34px] top-0 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center border-4 border-black">
                   <Zap size={16} className="text-white" />
                 </div>
-                <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30">
+                <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 p-6 rounded-xl border border-purple-500/30">
                   <h3 className="text-2xl font-bold text-blue-300 mb-2">Bachelor of Engineering</h3>
                   <p className="text-purple-400 font-semibold mb-1">Mumbai University</p>
                   <p className="text-gray-400 mb-2">Mumbai, Maharashtra, India</p>
@@ -154,7 +154,7 @@ const QualificationsPage = () => {
           >
             <div className="space-y-8">
               {skillCategories.map((category, index) => (
-                <div key={index} className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-700">
+                <div key={index} className="bg-gray-800/80 p-6 rounded-xl shadow-lg border border-gray-700">
                   <div className="flex items-center gap-3 mb-4">
                     {category.icon}
                     <h3 className="text-2xl font-bold text-blue-300">{category.title}</h3>
@@ -168,7 +168,7 @@ const QualificationsPage = () => {
               ))}
             </div>
 
-            <div className="mt-8 bg-gradient-to-r from-purple-900/30 to-blue-900/30 backdrop-blur-sm p-6 rounded-xl border border-purple-500/20">
+            <div className="mt-8 bg-gradient-to-r from-purple-900/30 to-blue-900/30 p-6 rounded-xl border border-purple-500/20">
               <h3 className="text-xl font-bold text-blue-300 mb-4">Additional Skills & Tools</h3>
               <div className="flex flex-wrap gap-3">
                 {skills.filter(skill => 

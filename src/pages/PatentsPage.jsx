@@ -37,17 +37,17 @@ const PatentsPage = () => {
         <section className="py-12 px-6 bg-black/40">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 backdrop-blur-sm p-6 rounded-xl border border-yellow-500/30 text-center">
+              <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 p-6 rounded-xl border border-yellow-500/30 text-center">
                 <Award className="text-yellow-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-yellow-300 mb-2">{patents.length}</div>
                 <div className="text-gray-300">Granted Patents</div>
               </div>
-              <div className="bg-gradient-to-br from-orange-900/50 to-yellow-900/50 backdrop-blur-sm p-6 rounded-xl border border-orange-500/30 text-center">
+              <div className="bg-gradient-to-br from-orange-900/50 to-yellow-900/50 p-6 rounded-xl border border-orange-500/30 text-center">
                 <TrendingUp className="text-orange-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-orange-300 mb-2">100%</div>
                 <div className="text-gray-300">Success Rate</div>
               </div>
-              <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 backdrop-blur-sm p-6 rounded-xl border border-yellow-500/30 text-center">
+              <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 p-6 rounded-xl border border-yellow-500/30 text-center">
                 <FileText className="text-yellow-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-yellow-300 mb-2">UK</div>
                 <div className="text-gray-300">International</div>
@@ -58,7 +58,7 @@ const PatentsPage = () => {
 
         {/* Innovation Impact Section */}
         <section className="py-12 px-6">
-          <div className="max-w-6xl mx-auto bg-gradient-to-r from-yellow-900/30 to-orange-900/30 backdrop-blur-sm p-8 rounded-2xl border border-yellow-500/20">
+          <div className="max-w-6xl mx-auto bg-gradient-to-r from-yellow-900/30 to-orange-900/30 p-8 rounded-2xl border border-yellow-500/20">
             <h2 className="text-3xl font-bold text-center mb-6 text-yellow-300">
               Innovation Impact
             </h2>
@@ -99,7 +99,7 @@ const PatentsPage = () => {
                   <div className="absolute -left-[42px] top-0 w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center z-10 border-4 border-black shadow-lg">
                     <Award size={20} className="text-white" />
                   </div>
-                  <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 backdrop-blur-sm p-6 rounded-xl border border-yellow-500/30 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                  <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 p-6 rounded-xl border border-yellow-500/30 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
                     <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
                       <div className="flex-1">
                         <h3 className="text-2xl font-bold text-yellow-300 mb-2">{patent.title}</h3>
@@ -132,7 +132,7 @@ const PatentsPage = () => {
             </div>
 
             {/* Future Innovations */}
-            <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-blue-900/30 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/20">
+            <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-blue-900/30 p-8 rounded-2xl border border-purple-500/20">
               <h3 className="text-2xl font-bold text-center mb-6 text-purple-300">
                 Ongoing Research & Future Innovations
               </h3>

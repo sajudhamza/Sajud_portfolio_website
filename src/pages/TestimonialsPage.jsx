@@ -40,17 +40,17 @@ const TestimonialsPage = () => {
         <section className="py-12 px-6 bg-black/40">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500/30 text-center">
+              <div className="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 p-6 rounded-xl border border-indigo-500/30 text-center">
                 <Users className="text-indigo-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-indigo-300 mb-2">{totalTestimonials}</div>
                 <div className="text-gray-300">Recommendations</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-900/50 to-indigo-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30 text-center">
+              <div className="bg-gradient-to-br from-purple-900/50 to-indigo-900/50 p-6 rounded-xl border border-purple-500/30 text-center">
                 <Star className="text-purple-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-purple-300 mb-2">5/5</div>
                 <div className="text-gray-300">Average Rating</div>
               </div>
-              <div className="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500/30 text-center">
+              <div className="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 p-6 rounded-xl border border-indigo-500/30 text-center">
                 <Award className="text-indigo-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-indigo-300 mb-2">100%</div>
                 <div className="text-gray-300">Positive</div>
@@ -62,7 +62,7 @@ const TestimonialsPage = () => {
         {/* Featured Testimonial */}
         {featuredTestimonial && (
           <section className="py-12 px-6">
-            <div className="max-w-6xl mx-auto bg-gradient-to-r from-indigo-900/30 to-purple-900/30 backdrop-blur-sm p-8 rounded-2xl border border-indigo-500/20">
+            <div className="max-w-6xl mx-auto bg-gradient-to-r from-indigo-900/30 to-purple-900/30 p-8 rounded-2xl border border-indigo-500/20">
               <div className="flex items-center justify-center mb-6">
                 <Quote className="text-indigo-400" size={48} />
               </div>
@@ -139,7 +139,7 @@ const TestimonialsPage = () => {
             </div>
 
             {/* Impact Section */}
-            <div className="mt-16 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 backdrop-blur-sm p-8 rounded-2xl border border-indigo-500/20">
+            <div className="mt-16 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 p-8 rounded-2xl border border-indigo-500/20">
               <h3 className="text-2xl font-bold text-center mb-6 text-indigo-300">
                 Recognition & Trust
               </h3>

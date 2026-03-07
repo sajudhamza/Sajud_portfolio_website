@@ -41,17 +41,17 @@ const ArticlesPage = () => {
         <section className="py-12 px-6 bg-black/40">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 backdrop-blur-sm p-6 rounded-xl border border-green-500/30 text-center">
+              <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 p-6 rounded-xl border border-green-500/30 text-center">
                 <BookOpen className="text-green-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-green-300 mb-2">{totalArticles}</div>
                 <div className="text-gray-300">Published Articles</div>
               </div>
-              <div className="bg-gradient-to-br from-emerald-900/50 to-green-900/50 backdrop-blur-sm p-6 rounded-xl border border-emerald-500/30 text-center">
+              <div className="bg-gradient-to-br from-emerald-900/50 to-green-900/50 p-6 rounded-xl border border-emerald-500/30 text-center">
                 <Globe className="text-emerald-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-emerald-300 mb-2">{platforms.length}</div>
                 <div className="text-gray-300">Platforms</div>
               </div>
-              <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 backdrop-blur-sm p-6 rounded-xl border border-green-500/30 text-center">
+              <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 p-6 rounded-xl border border-green-500/30 text-center">
                 <TrendingUp className="text-green-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-green-300 mb-2">1000+</div>
                 <div className="text-gray-300">Readers</div>
@@ -63,7 +63,7 @@ const ArticlesPage = () => {
         {/* Featured Article */}
         {latestArticle && (
           <section className="py-12 px-6">
-            <div className="max-w-6xl mx-auto bg-gradient-to-r from-green-900/30 to-emerald-900/30 backdrop-blur-sm p-8 rounded-2xl border border-green-500/20">
+            <div className="max-w-6xl mx-auto bg-gradient-to-r from-green-900/30 to-emerald-900/30 p-8 rounded-2xl border border-green-500/20">
               <div className="flex items-center gap-2 mb-4">
                 <Award className="text-yellow-400" size={20} />
                 <span className="text-yellow-300 font-semibold text-sm uppercase tracking-wide">Latest Article</span>
@@ -100,7 +100,7 @@ const ArticlesPage = () => {
               {platforms.map((platform, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800/80 backdrop-blur-sm px-6 py-3 rounded-lg border border-gray-700 hover:border-green-500 transition-colors"
+                  className="bg-gray-800/80 px-6 py-3 rounded-lg border border-gray-700 hover:border-green-500 transition-colors"
                 >
                   <span className="text-green-300 font-semibold">{platform}</span>
                 </div>
@@ -123,7 +123,7 @@ const ArticlesPage = () => {
             <ArticleCarousel articles={articles} />
 
             {/* Writing Topics */}
-            <div className="mt-16 bg-gradient-to-r from-green-900/30 to-emerald-900/30 backdrop-blur-sm p-8 rounded-2xl border border-green-500/20">
+            <div className="mt-16 bg-gradient-to-r from-green-900/30 to-emerald-900/30 p-8 rounded-2xl border border-green-500/20">
               <h3 className="text-2xl font-bold text-center mb-6 text-green-300">
                 Topics & Themes
               </h3>
@@ -148,7 +148,7 @@ const ArticlesPage = () => {
 
             {/* Impact Section */}
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+              <div className="bg-gray-800/80 p-6 rounded-xl border border-gray-700">
                 <Globe className="text-green-400 mb-3" size={32} />
                 <h4 className="text-lg font-bold text-green-300 mb-2">Industry Insights</h4>
                 <p className="text-gray-300 text-sm">
@@ -156,7 +156,7 @@ const ArticlesPage = () => {
                   industries and solving real-world problems.
                 </p>
               </div>
-              <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+              <div className="bg-gray-800/80 p-6 rounded-xl border border-gray-700">
                 <TrendingUp className="text-emerald-400 mb-3" size={32} />
                 <h4 className="text-lg font-bold text-emerald-300 mb-2">Thought Leadership</h4>
                 <p className="text-gray-300 text-sm">

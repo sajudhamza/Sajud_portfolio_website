@@ -41,17 +41,17 @@ const MediaPage = () => {
         <section className="py-12 px-6 bg-black/40">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-cyan-500/30 text-center">
+              <div className="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 p-6 rounded-xl border border-cyan-500/30 text-center">
                 <Newspaper className="text-cyan-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-cyan-300 mb-2">{totalFeatures}</div>
                 <div className="text-gray-300">Media Features</div>
               </div>
-              <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30 text-center">
+              <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 p-6 rounded-xl border border-blue-500/30 text-center">
                 <Globe className="text-blue-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-blue-300 mb-2">{platforms.length}</div>
                 <div className="text-gray-300">Publications</div>
               </div>
-              <div className="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-cyan-500/30 text-center">
+              <div className="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 p-6 rounded-xl border border-cyan-500/30 text-center">
                 <TrendingUp className="text-cyan-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-cyan-300 mb-2">100K+</div>
                 <div className="text-gray-300">Reach</div>
@@ -63,7 +63,7 @@ const MediaPage = () => {
         {/* Featured Publication */}
         {latestFeature && (
           <section className="py-12 px-6">
-            <div className="max-w-6xl mx-auto bg-gradient-to-r from-cyan-900/30 to-blue-900/30 backdrop-blur-sm p-8 rounded-2xl border border-cyan-500/20">
+            <div className="max-w-6xl mx-auto bg-gradient-to-r from-cyan-900/30 to-blue-900/30 p-8 rounded-2xl border border-cyan-500/20">
               <div className="flex items-center gap-2 mb-4">
                 <Award className="text-yellow-400" size={20} />
                 <span className="text-yellow-300 font-semibold text-sm uppercase tracking-wide">Latest Feature</span>
@@ -106,7 +106,7 @@ const MediaPage = () => {
               {platforms.map((platform, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800/80 backdrop-blur-sm px-6 py-3 rounded-lg border border-gray-700 hover:border-cyan-500 transition-colors"
+                  className="bg-gray-800/80 px-6 py-3 rounded-lg border border-gray-700 hover:border-cyan-500 transition-colors"
                 >
                   <span className="text-cyan-300 font-semibold">{platform}</span>
                 </div>
@@ -135,7 +135,7 @@ const MediaPage = () => {
             </div>
 
             {/* Impact Section */}
-            <div className="mt-16 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 backdrop-blur-sm p-8 rounded-2xl border border-cyan-500/20">
+            <div className="mt-16 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 p-8 rounded-2xl border border-cyan-500/20">
               <div className="flex items-center justify-center mb-6">
                 <Quote className="text-cyan-400" size={48} />
               </div>

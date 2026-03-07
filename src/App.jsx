@@ -45,7 +45,7 @@ const TechStackShowcase = () => {
         {technologies.map((tech, index) => (
           <div
             key={index}
-            className="group relative bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-sm px-4 py-2 rounded-lg border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105"
+            className="group relative bg-gradient-to-br from-purple-900/40 to-blue-900/40 px-4 py-2 rounded-lg border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105"
             style={{
               animationDelay: `${index * 100}ms`,
             }}
@@ -153,17 +153,17 @@ const App = () => {
 
             {/* Stats Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mb-12">
-              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30">
+              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-6 rounded-xl border border-purple-500/30">
                 <BookOpen className="text-purple-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-purple-300 mb-2">{publicationCount}+</div>
                 <div className="text-gray-300">Research Publications</div>
               </div>
-              <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30">
+              <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 p-6 rounded-xl border border-blue-500/30">
                 <Award className="text-blue-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-blue-300 mb-2">{judgingCount}+</div>
                 <div className="text-gray-300">Award Judging Panels</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30">
+              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-6 rounded-xl border border-purple-500/30">
                 <TrendingUp className="text-purple-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-purple-300 mb-2">{mediaCount}+</div>
                 <div className="text-gray-300">Media Features</div>
@@ -180,7 +180,7 @@ const App = () => {
                 Test Your AI & Data Knowledge
               </span>
             </h2>
-            <div className="bg-gray-900/90 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-purple-500/20">
+            <div className="bg-gray-900/95 p-8 rounded-2xl shadow-2xl border border-purple-500/20">
               <TriviaGame />
             </div>
           </div>
@@ -229,7 +229,7 @@ const App = () => {
               ].map((topic, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02] border border-gray-700 hover:border-purple-500/50"
+                  className="bg-gray-800/90 p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02] border border-gray-700 hover:border-purple-500/50"
                 >
                   <div className="mb-4">{topic.icon}</div>
                   <h3 className="text-xl font-bold text-blue-300 mb-3">{topic.title}</h3>
@@ -242,7 +242,7 @@ const App = () => {
 
         {/* About Me / Credentials */}
         <section className="py-20 px-6 md:px-12 lg:px-24 relative z-10 bg-black/40">
-          <div className="max-w-6xl mx-auto bg-gray-900/90 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl">
+          <div className="max-w-6xl mx-auto bg-gray-900/95 p-8 md:p-12 rounded-2xl shadow-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
                 Research & Contributions
@@ -387,7 +387,7 @@ const App = () => {
           </div>
         </section>
 
-        <footer className="bg-black/80 backdrop-blur-sm p-8 text-center text-gray-400">
+        <footer className="bg-black/90 p-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Sajud Hamza Elinjulliparambil. All rights reserved.</p>
         </footer>
       </div>

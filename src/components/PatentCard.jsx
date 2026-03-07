@@ -4,7 +4,7 @@ import { FileText, ExternalLink } from 'lucide-react';
 const PatentCard = ({ patent }) => {
   return (
     // Reverted to a left-aligned layout
-    <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg flex flex-col justify-between transform transition-all duration-300 hover:scale-[1.03]">
+    <div className="bg-gray-800/80 p-6 rounded-xl shadow-lg flex flex-col justify-between transform transition-all duration-300 hover:scale-[1.03]">
       <div>
         <h3 className="text-xl font-bold text-blue-300 mb-2">{patent.title}</h3>
         <p className="text-sm font-semibold text-purple-400 mb-1">{patent.patentNumber}</p>

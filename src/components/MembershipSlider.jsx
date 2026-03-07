@@ -31,7 +31,7 @@ const MembershipSlider = () => {
 
   return (
     // UPDATE: Reduced vertical padding on the main container
-    <div className="w-full bg-gray-900/80 backdrop-blur-sm py-2 relative">
+    <div className="w-full bg-gray-900/90 py-2 relative">
       <div className="max-w-7xl mx-auto">
         <div className="overflow-hidden">
           <div 

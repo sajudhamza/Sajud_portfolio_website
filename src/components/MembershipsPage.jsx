@@ -24,7 +24,7 @@ const MembershipsPage = () => {
                   key={index} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center group transform transition-all duration-300 hover:scale-105"
+                  className="bg-gray-800/80 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center group transform transition-all duration-300 hover:scale-105"
                 >
                   <img src={membership.logoUrl} alt={membership.name} className="h-24 w-auto mb-4" />
                   <p className="font-semibold text-blue-300 mb-4">{membership.name}</p>

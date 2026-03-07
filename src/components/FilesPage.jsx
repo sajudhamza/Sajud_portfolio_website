@@ -39,7 +39,7 @@ const FilesPage = () => {
               <button 
                 key={index} 
                 onClick={() => setSelectedFolder(folder)}
-                className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center group transform transition-all duration-300 hover:scale-105"
+                className="bg-gray-800/80 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center group transform transition-all duration-300 hover:scale-105"
               >
                 <Folder className="w-16 h-16 text-yellow-400" />
                 <p className="font-semibold text-blue-300 mt-4 break-words">{folder.folderName}</p>
@@ -71,7 +71,7 @@ const FilesPage = () => {
               key={index} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center group transform transition-all duration-300 hover:scale-105"
+              className="bg-gray-800/80 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center group transform transition-all duration-300 hover:scale-105"
             >
               {getFileIcon(file.type)}
               <p className="font-semibold text-blue-300 mt-4 break-words">{file.name}</p>

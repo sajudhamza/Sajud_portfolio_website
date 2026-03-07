@@ -40,22 +40,22 @@ const PublicationsPage = () => {
         <section className="py-12 px-6 bg-black/40">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30 text-center">
+              <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 p-6 rounded-xl border border-blue-500/30 text-center">
                 <BookOpen className="text-blue-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-blue-300 mb-2">{totalPublications}</div>
                 <div className="text-gray-300">Publications</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30 text-center">
+              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-6 rounded-xl border border-purple-500/30 text-center">
                 <Award className="text-purple-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-purple-300 mb-2">100%</div>
                 <div className="text-gray-300">Peer-Reviewed</div>
               </div>
-              <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30 text-center">
+              <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 p-6 rounded-xl border border-blue-500/30 text-center">
                 <Calendar className="text-blue-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-blue-300 mb-2">{latestYear}</div>
                 <div className="text-gray-300">Latest Year</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30 text-center">
+              <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-6 rounded-xl border border-purple-500/30 text-center">
                 <TrendingUp className="text-purple-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-purple-300 mb-2">AI/ML</div>
                 <div className="text-gray-300">Focus Area</div>
@@ -66,7 +66,7 @@ const PublicationsPage = () => {
 
         {/* Research Impact Section */}
         <section className="py-12 px-6">
-          <div className="max-w-6xl mx-auto bg-gradient-to-r from-blue-900/30 to-purple-900/30 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/20">
+          <div className="max-w-6xl mx-auto bg-gradient-to-r from-blue-900/30 to-purple-900/30 p-8 rounded-2xl border border-blue-500/20">
             <div className="flex items-center justify-center mb-6">
               <Quote className="text-blue-400" size={48} />
             </div>
@@ -139,7 +139,7 @@ const PublicationsPage = () => {
             </div>
 
             {/* Research Topics */}
-            <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-blue-900/30 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/20">
+            <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-blue-900/30 p-8 rounded-2xl border border-purple-500/20">
               <h3 className="text-2xl font-bold text-center mb-6 text-purple-300">
                 Research Topics & Domains
               </h3>
@@ -163,21 +163,21 @@ const PublicationsPage = () => {
 
             {/* Citations & Impact */}
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+              <div className="bg-gray-800/80 p-6 rounded-xl border border-gray-700">
                 <Users className="text-blue-400 mb-3" size={32} />
                 <h4 className="text-lg font-bold text-blue-300 mb-2">Academic Impact</h4>
                 <p className="text-gray-300 text-sm">
                   Contributing to the global research community through high-quality peer-reviewed publications.
                 </p>
               </div>
-              <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+              <div className="bg-gray-800/80 p-6 rounded-xl border border-gray-700">
                 <TrendingUp className="text-purple-400 mb-3" size={32} />
                 <h4 className="text-lg font-bold text-purple-300 mb-2">Industry Application</h4>
                 <p className="text-gray-300 text-sm">
                   Research that translates directly into practical solutions for real-world challenges.
                 </p>
               </div>
-              <div className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+              <div className="bg-gray-800/80 p-6 rounded-xl border border-gray-700">
                 <Award className="text-yellow-400 mb-3" size={32} />
                 <h4 className="text-lg font-bold text-yellow-300 mb-2">Peer Recognition</h4>
                 <p className="text-gray-300 text-sm">

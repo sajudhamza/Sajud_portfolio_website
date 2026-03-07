@@ -45,22 +45,22 @@ const JudgingPage = () => {
         <section className="py-12 px-6 bg-black/40">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 backdrop-blur-sm p-6 rounded-xl border border-orange-500/30 text-center">
+              <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 p-6 rounded-xl border border-orange-500/30 text-center">
                 <Gavel className="text-orange-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-orange-300 mb-2">{totalJudgingRoles}</div>
                 <div className="text-gray-300">Judging Roles</div>
               </div>
-              <div className="bg-gradient-to-br from-red-900/50 to-orange-900/50 backdrop-blur-sm p-6 rounded-xl border border-red-500/30 text-center">
+              <div className="bg-gradient-to-br from-red-900/50 to-orange-900/50 p-6 rounded-xl border border-red-500/30 text-center">
                 <Users className="text-red-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-red-300 mb-2">{totalEntriesJudged}+</div>
                 <div className="text-gray-300">Entries Judged</div>
               </div>
-              <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 backdrop-blur-sm p-6 rounded-xl border border-orange-500/30 text-center">
+              <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 p-6 rounded-xl border border-orange-500/30 text-center">
                 <Award className="text-orange-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-orange-300 mb-2">{featuredOrganizations.length}</div>
                 <div className="text-gray-300">Organizations</div>
               </div>
-              <div className="bg-gradient-to-br from-red-900/50 to-orange-900/50 backdrop-blur-sm p-6 rounded-xl border border-red-500/30 text-center">
+              <div className="bg-gradient-to-br from-red-900/50 to-orange-900/50 p-6 rounded-xl border border-red-500/30 text-center">
                 <CheckCircle className="text-red-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-red-300 mb-2">100%</div>
                 <div className="text-gray-300">Commitment</div>
@@ -77,7 +77,7 @@ const JudgingPage = () => {
               {featuredOrganizations.slice(0, 8).map((org, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800/80 backdrop-blur-sm px-6 py-3 rounded-lg border border-gray-700 hover:border-orange-500 transition-colors"
+                  className="bg-gray-800/80 px-6 py-3 rounded-lg border border-gray-700 hover:border-orange-500 transition-colors"
                 >
                   <span className="text-orange-300 font-semibold text-sm">{org}</span>
                 </div>
@@ -98,7 +98,7 @@ const JudgingPage = () => {
                   <div className="absolute -left-[42px] top-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center z-10 border-4 border-black shadow-lg">
                     <Gavel size={20} className="text-white" />
                   </div>
-                  <div className="bg-gradient-to-br from-orange-900/30 to-red-900/30 backdrop-blur-sm p-6 rounded-xl border border-orange-500/30 transform transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl">
+                  <div className="bg-gradient-to-br from-orange-900/30 to-red-900/30 p-6 rounded-xl border border-orange-500/30 transform transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl">
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
                       <div className="flex-1">
                         <h3 className="text-2xl font-bold text-orange-300 mb-2">{experience.title}</h3>
@@ -174,7 +174,7 @@ const JudgingPage = () => {
             </div>
 
             {/* Impact Section */}
-            <div className="mt-16 bg-gradient-to-r from-orange-900/30 to-red-900/30 backdrop-blur-sm p-8 rounded-2xl border border-orange-500/20">
+            <div className="mt-16 bg-gradient-to-r from-orange-900/30 to-red-900/30 p-8 rounded-2xl border border-orange-500/20">
               <h3 className="text-2xl font-bold text-center mb-6 text-orange-300">
                 Impact & Contribution
               </h3>

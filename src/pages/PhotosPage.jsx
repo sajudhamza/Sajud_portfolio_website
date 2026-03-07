@@ -40,17 +40,17 @@ const PhotosPage = () => {
         <section className="py-12 px-6 bg-black/40">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-pink-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-pink-500/30 text-center">
+              <div className="bg-gradient-to-br from-pink-900/50 to-purple-900/50 p-6 rounded-xl border border-pink-500/30 text-center">
                 <Image className="text-pink-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-pink-300 mb-2">{totalPhotos}</div>
                 <div className="text-gray-300">Photos</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30 text-center">
+              <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-xl border border-purple-500/30 text-center">
                 <Grid3x3 className="text-purple-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-purple-300 mb-2">{categories.length}</div>
                 <div className="text-gray-300">Categories</div>
               </div>
-              <div className="bg-gradient-to-br from-pink-900/50 to-purple-900/50 backdrop-blur-sm p-6 rounded-xl border border-pink-500/30 text-center">
+              <div className="bg-gradient-to-br from-pink-900/50 to-purple-900/50 p-6 rounded-xl border border-pink-500/30 text-center">
                 <Sparkles className="text-pink-400 mx-auto mb-3" size={32} />
                 <div className="text-4xl font-bold text-pink-300 mb-2">Events</div>
                 <div className="text-gray-300">Captured</div>
@@ -74,7 +74,7 @@ const PhotosPage = () => {
               ].map((category, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800/80 backdrop-blur-sm px-6 py-3 rounded-lg border border-gray-700 hover:border-pink-500 transition-colors"
+                  className="bg-gray-800/80 px-6 py-3 rounded-lg border border-gray-700 hover:border-pink-500 transition-colors"
                 >
                   <span className="text-pink-300 font-semibold">{category}</span>
                 </div>
@@ -97,7 +97,7 @@ const PhotosPage = () => {
             <PhotoGallery photos={photos} />
 
             {/* Gallery Info */}
-            <div className="mt-16 bg-gradient-to-r from-pink-900/30 to-purple-900/30 backdrop-blur-sm p-8 rounded-2xl border border-pink-500/20">
+            <div className="mt-16 bg-gradient-to-r from-pink-900/30 to-purple-900/30 p-8 rounded-2xl border border-pink-500/20">
               <div className="flex items-center justify-center mb-6">
                 <Layers className="text-pink-400" size={48} />
               </div>

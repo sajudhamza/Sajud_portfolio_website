@@ -1,77 +1,57 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx'
-import MembershipsPage from './components/MembershipsPage.jsx';
-import TestimonialPage from './components/TestimonialPage.jsx';
-import LoginPage from './components/LoginPage.jsx';
-import FilesPage from './components/FilesPage.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
-import QualificationsPage from './pages/QualificationsPage.jsx';
-import PatentsPage from './pages/PatentsPage.jsx';
-import PublicationsPage from './pages/PublicationsPage.jsx';
-import ArticlesPage from './pages/ArticlesPage.jsx';
-import JudgingPage from './pages/JudgingPage.jsx';
-import MediaPage from './pages/MediaPage.jsx';
-import PhotosPage from './pages/PhotosPage.jsx';
-import TestimonialsPage from './pages/TestimonialsPage.jsx';
 import './index.css'
 
+// Lazy-load pages for faster initial load and smoother navigation
+const MembershipsPage = lazy(() => import('./components/MembershipsPage.jsx'));
+const TestimonialPage = lazy(() => import('./components/TestimonialPage.jsx'));
+const LoginPage = lazy(() => import('./components/LoginPage.jsx'));
+const FilesPage = lazy(() => import('./components/FilesPage.jsx'));
+const QualificationsPage = lazy(() => import('./pages/QualificationsPage.jsx'));
+const PatentsPage = lazy(() => import('./pages/PatentsPage.jsx'));
+const PublicationsPage = lazy(() => import('./pages/PublicationsPage.jsx'));
+const ArticlesPage = lazy(() => import('./pages/ArticlesPage.jsx'));
+const JudgingPage = lazy(() => import('./pages/JudgingPage.jsx'));
+const MediaPage = lazy(() => import('./pages/MediaPage.jsx'));
+const PhotosPage = lazy(() => import('./pages/PhotosPage.jsx'));
+const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage.jsx'));
+
+const PageFallback = () => (
+  <div className="min-h-screen bg-black flex items-center justify-center">
+    <div className="text-gray-400">Loading…</div>
+  </div>
+);
+
+const withSuspense = (Component) => (
+  <Suspense fallback={<PageFallback />}>
+    <Component />
+  </Suspense>
+);
+
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/qualifications",
-    element: <QualificationsPage />,
-  },
-  {
-    path: "/patents",
-    element: <PatentsPage />,
-  },
-  {
-    path: "/publications",
-    element: <PublicationsPage />,
-  },
-  {
-    path: "/articles",
-    element: <ArticlesPage />,
-  },
-  {
-    path: "/judging",
-    element: <JudgingPage />,
-  },
-  {
-    path: "/media",
-    element: <MediaPage />,
-  },
-  {
-    path: "/photos",
-    element: <PhotosPage />,
-  },
-  {
-    path: "/testimonials",
-    element: <TestimonialsPage />,
-  },
-  {
-    path: "/memberships",
-    element: <MembershipsPage />,
-  },
-  {
-    path: "/testimonial/:id",
-    element: <TestimonialPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
+  { path: "/", element: <App /> },
+  { path: "/qualifications", element: withSuspense(QualificationsPage) },
+  { path: "/patents", element: withSuspense(PatentsPage) },
+  { path: "/publications", element: withSuspense(PublicationsPage) },
+  { path: "/articles", element: withSuspense(ArticlesPage) },
+  { path: "/judging", element: withSuspense(JudgingPage) },
+  { path: "/media", element: withSuspense(MediaPage) },
+  { path: "/photos", element: withSuspense(PhotosPage) },
+  { path: "/testimonials", element: withSuspense(TestimonialsPage) },
+  { path: "/memberships", element: withSuspense(MembershipsPage) },
+  { path: "/testimonial/:id", element: withSuspense(TestimonialPage) },
+  { path: "/login", element: withSuspense(LoginPage) },
   {
     path: "/files",
     element: (
-      <ProtectedRoute>
-        <FilesPage />
-      </ProtectedRoute>
+      <Suspense fallback={<PageFallback />}>
+        <ProtectedRoute>
+          <FilesPage />
+        </ProtectedRoute>
+      </Suspense>
     ),
   },
 ]);

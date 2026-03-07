@@ -25,7 +25,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center">
       <Background />
-      <div className="relative z-10 max-w-md w-full bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl text-center">
+      <div className="relative z-10 max-w-md w-full bg-gray-900/80 p-8 rounded-2xl shadow-2xl text-center">
         <Lock size={48} className="mx-auto text-purple-400 mb-6" />
         <h1 className="text-3xl font-bold mb-4">Admin Access</h1>
         <p className="text-gray-400 mb-8">Please enter the password to view protected files.</p>

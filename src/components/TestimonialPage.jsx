@@ -35,7 +35,7 @@ const TestimonialPage = () => {
             Back to Testimonials
           </Link>
           
-          <div className="bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl">
+          <div className="bg-gray-900/80 p-8 rounded-2xl shadow-2xl">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <img 
                 src={testimonial.imageUrl} 

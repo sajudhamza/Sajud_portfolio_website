@@ -14,7 +14,7 @@ const ArticleCarousel = ({ articles }) => {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      <div className="overflow-hidden rounded-xl shadow-lg bg-gray-800/80 backdrop-blur-sm p-6">
+      <div className="overflow-hidden rounded-xl shadow-lg bg-gray-800/80 p-6">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
