@@ -9,7 +9,7 @@ const MembershipsPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Background />
-      <div className="relative z-10">
+      <div className="relative z-10 scroll-content-layer">
         <Navigation />
         <div className="pt-20">
           <Section

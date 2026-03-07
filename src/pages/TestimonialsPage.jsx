@@ -13,7 +13,7 @@ const TestimonialsPage = () => {
   return (
     <div className="min-h-screen text-gray-100 font-sans bg-black">
       <Background />
-      <div className="relative z-10">
+      <div className="relative z-10 scroll-content-layer">
         <Navigation />
         
         {/* Hero Section */}

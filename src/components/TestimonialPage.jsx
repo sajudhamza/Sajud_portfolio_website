@@ -14,7 +14,7 @@ const TestimonialPage = () => {
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
         <Background />
         <Navigation />
-        <div className="relative z-10 text-center pt-20">
+        <div className="relative z-10 scroll-content-layer text-center pt-20">
           <h1 className="text-4xl font-bold mb-4">Testimonial Not Found</h1>
           <Link to="/testimonials" className="text-purple-400 hover:text-purple-300">
             &larr; Back to Testimonials
@@ -27,7 +27,7 @@ const TestimonialPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Background />
-      <div className="relative z-10">
+      <div className="relative z-10 scroll-content-layer">
         <Navigation />
         <div className="max-w-4xl mx-auto p-8 pt-28">
           <Link to="/testimonials" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-8">

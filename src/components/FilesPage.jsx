@@ -26,7 +26,7 @@ const FilesPage = () => {
     return (
       <div className="min-h-screen bg-black text-white">
         <Background />
-        <div className="relative z-10 max-w-6xl mx-auto p-8 pt-16">
+        <div className="relative z-10 scroll-content-layer max-w-6xl mx-auto p-8 pt-16">
           <Link to="/" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-8">
             <ArrowLeft size={20} />
             Back to Portfolio
@@ -56,7 +56,7 @@ const FilesPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Background />
-      <div className="relative z-10 max-w-6xl mx-auto p-8 pt-16">
+      <div className="relative z-10 scroll-content-layer max-w-6xl mx-auto p-8 pt-16">
         <button onClick={() => setSelectedFolder(null)} className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-8">
           <ArrowLeft size={20} />
           Back to Folders
