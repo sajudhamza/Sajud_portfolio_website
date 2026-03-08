@@ -7,6 +7,10 @@ const IntroScreen = ({ onEnter }) => {
   const [buttonVisible, setButtonVisible] = useState(false);
   const [textOpacity, setTextOpacity] = useState(1);
 
+  // Refs for scroll-driven starfield speed (updated in handleScroll)
+  const scrollYRef = useRef(0);
+  const maxScrollRef = useRef(1);
+
   // Scroll effect: react to scroll inside the intro's own scroll container
   useEffect(() => {
     const el = scrollContainerRef.current;
@@ -15,6 +19,8 @@ const IntroScreen = ({ onEnter }) => {
     const handleScroll = () => {
       const scrollY = el.scrollTop;
       const maxScroll = el.scrollHeight - el.clientHeight;
+      maxScrollRef.current = Math.max(maxScroll, 1);
+      scrollYRef.current = scrollY;
       const scrollPercent = maxScroll > 0 ? Math.min(scrollY / (maxScroll * 0.85), 1) : 0;
       setTextOpacity(Math.max(0, 1 - scrollPercent * 2));
       setButtonVisible(scrollPercent > 0.85);
@@ -25,49 +31,112 @@ const IntroScreen = ({ onEnter }) => {
     return () => el.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Static starfield (CSS-only) so intro scroll stays smooth; no requestAnimationFrame
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d', { alpha: false });
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    canvas.width = w;
-    canvas.height = h;
-    const count = 80;
-    const stars = Array.from({ length: count }, () => ({
-      x: (Math.random() - 0.5) * w,
-      y: (Math.random() - 0.5) * h,
-      z: Math.random() * 800,
-      size: Math.random() * 1.5 + 0.5,
-    }));
-    const fov = 300;
+    const STAR_COUNT = 280;
+    const FOV = 220;
+    let stars = [];
+    let rafId = null;
+    let visible = true;
 
-    const draw = () => {
-      ctx.fillStyle = '#000';
-      ctx.fillRect(0, 0, w, h);
+    const setup = () => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      canvas.width = w;
+      canvas.height = h;
+      stars = [];
+      for (let i = 0; i < STAR_COUNT; i++) {
+        stars.push({
+          x: (Math.random() - 0.5) * w * 1.4,
+          y: (Math.random() - 0.5) * h * 1.4,
+          z: Math.random() * 1200,
+          size: Math.random() * 2.2 + 0.6,
+          prevX: null,
+          prevY: null,
+        });
+      }
+    };
+
+    const animate = () => {
+      if (!visible) {
+        rafId = requestAnimationFrame(animate);
+        return;
+      }
+      const w = canvas.width;
+      const h = canvas.height;
       const cx = w / 2;
       const cy = h / 2;
-      stars.forEach((star) => {
-        const scale = fov / (fov + star.z);
+      const maxScroll = maxScrollRef.current;
+      const rawPercent = maxScroll > 0 ? Math.min(scrollYRef.current / maxScroll, 1) : 0;
+      const scrollPercent = rawPercent * rawPercent;
+      const speedMultiplier = 1 + scrollPercent * 22;
+      const speed = 1.4 * speedMultiplier;
+
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, w, h);
+
+      for (let i = 0; i < stars.length; i++) {
+        const star = stars[i];
+        const prevZ = star.z;
+        star.z -= speed;
+        if (star.z <= 0) {
+          star.z = 1200;
+          star.prevX = null;
+          star.prevY = null;
+        }
+
+        const scale = FOV / (FOV + star.z);
         const x = star.x * scale + cx;
         const y = star.y * scale + cy;
-        const r = star.size * scale;
-        const alpha = scale * 0.8;
+        const r = Math.max(star.size * scale, 0.5);
+        const alpha = Math.min(scale * 0.95, 1);
+
+        if (star.prevX != null && star.prevY != null) {
+          const dx = x - star.prevX;
+          const dy = y - star.prevY;
+          const len = Math.sqrt(dx * dx + dy * dy) || 1;
+          const trailLen = Math.min(len * 2.5, 120);
+          const tx = x - (dx / len) * trailLen;
+          const ty = y - (dy / len) * trailLen;
+          const gradient = ctx.createLinearGradient(x, y, tx, ty);
+          gradient.addColorStop(0, `rgba(255,255,255,${alpha * 0.9})`);
+          gradient.addColorStop(0.3, `rgba(200,220,255,${alpha * 0.4})`);
+          gradient.addColorStop(1, 'rgba(255,255,255,0)');
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(tx, ty);
+          ctx.strokeStyle = gradient;
+          ctx.lineWidth = Math.max(r * 2.5, 2);
+          ctx.lineCap = 'round';
+          ctx.stroke();
+        }
+        star.prevX = x;
+        star.prevY = y;
+
         ctx.beginPath();
         ctx.arc(x, y, r, 0, 2 * Math.PI);
         ctx.fillStyle = `rgba(255,255,255,${alpha})`;
         ctx.fill();
-      });
+      }
+      rafId = requestAnimationFrame(animate);
     };
-    draw();
-    const onResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      draw();
+
+    const onVisibilityChange = () => {
+      visible = document.visibilityState === 'visible';
     };
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+
+    setup();
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    rafId = requestAnimationFrame(animate);
+    window.addEventListener('resize', setup);
+
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      window.removeEventListener('resize', setup);
+      if (rafId != null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
