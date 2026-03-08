@@ -35,8 +35,8 @@ const IntroScreen = ({ onEnter }) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d', { alpha: false });
-    const STAR_COUNT = 280;
-    const FOV = 220;
+    const STAR_COUNT = 100;
+    const FOV = 300;
     let stars = [];
     let rafId = null;
     let visible = true;
@@ -49,12 +49,10 @@ const IntroScreen = ({ onEnter }) => {
       stars = [];
       for (let i = 0; i < STAR_COUNT; i++) {
         stars.push({
-          x: (Math.random() - 0.5) * w * 1.4,
-          y: (Math.random() - 0.5) * h * 1.4,
-          z: Math.random() * 1200,
-          size: Math.random() * 2.2 + 0.6,
-          prevX: null,
-          prevY: null,
+          x: (Math.random() - 0.5) * w * 1.2,
+          y: (Math.random() - 0.5) * h * 1.2,
+          z: Math.random() * 900,
+          size: Math.random() * 1.5 + 0.5,
         });
       }
     };
@@ -71,49 +69,22 @@ const IntroScreen = ({ onEnter }) => {
       const maxScroll = maxScrollRef.current;
       const rawPercent = maxScroll > 0 ? Math.min(scrollYRef.current / maxScroll, 1) : 0;
       const scrollPercent = rawPercent * rawPercent;
-      const speedMultiplier = 1 + scrollPercent * 22;
-      const speed = 1.4 * speedMultiplier;
+      const speedMultiplier = 1 + scrollPercent * 6;
+      const speed = 0.5 * speedMultiplier;
 
       ctx.fillStyle = '#000';
       ctx.fillRect(0, 0, w, h);
 
       for (let i = 0; i < stars.length; i++) {
         const star = stars[i];
-        const prevZ = star.z;
         star.z -= speed;
-        if (star.z <= 0) {
-          star.z = 1200;
-          star.prevX = null;
-          star.prevY = null;
-        }
+        if (star.z <= 0) star.z = 900;
 
         const scale = FOV / (FOV + star.z);
         const x = star.x * scale + cx;
         const y = star.y * scale + cy;
-        const r = Math.max(star.size * scale, 0.5);
-        const alpha = Math.min(scale * 0.95, 1);
-
-        if (star.prevX != null && star.prevY != null) {
-          const dx = x - star.prevX;
-          const dy = y - star.prevY;
-          const len = Math.sqrt(dx * dx + dy * dy) || 1;
-          const trailLen = Math.min(len * 2.5, 120);
-          const tx = x - (dx / len) * trailLen;
-          const ty = y - (dy / len) * trailLen;
-          const gradient = ctx.createLinearGradient(x, y, tx, ty);
-          gradient.addColorStop(0, `rgba(255,255,255,${alpha * 0.9})`);
-          gradient.addColorStop(0.3, `rgba(200,220,255,${alpha * 0.4})`);
-          gradient.addColorStop(1, 'rgba(255,255,255,0)');
-          ctx.beginPath();
-          ctx.moveTo(x, y);
-          ctx.lineTo(tx, ty);
-          ctx.strokeStyle = gradient;
-          ctx.lineWidth = Math.max(r * 2.5, 2);
-          ctx.lineCap = 'round';
-          ctx.stroke();
-        }
-        star.prevX = x;
-        star.prevY = y;
+        const r = star.size * scale;
+        const alpha = Math.min(scale * 0.8, 1);
 
         ctx.beginPath();
         ctx.arc(x, y, r, 0, 2 * Math.PI);
