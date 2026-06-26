@@ -111,6 +111,27 @@ export const publications = [
       description: "Monocular video-based 3D reconstruction has emerged as a fundamental yet challenging problem in computer vision, due to depth ambiguity, scale uncertainty, and limited viewpoint coverage. ",
       link: "https://ijeret.org/index.php/ijeret/article/view/398"
     },
+    {
+      title: "Intelligent Medical Imaging: Leveraging Artificial Intelligence for Precision Diagnosis",
+      journal: "International Journal of Emerging Trends in Computer Science and Information Technology",
+      year: "2026",
+      description: "The modern clinical diagnosis and disease monitoring have become impossible without medical imaging techniques like Magnetic Resonance Imaging (MRI), Computed Tomography (CT) and X-ray.",
+      link: "https://ijetcsit.org/index.php/ijetcsit/article/view/645"
+    },
+    {
+      title: "A Review on the Role of Artificial Intelligence in Medicine and Clinical Sciences",
+      journal: "American International Journal of Computer Science and Technology",
+      year: "2026",
+      description: "The challenges posed by artificial intelligence (AI) in health and clinical sciences is extremely rapid and transformative in the prevention, diagnosis, treatment, and planning, and future management of diseases.",
+      link: "https://aijcst.org/index.php/aijcst/article/view/222"
+    },
+    {
+      title: "The Use of Federated Learning in AI-Based Predictive Analytics to Prevent Chronic Diseases in Global Health Systems",
+      journal: "European Journal of Science, Innovation and Technology",
+      year: "2026",
+      description: "The growing burden of the chronic diseases in the world like diabetes, cardiovascular diseases and chronic respiratory illnesses puts greater strain in the global health systems.",
+      link: "https://www.researchgate.net/profile/Sajud-Hamza/publication/401775235_The_Use_of_Federated_Learning_in_AI-Based_Predictive_Analytics_to_Prevent_Chronic_Diseases_in_Global_Health_Systems/links/69b0f415e4cc384db5217f5b/The-Use-of-Federated-Learning-in-AI-Based-Predictive-Analytics-to-Prevent-Chronic-Diseases-in-Global-Health-Systems.pdf"
+    },
   ];
   
   export const articles = [
