@@ -286,6 +286,19 @@ export const publications = [
       }
     },
     {
+      title: "Panel Judge - QS Reimagine Education & Conference Awards 2024",
+      organization: "QS Reimagine Awards",
+      date: "Dec 2024",
+      description: "Was in the Judge Panel for QS Reimagine Awards 2024 to judge multiple entries in Education and conferance awards 2024",
+      judgeFeature: { 
+        text: "View Featured Judge", 
+        url: "https://qsrea.evessiocloud.com/Awards2024/en/node/judgeprofile-sajud-e" // Your external URL
+      },
+      certificateLinks: [
+        { name: "QS-Reimaginine 2024 Certificate", url: "/membercert/QS-Reminagine 2024.pdf" }
+    ]
+    },
+    {
       title: "Peer Review - IEM - ICDC 2025 ",
       organization: "International Conference on Computational Intelligence, Data Science & Cloud Computing ",
       date: "Apr 2025",
