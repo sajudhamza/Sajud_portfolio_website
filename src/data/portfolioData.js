@@ -1,5 +1,12 @@
 export const publications = [
   {
+    title: "FedShield: Robust Federated Intrusion Detection for Consumer IoT under Malicious Updates using Blockchain Validation",
+    journal: "IEEE Transactions on Consumer Electronics",
+    year: "2026",
+    description: "The rapid adoption of IoT in healthcare enables real-time patient monitoring but introduces severe security and privacy vulnerabilities, including malicious node attacks, privacy leakage from centralized model training, and high blockchain storage costs",
+    link: "https://ieeexplore.ieee.org/abstract/document/11575308"
+  },
+  {
     title: "The Role of Artificial Intelligence in Intelligent Urban Planning: From Data-Driven Insights to Sustainable City Systems",
     journal: "International Journal of AI, BigData, Computational and Management Studies",
     year: "2026",
