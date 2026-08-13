@@ -19,8 +19,13 @@ manager — the browser blocks local file loads; it must go through a server.
 | `support.js` | Runtime that renders index.html's template (loads React from CDN). Don't edit |
 | `hero3d.js` | All three.js scenes: interactive hero (drag/click nodes) + per-page ambient variants (`waves`, `rings`, `shapes`, `drift`, `rain`) |
 | `tilt-card.js` | `<tilt-card>` hover-tilt wrapper used on cards |
+| `sfx.js` | Web Audio ambients + page-transition cues (SOUND ON/OFF in the nav) |
 | `data/portfolioData.js` | **All content lives here**: publications, articles, media, judging, patents, memberships, testimonials, protected files, trivia questions |
 | `assets/` | Profile photo, membership logos, testimonial photos |
+
+## Sound
+
+Each chapter has its own ambient bed (home pulse, research waves, recognition rings, patents shapes, testimonials drift, vault rain) plus a short transition cue when you change pages. Sound starts **off** until the visitor taps **SOUND ON** (or any click unlocks audio for the browser). Preference is stored in `localStorage`.
 
 ## Common edits
 

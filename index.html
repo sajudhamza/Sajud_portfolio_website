@@ -35,6 +35,7 @@ a:hover{color:#f2cf82}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 </style>
 <script src="tilt-card.js"></script>
+<script src="sfx.js"></script>
 </helmet>
 
 <div style="min-height:100vh;background:#0d0c0a">
@@ -44,6 +45,7 @@ a:hover{color:#f2cf82}
     <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="6">
       <button onClick="{{ n.go }}" style="background:none;border:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;padding:4px 0;color: {{ n.color }}; border-bottom: {{ n.underline }}">{{ n.label }}</button>
     </sc-for>
+    <button type="button" data-sfx-toggle onClick="{{ toggleSound }}" aria-pressed="false" title="Enable immersive sound" style="background:none;border:1px solid #3d3728;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;padding:7px 12px;border-radius:3px;color:#9a917d" style-hover="border-color:#e8b64c;color:#e8b64c">SOUND OFF</button>
     <a href="mailto:sajudhamza@gmail.com" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#0d0c0a;background:#e8b64c;padding:9px 16px;border-radius:3px;font-weight:700" style-hover="background:#f2cf82;color:#0d0c0a">CONTACT</a>
   </div>
 </nav>
@@ -504,6 +506,11 @@ class Component extends DCLogic {
     this._roles = ['Senior Data Engineer', 'AI & ML Researcher', 'Ph.D. Candidate in Computer Science', 'Published Author — 20+ papers', 'International Award Judge', 'Inventor — 2 UK Patents'];
     this._ri = 0; this._ci = 0; this._del = false;
     this._tick = setInterval(() => this._type(), 65);
+    if (window.PortfolioSFX) {
+      window.PortfolioSFX.bindUnlock();
+      window.PortfolioSFX.syncToggle();
+      window.PortfolioSFX.setPage(this.state.page);
+    }
   }
   componentWillUnmount() { clearInterval(this._tick); window.removeEventListener('hero3d-nav', this._onHeroNav); }
 
@@ -531,6 +538,11 @@ class Component extends DCLogic {
     if (page === this.state.page) return;
     const meta = { home: ['HOME', '#e8b64c'], research: ['RESEARCH', '#e8b64c'], recognition: ['RECOGNITION', '#e8836b'], patents: ['PATENTS', '#6bc9b4'], testimonials: ['TESTIMONIALS', '#c39ee8'], vault: ['VAULT', '#e0755f'] }[page] || ['', '#e8b64c'];
     clearTimeout(this._t1); clearTimeout(this._t2);
+    if (window.PortfolioSFX) {
+      window.PortfolioSFX.unlock();
+      window.PortfolioSFX.click();
+      window.PortfolioSFX.transition(page);
+    }
     this.setState({ trans: true, transLabel: meta[0], transAccent: meta[1] });
     this._t1 = setTimeout(() => this._switch(page), 360);
     this._t2 = setTimeout(() => this.setState({ trans: false }), 950);
@@ -548,6 +560,7 @@ class Component extends DCLogic {
       vault: 'Document Vault — Sajud Hamza'
     };
     document.title = titles[page] || titles.home;
+    if (window.PortfolioSFX) window.PortfolioSFX.setPage(page);
   }
 
   renderVals() {
@@ -598,6 +611,7 @@ class Component extends DCLogic {
       isHome: s.page === 'home', notHome: s.page !== 'home', isResearch: s.page === 'research', isRecognition: s.page === 'recognition',
       isPatents: s.page === 'patents', isTestimonials: s.page === 'testimonials', isVault: s.page === 'vault',
       goHome: () => this._go('home'), goResearch: () => this._go('research'), goVault: () => this._go('vault'),
+      toggleSound: () => { if (window.PortfolioSFX) window.PortfolioSFX.toggleMute(); },
       roleText: s.roleText,
       particleDensity: String(this.props.particleDensity ?? 1),
       showTrivia: this.props.showTrivia ?? true,
@@ -668,8 +682,10 @@ class Component extends DCLogic {
     if (this.state.pw === 'Sajud@1234') {
       sessionStorage.setItem('isAuthenticated', 'true');
       this.setState({ authed: true, pwError: '' });
+      if (window.PortfolioSFX) window.PortfolioSFX.unlockSuccess();
     } else {
       this.setState({ pwError: 'Incorrect password. Please try again.', pw: '' });
+      if (window.PortfolioSFX) window.PortfolioSFX.unlockFail();
     }
   }
 }
