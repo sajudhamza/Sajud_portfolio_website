@@ -1,13 +1,678 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Untitled.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sajud Hamza Elinjulliparambil | Researcher | Data Engineer | Developer</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Sajud Hamza Elinjulliparambil — AI &amp; Machine Learning Researcher, Senior Data Engineer</title>
+<meta name="description" content="Sajud Hamza Elinjulliparambil is an AI and machine learning researcher, senior data engineer, and Ph.D. candidate in computer science. 20+ peer-reviewed publications, 2 granted UK patents, international award judge, and builder of AI systems protecting millions of Americans.">
+<meta name="keywords" content="Sajud Hamza, AI researcher, artificial intelligence expert, machine learning, data engineering, predictive analytics, computer vision, federated learning, AI safety, EB-1A">
+<meta property="og:title" content="Sajud Hamza Elinjulliparambil — AI &amp; ML Researcher">
+<meta property="og:description" content="AI researcher and senior data engineer. 20+ publications, 2 UK patents, international award judge.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://www.sajudhamza.com">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.sajudhamza.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Sajud Hamza Elinjulliparambil","url":"https://www.sajudhamza.com","email":"mailto:sajudhamza@gmail.com","jobTitle":["Senior Data Engineer","AI & ML Researcher","Ph.D. Candidate in Computer Science"],"worksFor":{"@type":"Organization","name":"ConsultAdd Inc."},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Pace University"},{"@type":"CollegeOrUniversity","name":"Mumbai University"}],"knowsAbout":["Artificial Intelligence","Machine Learning","Data Engineering","Predictive Analytics","Computer Vision","Federated Learning","Cloud Architecture"],"sameAs":["https://www.linkedin.com/in/sajud-hamza/"]}
+</script>
+<style>
+html{scroll-behavior:auto}
+body{margin:0;background:#0d0c0a;color:#f0ead9;font-family:'Sora',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#e8b64c;text-decoration:none}
+a:hover{color:#f2cf82}
+*{box-sizing:border-box}
+::selection{background:#e8b64c;color:#0d0c0a}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes wipe{0%{transform:translateY(101%)}38%{transform:translateY(0)}62%{transform:translateY(0)}100%{transform:translateY(-101%)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+</style>
+<script src="tilt-card.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:#0d0c0a">
+<nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(13,12,10,0.82);backdrop-filter:blur(14px);border-bottom:1px solid #26221a">
+  <button onClick="{{ goHome }}" style="background:none;border:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#f0ead9;letter-spacing:0.08em;padding:0">SAJUD<span style="color:#e8b64c">/</span>HAMZA</button>
+  <div style="display:flex;align-items:center;gap:26px">
+    <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="6">
+      <button onClick="{{ n.go }}" style="background:none;border:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;padding:4px 0;color: {{ n.color }}; border-bottom: {{ n.underline }}">{{ n.label }}</button>
+    </sc-for>
+    <a href="mailto:sajudhamza@gmail.com" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#0d0c0a;background:#e8b64c;padding:9px 16px;border-radius:3px;font-weight:700" style-hover="background:#f2cf82;color:#0d0c0a">CONTACT</a>
+  </div>
+</nav>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<main>
+  <section style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden">
+    <x-import component-from-global-scope="hero-3d" from="./hero3d.js" density="{{ particleDensity }}" accent="#e8b64c" hint-size="100%,100vh" style="position:absolute;inset:0"></x-import>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%, rgba(13,12,10,0) 0%, rgba(13,12,10,0.55) 70%, #0d0c0a 100%);pointer-events:none"></div>
+    <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:140px 40px 170px;width:100%;pointer-events:none">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#e8b64c;margin-bottom:22px;animation:rise 0.7s ease both">ARTIFICIAL INTELLIGENCE · DATA ENGINEERING · RESEARCH</div>
+      <h1 style="font-size:clamp(44px,6.5vw,84px);font-weight:800;line-height:1.02;margin:0 0 18px;letter-spacing:-0.02em;animation:rise 0.7s 0.1s ease both">Sajud Hamza<br>Elinjulliparambil</h1>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(16px,2vw,22px);color:#c9bfa4;height:32px;margin-bottom:26px;animation:rise 0.7s 0.2s ease both">{{ roleText }}<span style="color:#e8b64c;animation:blink 1s step-end infinite">_</span></div>
+      <p style="max-width:640px;font-size:17px;line-height:1.7;color:#b5ab92;font-weight:300;margin:0 0 38px;animation:rise 0.7s 0.3s ease both;text-wrap:pretty">I build AI systems with national-scale consequences — screening platforms that keep American workplaces and schools safe, data pipelines guarding the retirement savings of millions, and clinical-trial infrastructure on FDA approval pathways.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;pointer-events:auto;animation:rise 0.7s 0.4s ease both">
+        <button onClick="{{ goResearch }}" style="cursor:pointer;background:#e8b64c;color:#0d0c0a;border:none;padding:15px 28px;border-radius:3px;font-family:'Sora',sans-serif;font-weight:700;font-size:15px" style-hover="background:#f2cf82">Explore the research →</button>
+        <button onClick="{{ goVault }}" style="cursor:pointer;background:transparent;color:#f0ead9;border:1px solid #3d3728;padding:15px 28px;border-radius:3px;font-family:'Sora',sans-serif;font-weight:600;font-size:15px" style-hover="border-color:#e8b64c;color:#e8b64c">Document vault</button>
+      </div>
+    </div>
+    <div style="position:absolute;bottom:110px;right:40px;z-index:2;pointer-events:none;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#8f8570;display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;width:26px;height:1px;background:#e8b64c"></span>DRAG TO ORBIT · CLICK A NODE TO EXPLORE
+    </div>
+    <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;border-top:1px solid #26221a;background:rgba(13,12,10,0.7);backdrop-filter:blur(10px)">
+      <div style="max-width:1200px;margin:0 auto;padding:22px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:3px">
+            <div style="font-size:30px;font-weight:800;color:#e8b64c">{{ s.value }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#8f8570">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:110px 40px 40px;display:grid;grid-template-columns:340px 1fr;gap:70px;align-items:center">
+    <div style="position:relative">
+      <img src="assets/sajud.png" alt="Portrait of Sajud Hamza Elinjulliparambil, AI researcher and senior data engineer" style="width:100%;border-radius:4px;display:block;filter:saturate(0.9)">
+      <div style="position:absolute;inset:0;border:1px solid #e8b64c;border-radius:4px;transform:translate(14px,14px);z-index:-1"></div>
+    </div>
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.24em;color:#e8b64c;margin-bottom:16px">ABOUT</div>
+      <h2 style="font-size:36px;font-weight:800;margin:0 0 20px;letter-spacing:-0.01em">Engineering intelligence for systems that cannot fail</h2>
+      <p style="font-size:16px;line-height:1.8;color:#b5ab92;font-weight:300;margin:0 0 16px;text-wrap:pretty">Senior Data Engineer at ConsultAdd Inc. and Ph.D. candidate in Computer Science at Pace University (4.0 GPA). Over the past decade my work has protected sensitive data for 100,000+ high-profile candidates, ~1,500 NYC public schools, millions of Americans' 401(k) accounts, and the City of London Police.</p>
+      <p style="font-size:16px;line-height:1.8;color:#b5ab92;font-weight:300;margin:0 0 28px;text-wrap:pretty">In parallel: 20+ peer-reviewed publications spanning computer vision, federated learning, and healthcare AI; two granted UK design patents; judging panels for ten international award programs; and coverage in Tech Times, Benzinga, IBTimes, and LatestLY.</p>
+      <div style="display:flex;gap:22px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:13px">
+        <a href="https://www.linkedin.com/in/sajud-hamza/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/sajudhamza" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="mailto:sajudhamza@gmail.com">sajudhamza@gmail.com</a>
+        <span style="color:#8f8570">New York, NY</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:70px">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.24em;color:#e8b64c;margin-bottom:16px">EDUCATION</div>
+      <h2 style="font-size:30px;font-weight:800;margin:0 0 30px;letter-spacing:-0.01em">Academic record</h2>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="border-left:1px solid #3d3728;padding:0 0 30px 26px;position:relative">
+          <div style="position:absolute;left:-5px;top:4px;width:9px;height:9px;background:#e8b64c;border-radius:50%"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e8b64c;margin-bottom:6px">2023 — 2026 (EXPECTED) · GPA 4.0</div>
+          <div style="font-size:17px;font-weight:700;margin-bottom:4px">Ph.D. in Computer Science</div>
+          <div style="font-size:14px;color:#9a917d;font-weight:300">Pace University, Seidenberg School — New York, NY. Advanced research in AI, machine learning algorithms, and data engineering systems.</div>
+        </div>
+        <div style="border-left:1px solid #3d3728;padding:0 0 30px 26px;position:relative">
+          <div style="position:absolute;left:-5px;top:4px;width:9px;height:9px;background:#e8b64c;border-radius:50%"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e8b64c;margin-bottom:6px">2018 — 2020 · GPA 3.87</div>
+          <div style="font-size:17px;font-weight:700;margin-bottom:4px">M.S. in Information Systems, Data Science</div>
+          <div style="font-size:14px;color:#9a917d;font-weight:300">Pace University, Seidenberg School — New York, NY.</div>
+        </div>
+        <div style="border-left:1px solid transparent;padding:0 0 0 26px;position:relative">
+          <div style="position:absolute;left:-5px;top:4px;width:9px;height:9px;background:#e8b64c;border-radius:50%"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e8b64c;margin-bottom:6px">2010 — 2014</div>
+          <div style="font-size:17px;font-weight:700;margin-bottom:4px">Bachelor of Engineering</div>
+          <div style="font-size:14px;color:#9a917d;font-weight:300">Mumbai University — Mumbai, India.</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.24em;color:#e8b64c;margin-bottom:16px">TOOLKIT</div>
+      <h2 style="font-size:30px;font-weight:800;margin:0 0 30px;letter-spacing:-0.01em">Technical skills</h2>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <sc-for list="{{ skillGroups }}" as="sg" hint-placeholder-count="4">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#c9bfa4;margin-bottom:10px">{{ sg.title }}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ sg.skills }}" as="sk" hint-placeholder-count="5">
+                <span style="font-size:13px;padding:6px 13px;border:1px solid #2a261e;border-radius:20px;color:#9a917d;background:#12100c" style-hover="border-color:#e8b64c;color:#e8b64c">{{ sk }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:80px 40px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.24em;color:#e8b64c;margin-bottom:16px">EXPERTISE</div>
+    <h2 style="font-size:36px;font-weight:800;margin:0 0 40px;letter-spacing:-0.01em">Six domains, one discipline</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#26221a;border:1px solid #26221a">
+      <sc-for list="{{ expertise }}" as="e" hint-placeholder-count="6">
+        <div style="background:#0d0c0a;padding:30px 26px" style-hover="background:#14120e">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e8b64c;margin-bottom:12px">{{ e.num }}</div>
+          <div style="font-size:18px;font-weight:700;margin-bottom:10px">{{ e.title }}</div>
+          <div style="font-size:14px;line-height:1.65;color:#9a917d;font-weight:300">{{ e.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <sc-if value="{{ showTrivia }}" hint-placeholder-val="{{ true }}">
+  <section style="max-width:800px;margin:0 auto;padding:80px 40px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.24em;color:#e8b64c;margin-bottom:16px">INTERLUDE</div>
+    <h2 style="font-size:30px;font-weight:800;margin:0 0 8px">Think you know AI?</h2>
+    <p style="color:#9a917d;font-weight:300;margin:0 0 28px">Ten quick questions from the field I work in every day.</p>
+    <div style="border:1px solid #26221a;border-radius:4px;padding:34px;background:#12100c">
+      <sc-if value="{{ triviaDone }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center">
+          <div style="font-size:52px;font-weight:800;color:#e8b64c;margin-bottom:8px">{{ triviaScoreText }}</div>
+          <div style="color:#9a917d;margin-bottom:24px">{{ triviaVerdict }}</div>
+          <button onClick="{{ triviaRestart }}" style="cursor:pointer;background:transparent;color:#e8b64c;border:1px solid #e8b64c;padding:11px 22px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:13px" style-hover="background:#e8b64c;color:#0d0c0a">PLAY AGAIN</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ triviaActive }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8f8570;margin-bottom:18px">
+          <span>{{ triviaProgress }}</span><span style="color:#e8b64c">{{ triviaScoreLive }}</span>
+        </div>
+        <div style="font-size:19px;font-weight:600;line-height:1.5;margin-bottom:22px">{{ triviaQuestion }}</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ triviaOptions }}" as="o" hint-placeholder-count="4">
+            <button onClick="{{ o.pick }}" style="cursor:pointer;text-align:left;padding:14px 18px;border-radius:3px;font-family:'Sora',sans-serif;font-size:15px;font-weight:400;background: {{ o.bg }}; color: {{ o.color }}; border: 1px solid {{ o.border }}">{{ o.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ triviaAnswered }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ triviaNext }}" style="cursor:pointer;margin-top:20px;background:#e8b64c;color:#0d0c0a;border:none;padding:12px 24px;border-radius:3px;font-weight:700;font-size:14px">{{ triviaNextLabel }}</button>
+        </sc-if>
+      </sc-if>
+    </div>
+  </section>
+  </sc-if>
+</main>
+</sc-if>
+
+<sc-if value="{{ transitioning }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;inset:0;z-index:99;background:#12100c;display:flex;align-items:center;justify-content:center;animation:wipe 0.9s cubic-bezier(0.76,0,0.24,1) both">
+  <div style="display:flex;align-items:center;gap:18px">
+    <span style="display:inline-block;width:38px;height:1px;background: {{ transAccent }}"></span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.4em;color: {{ transAccent }}">{{ transLabel }}</span>
+    <span style="display:inline-block;width:38px;height:1px;background: {{ transAccent }}"></span>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isResearch }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.9">
+  <x-import component-from-global-scope="hero-3d" from="./hero3d.js" mode="ambient" variant="waves" accent="#e8b64c" hint-size="100%,100vh"></x-import>
+</div>
+<main style="position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:100px 40px 60px;animation:rise 0.6s ease both">
+  <header style="min-height:56vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding-bottom:56px">
+    <div style="position:absolute;top:10px;right:0;font-family:'JetBrains Mono',monospace;font-size:280px;font-weight:700;line-height:1;color:rgba(232,182,76,0.06);pointer-events:none;user-select:none">01</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.3em;color:#e8b64c;margin-bottom:20px">CHAPTER 01 · RESEARCH</div>
+    <h1 style="font-size:clamp(54px,9vw,118px);font-weight:800;margin:0 0 22px;letter-spacing:-0.03em;line-height:0.95">Publications</h1>
+    <p style="color:#9a917d;font-weight:300;max-width:640px;margin:0;font-size:17px;line-height:1.7;text-wrap:pretty">Peer-reviewed work across computer vision, federated learning, healthcare AI, urban systems, and cybersecurity — including IEEE Transactions on Consumer Electronics.</p>
+    <div style="position:absolute;bottom:0;right:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#8f8570;animation:bob 2s ease-in-out infinite">SCROLL ↓</div>
+  </header>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px">
+    <sc-for list="{{ yearChips }}" as="y" hint-placeholder-count="6">
+      <button onClick="{{ y.pick }}" style="cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;padding:8px 16px;border-radius:20px;background: {{ y.bg }}; color: {{ y.color }}; border: 1px solid {{ y.border }}">{{ y.label }}</button>
+    </sc-for>
+  </div>
+  <div style="display:flex;flex-direction:column">
+    <sc-for list="{{ pubs }}" as="p" hint-placeholder-count="6">
+      <a href="{{ p.link }}" target="_blank" rel="noopener" style="display:grid;grid-template-columns:70px 1fr;gap:26px;padding:26px 0;border-top:1px solid #26221a;color:inherit" style-hover="background:#12100c;color:inherit">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#e8b64c;padding-top:3px">{{ p.year }}</div>
+        <div>
+          <div style="font-size:17px;font-weight:600;line-height:1.45;margin-bottom:6px;color:#f0ead9">{{ p.title }}</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8f8570;letter-spacing:0.04em">{{ p.journal }}</div>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+
+  <h2 style="font-size:30px;font-weight:800;margin:90px 0 30px">Articles &amp; commentary</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+    <sc-for list="{{ arts }}" as="a" hint-placeholder-count="3">
+      <tilt-card>
+      <a href="{{ a.link }}" target="_blank" rel="noopener" style="border:1px solid #26221a;border-radius:4px;padding:24px;background:#12100c;color:inherit;display:flex;flex-direction:column;gap:10px;height:100%;box-sizing:border-box" style-hover="border-color:#e8b64c;color:inherit">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#e8b64c;letter-spacing:0.1em">{{ a.platform }} · {{ a.date }}</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.45;color:#f0ead9">{{ a.title }}</div>
+        <div style="font-size:13px;line-height:1.6;color:#9a917d;font-weight:300">{{ a.summary }}</div>
+      </a>
+      </tilt-card>
+    </sc-for>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ isRecognition }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.9">
+  <x-import component-from-global-scope="hero-3d" from="./hero3d.js" mode="ambient" variant="rings" accent="#e8836b" hint-size="100%,100vh"></x-import>
+</div>
+<main style="position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:100px 40px 60px;animation:rise 0.6s ease both">
+  <header style="min-height:56vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding-bottom:56px;margin-bottom:40px">
+    <div style="position:absolute;top:10px;right:0;font-family:'JetBrains Mono',monospace;font-size:280px;font-weight:700;line-height:1;color:rgba(232,131,107,0.07);pointer-events:none;user-select:none">02</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.3em;color:#e8836b;margin-bottom:20px">CHAPTER 02 · RECOGNITION</div>
+    <h1 style="font-size:clamp(54px,9vw,118px);font-weight:800;margin:0 0 22px;letter-spacing:-0.03em;line-height:0.95">In the press,<br>on the panel</h1>
+    <p style="color:#9a917d;font-weight:300;max-width:640px;margin:0;font-size:17px;line-height:1.7;text-wrap:pretty">Major media coverage, ten international judging panels, and memberships in selective professional communities.</p>
+    <div style="position:absolute;bottom:0;right:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#8f8570;animation:bob 2s ease-in-out infinite">SCROLL ↓</div>
+  </header>
+
+  <h2 style="font-size:26px;font-weight:800;margin:0 0 24px">Media features</h2>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:80px">
+    <sc-for list="{{ media }}" as="m" hint-placeholder-count="4">
+      <tilt-card>
+      <a href="{{ m.link }}" target="_blank" rel="noopener" style="border:1px solid #26221a;border-radius:4px;padding:26px;background:#12100c;color:inherit;display:flex;flex-direction:column;gap:10px;height:100%;box-sizing:border-box" style-hover="border-color:#e8b64c;color:inherit">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e8836b;letter-spacing:0.12em">{{ m.platform }} · {{ m.date }}</div>
+        <div style="font-size:17px;font-weight:700;line-height:1.4;color:#f0ead9">{{ m.title }}</div>
+        <div style="font-size:14px;line-height:1.6;color:#9a917d;font-weight:300">{{ m.description }}</div>
+      </a>
+      </tilt-card>
+    </sc-for>
+  </div>
+
+  <h2 style="font-size:26px;font-weight:800;margin:0 0 24px">Judging &amp; peer review</h2>
+  <div style="display:flex;flex-direction:column;margin-bottom:80px">
+    <sc-for list="{{ judging }}" as="j" hint-placeholder-count="6">
+      <div style="display:grid;grid-template-columns:190px 1fr;gap:26px;padding:24px 0;border-top:1px solid #26221a">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e8836b;margin-bottom:4px">{{ j.date }}</div>
+          <div style="font-size:14px;font-weight:600;color:#c9bfa4">{{ j.organization }}</div>
+        </div>
+        <div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:6px">{{ j.title }}</div>
+          <div style="font-size:14px;line-height:1.6;color:#9a917d;font-weight:300;margin-bottom:10px">{{ j.description }}</div>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:12px">
+            <sc-if value="{{ j.hasFeature }}" hint-placeholder-val="{{ false }}"><a href="{{ j.featureUrl }}" target="_blank" rel="noopener">Featured judge ↗</a></sc-if>
+            <sc-for list="{{ j.certs }}" as="c" hint-placeholder-count="0"><a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.name }} ↗</a></sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <h2 style="font-size:26px;font-weight:800;margin:0 0 8px">Memberships</h2>
+  <p style="color:#9a917d;font-weight:300;margin:0 0 24px">Selective professional communities requiring recognized expertise.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+    <tilt-card>
+    <a href="/membercert/growth hackers.png" target="_blank" rel="noopener" style="border:1px solid #26221a;border-radius:4px;padding:24px;background:#f5ede0;display:flex;flex-direction:column;align-items:center;gap:14px;color:#0d0c0a;height:100%;box-sizing:border-box" style-hover="border-color:#e8b64c;color:#0d0c0a">
+      <img src="assets/memberships/growth_hackers.png" alt="Growth Hackers membership logo" style="height:56px;object-fit:contain;max-width:100%">
+      <div style="font-size:12px;font-weight:600;text-align:center;line-height:1.4">Growth Hackers</div>
+    </a>
+    </tilt-card>
+    <tilt-card>
+    <a href="/membercert/harvard business review.jpg" target="_blank" rel="noopener" style="border:1px solid #26221a;border-radius:4px;padding:24px;background:#f5ede0;display:flex;flex-direction:column;align-items:center;gap:14px;color:#0d0c0a;height:100%;box-sizing:border-box" style-hover="border-color:#e8b64c;color:#0d0c0a">
+      <img src="assets/memberships/hbr.jpg" alt="Harvard Business Review Advisory Council membership logo" style="height:56px;object-fit:contain;max-width:100%">
+      <div style="font-size:12px;font-weight:600;text-align:center;line-height:1.4">Harvard Business Review</div>
+    </a>
+    </tilt-card>
+    <tilt-card>
+    <a href="/membercert/ISAC Membership Certificate-Sajud E..pdf" target="_blank" rel="noopener" style="border:1px solid #26221a;border-radius:4px;padding:24px;background:#f5ede0;display:flex;flex-direction:column;align-items:center;gap:14px;color:#0d0c0a;height:100%;box-sizing:border-box" style-hover="border-color:#e8b64c;color:#0d0c0a">
+      <img src="assets/memberships/isac.png" alt="International Society of Applied Computing membership logo" style="height:56px;object-fit:contain;max-width:100%">
+      <div style="font-size:12px;font-weight:600;text-align:center;line-height:1.4">International Society of Applied Computing</div>
+    </a>
+    </tilt-card>
+    <tilt-card>
+    <a href="/membercert/Vation Ventures.png" target="_blank" rel="noopener" style="border:1px solid #26221a;border-radius:4px;padding:24px;background:#f5ede0;display:flex;flex-direction:column;align-items:center;gap:14px;color:#0d0c0a;height:100%;box-sizing:border-box" style-hover="border-color:#e8b64c;color:#0d0c0a">
+      <img src="assets/memberships/vation.jpg" alt="Vation Ventures Technology Practitioner Council membership logo" style="height:56px;object-fit:contain;max-width:100%">
+      <div style="font-size:12px;font-weight:600;text-align:center;line-height:1.4">Vation Venture Technology Practitioner Council</div>
+    </a>
+    </tilt-card>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ isPatents }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.9">
+  <x-import component-from-global-scope="hero-3d" from="./hero3d.js" mode="ambient" variant="shapes" accent="#6bc9b4" hint-size="100%,100vh"></x-import>
+</div>
+<main style="position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:100px 40px 60px;animation:rise 0.6s ease both">
+  <header style="min-height:56vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding-bottom:56px;margin-bottom:20px">
+    <div style="position:absolute;top:10px;right:0;font-family:'JetBrains Mono',monospace;font-size:280px;font-weight:700;line-height:1;color:rgba(107,201,180,0.07);pointer-events:none;user-select:none">03</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.3em;color:#6bc9b4;margin-bottom:20px">CHAPTER 03 · INTELLECTUAL PROPERTY</div>
+    <h1 style="font-size:clamp(54px,9vw,118px);font-weight:800;margin:0 0 22px;letter-spacing:-0.03em;line-height:0.95">Granted patents</h1>
+    <p style="color:#9a917d;font-weight:300;max-width:640px;margin:0;font-size:17px;line-height:1.7;text-wrap:pretty">Two UK-granted registered designs for original inventions in financial risk computing and optical measurement.</p>
+    <div style="position:absolute;bottom:0;right:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#8f8570;animation:bob 2s ease-in-out infinite">SCROLL ↓</div>
+  </header>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px">
+    <sc-for list="{{ patents }}" as="pt" hint-placeholder-count="2">
+      <tilt-card>
+      <div style="border:1px solid #26221a;border-radius:4px;padding:36px;background:#12100c;display:flex;flex-direction:column;gap:14px;height:100%;box-sizing:border-box">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#6bc9b4;letter-spacing:0.1em">{{ pt.patentNumber }}</div>
+        <div style="font-size:21px;font-weight:700;line-height:1.35">{{ pt.title }}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8f8570">{{ pt.date }}</div>
+        <div style="font-size:14px;line-height:1.65;color:#9a917d;font-weight:300">{{ pt.description }}</div>
+        <div style="display:flex;gap:18px;font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:auto;padding-top:10px">
+          <a href="{{ pt.externalLink }}" target="_blank" rel="noopener">UK registry ↗</a>
+          <a href="{{ pt.pdfPath }}" target="_blank" rel="noopener">Certificate ↗</a>
+        </div>
+      </div>
+      </tilt-card>
+    </sc-for>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ isTestimonials }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.9">
+  <x-import component-from-global-scope="hero-3d" from="./hero3d.js" mode="ambient" variant="drift" accent="#c39ee8" hint-size="100%,100vh"></x-import>
+</div>
+<main style="position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:100px 40px 60px;animation:rise 0.6s ease both">
+  <header style="min-height:56vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding-bottom:56px;margin-bottom:40px">
+    <div style="position:absolute;top:10px;right:0;font-family:'JetBrains Mono',monospace;font-size:280px;font-weight:700;line-height:1;color:rgba(195,158,232,0.07);pointer-events:none;user-select:none">04</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.3em;color:#c39ee8;margin-bottom:20px">CHAPTER 04 · TESTIMONIALS</div>
+    <h1 style="font-size:clamp(54px,9vw,118px);font-weight:800;margin:0 0 22px;letter-spacing:-0.03em;line-height:0.95">In their words</h1>
+    <p style="color:#9a917d;font-weight:300;max-width:640px;margin:0;font-size:17px;line-height:1.7;text-wrap:pretty">Letters from founders, CTOs, and principal engineers who worked alongside him.</p>
+    <div style="position:absolute;bottom:0;right:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#8f8570;animation:bob 2s ease-in-out infinite">SCROLL ↓</div>
+  </header>
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <tilt-card max="4">
+    <div style="border:1px solid #26221a;border-radius:4px;padding:36px;background:#12100c;display:grid;grid-template-columns:96px 1fr;gap:28px;height:100%;box-sizing:border-box">
+      <img src="assets/testimonials/bharat.png" alt="Bharat Bhate" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid #2a261e">
+      <div>
+        <div style="font-size:16px;line-height:1.75;color:#c9bfa4;font-weight:300;margin-bottom:16px;text-wrap:pretty">“I am pleased to write this letter to confirm Mr. Sajud Elinjulliparambil's critical employment at Consultadd Inc. Mr. Elinjulliparambil is a distinguished expert in his field who plays a crucial role at ConsultAdd. As Senior Data Engineer, his technical skills and innovative approach were instrumental in shaping our client's success and driving its growth.”</div>
+        <div style="font-size:16px;font-weight:700;color:#c39ee8">Bharat Bhate</div>
+        <div style="font-size:13px;color:#8f8570;margin-bottom:10px">Founder / President of Consultadd Inc</div>
+        <div style="display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:12px">
+          <a href="https://www.linkedin.com/in/bhate/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="/Testimonial/pdfs/LOR Bharat Bhate Sajud.pdf" target="_blank" rel="noopener">Full letter ↗</a>
+        </div>
+      </div>
+    </div>
+    </tilt-card>
+    <tilt-card max="4">
+    <div style="border:1px solid #26221a;border-radius:4px;padding:36px;background:#12100c;display:grid;grid-template-columns:96px 1fr;gap:28px;height:100%;box-sizing:border-box">
+      <img src="assets/testimonials/brendten.jpg" alt="Brendten Eickstaedt" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid #2a261e">
+      <div>
+        <div style="font-size:16px;line-height:1.75;color:#c9bfa4;font-weight:300;margin-bottom:16px;text-wrap:pretty">“I first became acquainted with Mr. Sajud Elinjulliparambil through his impressive work with Fama Technologies. As a Developer at ConsultAdd, he played a crucial role in developing Fama's flagship product — an advanced AI tool designed to screen employment candidates. This cutting-edge tool sifts through data from over 10,000 online public sources to identify potential fraud indicators, illegal activities, or other risky behaviors. Mr. Elinjulliparambil's expertise in development and his innovative approach were instrumental in bringing this product to fruition.”</div>
+        <div style="font-size:16px;font-weight:700;color:#c39ee8">Brendten Eickstaedt</div>
+        <div style="font-size:13px;color:#8f8570;margin-bottom:10px">Chief Technology Officer at Fama Technologies</div>
+        <div style="display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:12px">
+          <a href="https://www.linkedin.com/in/brendteneickstaedt/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="/Testimonial/pdfs/Brendten Recommendation.pdf" target="_blank" rel="noopener">Full letter ↗</a>
+        </div>
+      </div>
+    </div>
+    </tilt-card>
+    <tilt-card max="4">
+    <div style="border:1px solid #26221a;border-radius:4px;padding:36px;background:#12100c;display:grid;grid-template-columns:96px 1fr;gap:28px;height:100%;box-sizing:border-box">
+      <img src="assets/testimonials/amir.jpg" alt="Amir Mirza" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid #2a261e">
+      <div>
+        <div style="font-size:16px;line-height:1.75;color:#c9bfa4;font-weight:300;margin-bottom:16px;text-wrap:pretty">“I had the pleasure of collaborating with Sajud on a cutting-edge Technology. Mr. Elinjulliparambil's role was of paramount importance, given the substantial responsibility he carried in managing high-stakes clients, including the City of London Police. In this capacity, he was entrusted with the critical task of analyzing complex system data to ensure the seamless operation of essential services.”</div>
+        <div style="font-size:16px;font-weight:700;color:#c39ee8">Amir Mirza</div>
+        <div style="font-size:13px;color:#8f8570;margin-bottom:10px">Monitoring Services Lead at Blenheim Chalcot</div>
+        <div style="display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:12px">
+          <a href="https://www.linkedin.com/in/amir-m-951b43141/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="/Testimonial/pdfs/Amir Mirza - Sajud Hamza.pdf" target="_blank" rel="noopener">Full letter ↗</a>
+        </div>
+      </div>
+    </div>
+    </tilt-card>
+    <tilt-card max="4">
+    <div style="border:1px solid #26221a;border-radius:4px;padding:36px;background:#12100c;display:grid;grid-template-columns:96px 1fr;gap:28px;height:100%;box-sizing:border-box">
+      <img src="assets/testimonials/okpara.jpg" alt="Okpara Uche" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid #2a261e">
+      <div>
+        <div style="font-size:16px;line-height:1.75;color:#c9bfa4;font-weight:300;margin-bottom:16px;text-wrap:pretty">“I had the pleasure of collaborating with Sajud on a cutting-edge machine learning project. His deep understanding of both theoretical concepts and practical implementation was key to our success. He is a dedicated and brilliant engineer who consistently delivers high-quality work.”</div>
+        <div style="font-size:16px;font-weight:700;color:#c39ee8">Okpara Uche</div>
+        <div style="font-size:13px;color:#8f8570;margin-bottom:10px">Principal AI Architect / ML Engineer</div>
+        <div style="display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:12px">
+          <a href="https://www.linkedin.com/in/uche-okpara-phd-pe-86a89516/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+    </tilt-card>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ isVault }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.9">
+  <x-import component-from-global-scope="hero-3d" from="./hero3d.js" mode="ambient" variant="rain" accent="#e0755f" hint-size="100%,100vh"></x-import>
+</div>
+<main style="position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:150px 40px 60px;animation:rise 0.6s ease both">
+  <div style="position:absolute;top:70px;right:40px;font-family:'JetBrains Mono',monospace;font-size:280px;font-weight:700;line-height:1;color:rgba(224,117,95,0.07);pointer-events:none;user-select:none">05</div>
+  <sc-if value="{{ notAuthed }}" hint-placeholder-val="{{ true }}">
+    <div style="max-width:440px;margin:60px auto;border:1px solid #26221a;border-radius:4px;padding:44px;background:#12100c;text-align:center">
+      <div style="width:52px;height:52px;border:1px solid #e0755f;border-radius:50%;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#e0755f">⬡</div>
+      <h1 style="font-size:26px;font-weight:800;margin:0 0 10px">Document vault</h1>
+      <p style="color:#9a917d;font-weight:300;font-size:14px;margin:0 0 28px">Enter the access password to view and download protected evidence files.</p>
+      <input type="password" value="{{ pw }}" onChange="{{ onPw }}" onKeyDown="{{ onPwKey }}" placeholder="Password" style="width:100%;padding:13px 16px;background:#0d0c0a;border:1px solid #2a261e;border-radius:3px;color:#f0ead9;font-family:'JetBrains Mono',monospace;font-size:14px;outline:none" style-focus="border-color:#e8b64c">
+      <sc-if value="{{ hasPwError }}" hint-placeholder-val="{{ false }}"><div style="color:#e06b5a;font-size:13px;margin-top:12px">{{ pwError }}</div></sc-if>
+      <button onClick="{{ tryLogin }}" style="cursor:pointer;width:100%;margin-top:18px;background:#e0755f;color:#0d0c0a;border:none;padding:14px;border-radius:3px;font-weight:700;font-size:15px;font-family:'Sora',sans-serif" style-hover="background:#eb9884">Unlock →</button>
+    </div>
+  </sc-if>
+  <sc-if value="{{ authed }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:20px;flex-wrap:wrap">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.24em;color:#e0755f;margin-bottom:16px">CHAPTER 05 · DOCUMENT VAULT · UNLOCKED</div>
+        <h1 style="font-size:44px;font-weight:800;margin:0;letter-spacing:-0.02em">Protected files</h1>
+      </div>
+      <button onClick="{{ logout }}" style="cursor:pointer;background:transparent;color:#8f8570;border:1px solid #2a261e;padding:10px 18px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px" style-hover="color:#e06b5a;border-color:#e06b5a">LOCK VAULT</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:34px">
+      <sc-for list="{{ vaultFolders }}" as="fd" hint-placeholder-count="4">
+        <div>
+          <button onClick="{{ fd.toggle }}" style="cursor:pointer;background:none;border:none;padding:0;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.14em;color:#e0755f;margin-bottom:12px;text-transform:uppercase;display:flex;align-items:center;gap:8px" style-hover="color:#eb9884">{{ fd.arrow }} {{ fd.folderName }} <span style="color:#8f8570">({{ fd.count }})</span></button>
+          <sc-if value="{{ fd.open }}" hint-placeholder-val="{{ true }}">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+            <sc-for list="{{ fd.files }}" as="f" hint-placeholder-count="3">
+              <a href="{{ f.url }}" target="_blank" rel="noopener" download style="display:flex;align-items:center;gap:12px;min-width:0;border:1px solid #26221a;border-radius:3px;padding:14px 16px;background:#12100c;color:#c9bfa4;font-size:13px" style-hover="border-color:#e8b64c;color:#f0ead9">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#e0755f;border:1px solid #3d3728;padding:2px 6px;border-radius:2px">{{ f.type }}</span>
+                <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0">{{ f.name }}</span>
+              </a>
+            </sc-for>
+          </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+</main>
+</sc-if>
+
+<footer style="border-top:1px solid #26221a;margin-top:100px">
+  <div style="max-width:1200px;margin:0 auto;padding:60px 40px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;letter-spacing:0.08em;margin-bottom:10px">SAJUD<span style="color:#e8b64c">/</span>HAMZA</div>
+      <div style="font-size:13px;color:#8f8570;font-weight:300;max-width:480px;line-height:1.7">AI &amp; machine learning researcher · Senior Data Engineer · Ph.D. candidate, Pace University · New York, NY</div>
+    </div>
+    <div style="display:flex;gap:24px;font-family:'JetBrains Mono',monospace;font-size:13px">
+      <a href="mailto:sajudhamza@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/sajud-hamza/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/sajudhamza" target="_blank" rel="noopener">GitHub</a>
+      <a href="tel:+12019204767">+1 (201) 920-4767</a>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;particleDensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.4,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showTrivia&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  state = {
+    page: 'home',
+    authed: typeof sessionStorage !== 'undefined' && sessionStorage.getItem('isAuthenticated') === 'true',
+    pw: '', pwError: '',
+    data: null,
+    roleText: '',
+    tq: [], tIdx: 0, tScore: 0, tSelected: -1, tDone: false,
+    pubYear: 'ALL', closedFolders: {}
+  };
+
+  componentDidMount() {
+    this._onHeroNav = (e) => this._go(e.detail);
+    window.addEventListener('hero3d-nav', this._onHeroNav);
+    import('./data/portfolioData.js').then(d => {
+      this._d = d;
+      this.setState({ data: true, tq: this._sample(d.triviaQuestions, 10) });
+    });
+    this._roles = ['Senior Data Engineer', 'AI & ML Researcher', 'Ph.D. Candidate in Computer Science', 'Published Author — 20+ papers', 'International Award Judge', 'Inventor — 2 UK Patents'];
+    this._ri = 0; this._ci = 0; this._del = false;
+    this._tick = setInterval(() => this._type(), 65);
+  }
+  componentWillUnmount() { clearInterval(this._tick); window.removeEventListener('hero3d-nav', this._onHeroNav); }
+
+  _type() {
+    const word = this._roles[this._ri];
+    if (!this._del) {
+      this._ci++;
+      if (this._ci > word.length) { this._del = true; this._pause = 22; }
+    } else if (this._pause > 0) { this._pause--; }
+    else {
+      this._ci--;
+      if (this._ci === 0) { this._del = false; this._ri = (this._ri + 1) % this._roles.length; }
+    }
+    const txt = word.slice(0, this._ci);
+    if (txt !== this.state.roleText) this.setState({ roleText: txt });
+  }
+
+  _sample(arr, n) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a.slice(0, n);
+  }
+
+  _go(page) {
+    if (page === this.state.page) return;
+    const meta = { home: ['HOME', '#e8b64c'], research: ['RESEARCH', '#e8b64c'], recognition: ['RECOGNITION', '#e8836b'], patents: ['PATENTS', '#6bc9b4'], testimonials: ['TESTIMONIALS', '#c39ee8'], vault: ['VAULT', '#e0755f'] }[page] || ['', '#e8b64c'];
+    clearTimeout(this._t1); clearTimeout(this._t2);
+    this.setState({ trans: true, transLabel: meta[0], transAccent: meta[1] });
+    this._t1 = setTimeout(() => this._switch(page), 360);
+    this._t2 = setTimeout(() => this.setState({ trans: false }), 950);
+  }
+
+  _switch(page) {
+    this.setState({ page });
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    const titles = {
+      home: 'Sajud Hamza Elinjulliparambil — AI & ML Researcher, Senior Data Engineer',
+      research: 'Publications & Research — Sajud Hamza',
+      recognition: 'Media, Judging & Memberships — Sajud Hamza',
+      patents: 'Granted Patents — Sajud Hamza',
+      testimonials: 'Testimonials — Sajud Hamza',
+      vault: 'Document Vault — Sajud Hamza'
+    };
+    document.title = titles[page] || titles.home;
+  }
+
+  renderVals() {
+    const d = this._d || {};
+    const s = this.state;
+    const pages = [
+      { key: 'home', label: 'HOME' },
+      { key: 'research', label: 'RESEARCH' },
+      { key: 'recognition', label: 'RECOGNITION' },
+      { key: 'patents', label: 'PATENTS' },
+      { key: 'testimonials', label: 'TESTIMONIALS' },
+      { key: 'vault', label: 'VAULT' }
+    ];
+    const navItems = pages.map(p => ({
+      label: p.label,
+      color: s.page === p.key ? '#e8b64c' : '#9a917d',
+      underline: s.page === p.key ? '1px solid #e8b64c' : '1px solid transparent',
+      go: () => this._go(p.key)
+    }));
+
+    const allPubs = (d.publications || []).slice().sort((a, b) => (+b.year) - (+a.year));
+    const years = ['ALL', ...Array.from(new Set(allPubs.map(p => p.year))).sort((a, b) => (+b) - (+a))];
+    const yearChips = years.map(y => {
+      const on = s.pubYear === y;
+      return {
+        label: y === 'ALL' ? 'ALL (' + allPubs.length + ')' : y,
+        bg: on ? '#e8b64c' : 'transparent', color: on ? '#0d0c0a' : '#9a917d', border: on ? '#e8b64c' : '#2a261e',
+        pick: () => this.setState({ pubYear: y })
+      };
+    });
+    const pubs = s.pubYear === 'ALL' ? allPubs : allPubs.filter(p => p.year === s.pubYear);
+    const memberLogos = { 'Growth Hackers': 'assets/memberships/growth_hackers.png', 'Harvard Business Review': 'assets/memberships/hbr.jpg', 'International Society of Applied Computing': 'assets/memberships/isac.png', 'Vation Venture Technology Practitioner Council': 'assets/memberships/vation.jpg' };
+    const testiImgs = { 'Bharat-Bhate': 'assets/testimonials/bharat.png', 'Brendten-Eickstaedt': 'assets/testimonials/brendten.jpg', 'Amir-Mirza': 'assets/testimonials/amir.jpg', 'Okpara-Uche': 'assets/testimonials/okpara.jpg' };
+
+    // trivia
+    const q = s.tq[s.tIdx];
+    const triviaOptions = q ? q.options.map((label, i) => {
+      const answered = s.tSelected >= 0;
+      let bg = '#0d0c0a', border = '#2a261e', color = '#c9bfa4';
+      if (answered && i === q.correctAnswer) { bg = 'rgba(120,180,90,0.12)'; border = '#7ab45a'; color = '#a8d68a'; }
+      else if (answered && i === s.tSelected) { bg = 'rgba(224,107,90,0.12)'; border = '#e06b5a'; color = '#e8988b'; }
+      return { label, bg, border, color, pick: () => { if (s.tSelected < 0) this.setState({ tSelected: i, tScore: s.tScore + (i === q.correctAnswer ? 1 : 0) }); } };
+    }) : [];
+
+    return {
+      navItems,
+      transitioning: !!s.trans, transLabel: s.transLabel || '', transAccent: s.transAccent || '#e8b64c',
+      isHome: s.page === 'home', notHome: s.page !== 'home', isResearch: s.page === 'research', isRecognition: s.page === 'recognition',
+      isPatents: s.page === 'patents', isTestimonials: s.page === 'testimonials', isVault: s.page === 'vault',
+      goHome: () => this._go('home'), goResearch: () => this._go('research'), goVault: () => this._go('vault'),
+      roleText: s.roleText,
+      particleDensity: String(this.props.particleDensity ?? 1),
+      showTrivia: this.props.showTrivia ?? true,
+      stats: [
+        { value: (d.publications ? d.publications.length : 20) + '+', label: 'PEER-REVIEWED PUBLICATIONS' },
+        { value: (d.judgingExperiences ? d.judgingExperiences.length : 10), label: 'INTERNATIONAL JUDGING PANELS' },
+        { value: '2', label: 'UK PATENTS GRANTED' },
+        { value: (d.mediaAppearances ? d.mediaAppearances.length : 4), label: 'MAJOR MEDIA FEATURES' }
+      ],
+      expertise: [
+        { num: '01', title: 'AI & Predictive Analytics', desc: 'Risk scoring and candidate-screening models over 10,000+ public data sources — NLP, tree ensembles, supervised learning at production scale.' },
+        { num: '02', title: 'Large-Scale Data Engineering', desc: 'PySpark and Spark SQL lakehouse pipelines; HBase tuning delivering ~70% performance gains on million-record workloads.' },
+        { num: '03', title: 'Cloud & Serverless Architecture', desc: 'AWS Lambda, API Gateway, DynamoDB, Redshift — zero-downtime CI/CD across regulated production environments.' },
+        { num: '04', title: 'Secure Full-Stack Systems', desc: 'Millisecond-SLA Web APIs guarding PII for ~1,500 NYC schools and retirement data for millions of Americans.' },
+        { num: '05', title: 'Computer Vision Research', desc: 'Published work on ViT, NeRF, diffusion models, skeleton GNNs, and quantum-inspired low-light imaging.' },
+        { num: '06', title: 'Federated & Healthcare AI', desc: 'FedShield intrusion detection (IEEE), federated predictive analytics for chronic disease, FDA-pathway clinical platforms.' }
+      ],
+      skillGroups: [
+        { title: 'PROGRAMMING', skills: ['Python', 'SQL', 'JavaScript', 'Java', 'Scala', 'R'] },
+        { title: 'AI & MACHINE LEARNING', skills: ['Deep Learning', 'NLP', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'Computer Vision'] },
+        { title: 'DATA ENGINEERING', skills: ['PySpark', 'ETL/ELT', 'Apache Spark', 'Hadoop', 'Snowflake', 'dbt', 'PostgreSQL', 'MongoDB', 'Redis'] },
+        { title: 'CLOUD & DEVOPS', skills: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Airflow', 'CI/CD'] }
+      ],
+      pubs, arts: d.articles || [], media: d.mediaAppearances || [],
+      judging: (d.judgingExperiences || []).map(j => ({
+        title: j.title, organization: j.organization, date: j.date, description: j.description,
+        hasFeature: !!(j.judgeFeature && j.judgeFeature.url && j.judgeFeature.url.startsWith('http')),
+        featureUrl: j.judgeFeature ? j.judgeFeature.url : '#',
+        certs: j.certificateLinks || []
+      })),
+      members: (d.memberships || []).map(m => ({ name: m.name, logo: memberLogos[m.name] || m.logoUrl, certificateUrl: m.certificateUrl })),
+      patents: d.patents || [],
+      testimonials: (d.testimonials || []).map(t => ({ ...t, img: testiImgs[t.id] || t.imageUrl })),
+      // vault
+      authed: s.authed, notAuthed: !s.authed,
+      pw: s.pw, pwError: s.pwError, hasPwError: !!s.pwError,
+      onPw: (e) => this.setState({ pw: e.target.value, pwError: '' }),
+      onPwKey: (e) => { if (e.key === 'Enter') this._login(); },
+      tryLogin: () => this._login(),
+      logout: () => { sessionStorage.removeItem('isAuthenticated'); this.setState({ authed: false, pw: '' }); },
+      yearChips,
+      vaultFolders: (d.protectedFiles || []).map(fd => ({
+        ...fd, count: fd.files.length,
+        open: !s.closedFolders[fd.folderName],
+        arrow: s.closedFolders[fd.folderName] ? '▸' : '▾',
+        toggle: () => this.setState({ closedFolders: { ...s.closedFolders, [fd.folderName]: !s.closedFolders[fd.folderName] } })
+      })),
+      // trivia
+      triviaActive: !s.tDone && !!q,
+      triviaDone: s.tDone,
+      triviaQuestion: q ? q.question : '',
+      triviaOptions,
+      triviaAnswered: s.tSelected >= 0,
+      triviaProgress: 'QUESTION ' + (s.tIdx + 1) + ' / ' + s.tq.length,
+      triviaScoreLive: 'SCORE ' + s.tScore,
+      triviaNextLabel: s.tIdx + 1 >= s.tq.length ? 'See results' : 'Next question →',
+      triviaNext: () => {
+        if (s.tIdx + 1 >= s.tq.length) this.setState({ tDone: true });
+        else this.setState({ tIdx: s.tIdx + 1, tSelected: -1 });
+      },
+      triviaScoreText: s.tScore + ' / ' + s.tq.length,
+      triviaVerdict: s.tScore >= 8 ? 'Impressive — we should talk.' : s.tScore >= 5 ? 'Solid fundamentals.' : 'The field moves fast — come back for a rematch.',
+      triviaRestart: () => this.setState({ tq: this._sample(this._d ? this._d.triviaQuestions : [], 10), tIdx: 0, tScore: 0, tSelected: -1, tDone: false })
+    };
+  }
+
+  _login() {
+    if (this.state.pw === 'Sajud@1234') {
+      sessionStorage.setItem('isAuthenticated', 'true');
+      this.setState({ authed: true, pwError: '' });
+    } else {
+      this.setState({ pwError: 'Incorrect password. Please try again.', pw: '' });
+    }
+  }
+}
+</script>
+</body>
 </html>

@@ -1,12 +1,54 @@
-# React + Vite
+# Sajud Hamza — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Immersive personal portfolio for www.sajudhamza.com. Plain HTML/JS — no build step,
+no npm install. Any static file server runs it.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+npx serve            # or: python3 -m http.server 8000
+```
+Open the printed localhost URL. Do NOT open index.html directly from the file
+manager — the browser blocks local file loads; it must go through a server.
 
-## Expanding the ESLint configuration
+## File map
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| File | What it is |
+|---|---|
+| `index.html` | The whole site: markup, styles (inline), and the app logic class at the bottom in `<script data-dc-script>` |
+| `support.js` | Runtime that renders index.html's template (loads React from CDN). Don't edit |
+| `hero3d.js` | All three.js scenes: interactive hero (drag/click nodes) + per-page ambient variants (`waves`, `rings`, `shapes`, `drift`, `rain`) |
+| `tilt-card.js` | `<tilt-card>` hover-tilt wrapper used on cards |
+| `data/portfolioData.js` | **All content lives here**: publications, articles, media, judging, patents, memberships, testimonials, protected files, trivia questions |
+| `assets/` | Profile photo, membership logos, testimonial photos |
+
+## Common edits
+
+**Add a publication / article / judging role / media feature / vault file:**
+edit the matching array in `data/portfolioData.js` — the site picks it up automatically.
+Counts (stats bar, chips) update on their own.
+
+**Change bio, hero copy, education, skills:** search the text in `index.html` and edit
+in place. Skills/education are in the logic class near the bottom (`skillGroups`) and
+the EDUCATION section markup.
+
+**Change the vault password:** in `index.html`, search `Sajud@1234` in the logic class.
+Note: it's client-side (visible to anyone reading the source), same as the original site.
+
+**Page accent colors:** each page ("chapter") has a hard-coded accent —
+amber `#e8b64c` (home/research), coral `#e8836b` (recognition), teal `#6bc9b4`
+(patents), mauve `#c39ee8` (testimonials), ember `#e0755f` (vault). Search-and-replace
+a hex to retheme a chapter; also update it in the `_go()` transition map in the logic class.
+
+**3D scenes:** particle counts, speeds, and shapes are all in `hero3d.js`, one
+`variant === '...'` block per page.
+
+**SEO:** title/description/OG tags and the JSON-LD Person schema are at the top of
+`index.html` inside `<helmet>`.
+
+## Deploying
+
+Links to certificates, testimonial letters, and vault documents point to root paths
+(`/membercert/...`, `/protected_files/...`, `/Testimonial/...`, `/patents/...`).
+They 404 locally — they resolve once deployed alongside those folders from the
+repo's `public/` directory. See the separate deploy package's README for repo steps.
