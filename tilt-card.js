@@ -7,6 +7,7 @@
       this.style.perspective = '900px';
       const inner = this.firstElementChild;
       if (!inner) return;
+      if (window.matchMedia('(pointer: coarse)').matches) return;
       inner.style.transition = 'transform 0.12s ease-out, box-shadow 0.25s ease';
       inner.style.transformStyle = 'preserve-3d';
       inner.style.willChange = 'transform';

@@ -78,6 +78,7 @@
 
   function onPointerMove(e) {
     if (muted) return;
+    if (e.pointerType === 'touch') return;
     if (!ensure()) return;
     if (ctx.state === 'suspended') ctx.resume();
     unlocked = true;

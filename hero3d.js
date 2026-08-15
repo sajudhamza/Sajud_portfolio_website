@@ -12,17 +12,18 @@
       let THREE;
       try { THREE = await import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js'); }
       catch (e) { return; }
+      const coarse = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
       const density = parseFloat(this.getAttribute('density') || '1');
       const accent = this.getAttribute('accent') || '#e8b64c';
       const ambient = this.getAttribute('mode') === 'ambient';
       const variant = this.getAttribute('variant') || 'drift';
       const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true, powerPreference: 'low-power' });
-      renderer.setPixelRatio(Math.min(devicePixelRatio, 1));
+      renderer.setPixelRatio(Math.min(devicePixelRatio, coarse ? 1 : 1));
       this.appendChild(renderer.domElement);
       renderer.domElement.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;';
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
-      camera.position.z = ambient ? 20 : 16;
+      camera.position.z = ambient ? 20 : (coarse ? 18 : 16);
 
       let update = () => {};
       const sats = [];
@@ -43,7 +44,7 @@
 
       if (!ambient) {
         // ---------- HERO ----------
-        const { pts, cloud } = makeCloud(Math.round(110 * density), 12, 0.13, 0.9);
+        const { pts, cloud } = makeCloud(Math.round((coarse ? 70 : 110) * density), 12, 0.13, 0.9);
         scene.add(cloud);
         const linePos = [];
         for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
@@ -112,7 +113,7 @@
         };
       } else if (variant === 'waves') {
         // ---------- data-field wave grid ----------
-        const cols = 42, rows = 20, pos = new Float32Array(cols * rows * 3);
+        const cols = coarse ? 28 : 42, rows = coarse ? 14 : 20, pos = new Float32Array(cols * rows * 3);
         let k = 0;
         for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
           pos[k++] = (i - cols / 2) * 0.55; pos[k++] = 0; pos[k++] = (j - rows / 2) * 0.55;
@@ -166,7 +167,7 @@
         };
       } else if (variant === 'rain') {
         // ---------- falling cipher rain ----------
-        const n = 140, pos = new Float32Array(n * 3), speed = new Float32Array(n);
+        const n = coarse ? 80 : 140, pos = new Float32Array(n * 3), speed = new Float32Array(n);
         for (let i = 0; i < n; i++) {
           pos[i * 3] = (Math.random() - 0.5) * 34;
           pos[i * 3 + 1] = (Math.random() - 0.5) * 24;
@@ -221,14 +222,18 @@
 
       if (!ambient) {
         const el = renderer.domElement;
-        el.style.cursor = 'grab';
+        el.style.cursor = coarse ? 'pointer' : 'grab';
         el.addEventListener('pointerdown', (e) => {
-          dragging = true; lastX = e.clientX; downX = e.clientX; downY = e.clientY;
-          el.style.cursor = 'grabbing'; el.setPointerCapture(e.pointerId);
+          downX = e.clientX; downY = e.clientY; lastX = e.clientX;
+          if (e.pointerType === 'touch' || coarse) return;
+          dragging = true;
+          el.style.cursor = 'grabbing';
+          el.setPointerCapture(e.pointerId);
         });
         let lastRay = 0;
         const satHalos = () => sats.map(s => s.userData.halo);
         el.addEventListener('pointermove', (e) => {
+          if (e.pointerType === 'touch' || coarse) return;
           if (dragging) {
             const dx = e.clientX - lastX; lastX = e.clientX;
             dragX += dx * 0.005; dragVel = dx * 0.005;
@@ -243,15 +248,19 @@
             if (g !== hovered) { hovered = g; el.style.cursor = g ? 'pointer' : 'grab'; }
           }
         });
-        el.addEventListener('pointerup', (e) => {
-          dragging = false; el.style.cursor = hovered ? 'pointer' : 'grab';
-          if (Math.hypot(e.clientX - downX, e.clientY - downY) < 6) {
+        const endPointer = (e) => {
+          dragging = false;
+          if (e.pointerType !== 'touch' && !coarse) el.style.cursor = hovered ? 'pointer' : 'grab';
+          const slop = (e.pointerType === 'touch' || coarse) ? 14 : 6;
+          if (Math.hypot(e.clientX - downX, e.clientY - downY) < slop) {
             toNdc(e);
             ray.setFromCamera(ndc, camera);
             const hits = ray.intersectObjects(sats.map(s => s.userData.halo));
             if (hits.length) window.dispatchEvent(new CustomEvent('hero3d-nav', { detail: hits[0].object.parent.userData.page }));
           }
-        });
+        };
+        el.addEventListener('pointerup', endPointer);
+        el.addEventListener('pointercancel', () => { dragging = false; });
         el.addEventListener('pointerleave', () => { hovered = null; });
       }
 
