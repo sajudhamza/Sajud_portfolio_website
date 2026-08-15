@@ -16,8 +16,8 @@
       const accent = this.getAttribute('accent') || '#e8b64c';
       const ambient = this.getAttribute('mode') === 'ambient';
       const variant = this.getAttribute('variant') || 'drift';
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+      const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true, powerPreference: 'low-power' });
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 1));
       this.appendChild(renderer.domElement);
       renderer.domElement.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;';
       const scene = new THREE.Scene();
@@ -43,11 +43,11 @@
 
       if (!ambient) {
         // ---------- HERO ----------
-        const { pts, cloud } = makeCloud(Math.round(260 * density), 12, 0.11, 0.9);
+        const { pts, cloud } = makeCloud(Math.round(110 * density), 12, 0.13, 0.9);
         scene.add(cloud);
         const linePos = [];
         for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
-          if (pts[i].distanceTo(pts[j]) < 2.6) linePos.push(pts[i].x, pts[i].y, pts[i].z, pts[j].x, pts[j].y, pts[j].z);
+          if (pts[i].distanceTo(pts[j]) < 2.15) linePos.push(pts[i].x, pts[i].y, pts[i].z, pts[j].x, pts[j].y, pts[j].z);
         }
         const lgeo = new THREE.BufferGeometry();
         lgeo.setAttribute('position', new THREE.Float32BufferAttribute(linePos, 3));
@@ -112,7 +112,7 @@
         };
       } else if (variant === 'waves') {
         // ---------- data-field wave grid ----------
-        const cols = 70, rows = 34, pos = new Float32Array(cols * rows * 3);
+        const cols = 42, rows = 20, pos = new Float32Array(cols * rows * 3);
         let k = 0;
         for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
           pos[k++] = (i - cols / 2) * 0.55; pos[k++] = 0; pos[k++] = (j - rows / 2) * 0.55;
@@ -135,8 +135,8 @@
       } else if (variant === 'rings') {
         // ---------- concentric spotlight rings ----------
         const rings = [];
-        for (let r = 0; r < 6; r++) {
-          const radius = 3.5 + r * 2.1, n = 60 + r * 26, pts = [];
+        for (let r = 0; r < 4; r++) {
+          const radius = 3.5 + r * 2.6, n = 36 + r * 10, pts = [];
           for (let i = 0; i < n; i++) {
             const a = (i / n) * Math.PI * 2;
             pts.push(new THREE.Vector3(Math.cos(a) * radius, Math.sin(a) * radius, (Math.random() - 0.5) * 0.4));
@@ -150,7 +150,7 @@
         // ---------- blueprint wireframes ----------
         const grp = new THREE.Group(); scene.add(grp);
         const m = (o) => new THREE.MeshBasicMaterial({ color: accent, wireframe: true, transparent: true, opacity: o });
-        const knot = new THREE.Mesh(new THREE.TorusKnotGeometry(4.6, 1.2, 90, 12), m(0.08));
+        const knot = new THREE.Mesh(new THREE.TorusKnotGeometry(4.6, 1.2, 48, 8), m(0.08));
         knot.position.set(6, 1, -4);
         const ico = new THREE.Mesh(new THREE.IcosahedronGeometry(2.6, 0), m(0.12));
         ico.position.set(-8, -2, -2);
@@ -166,7 +166,7 @@
         };
       } else if (variant === 'rain') {
         // ---------- falling cipher rain ----------
-        const n = 320, pos = new Float32Array(n * 3), speed = new Float32Array(n);
+        const n = 140, pos = new Float32Array(n * 3), speed = new Float32Array(n);
         for (let i = 0; i < n; i++) {
           pos[i * 3] = (Math.random() - 0.5) * 34;
           pos[i * 3 + 1] = (Math.random() - 0.5) * 24;
@@ -187,11 +187,11 @@
         };
       } else {
         // ---------- drift (default ambient) ----------
-        const { pts, cloud } = makeCloud(Math.round(150 * density), 12, 0.08, 0.45);
+        const { pts, cloud } = makeCloud(Math.round(70 * density), 12, 0.09, 0.45);
         scene.add(cloud);
         const linePos = [];
         for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
-          if (pts[i].distanceTo(pts[j]) < 2.6) linePos.push(pts[i].x, pts[i].y, pts[i].z, pts[j].x, pts[j].y, pts[j].z);
+          if (pts[i].distanceTo(pts[j]) < 2.15) linePos.push(pts[i].x, pts[i].y, pts[i].z, pts[j].x, pts[j].y, pts[j].z);
         }
         const lgeo = new THREE.BufferGeometry();
         lgeo.setAttribute('position', new THREE.Float32BufferAttribute(linePos, 3));
@@ -226,14 +226,19 @@
           dragging = true; lastX = e.clientX; downX = e.clientX; downY = e.clientY;
           el.style.cursor = 'grabbing'; el.setPointerCapture(e.pointerId);
         });
+        let lastRay = 0;
+        const satHalos = () => sats.map(s => s.userData.halo);
         el.addEventListener('pointermove', (e) => {
           if (dragging) {
             const dx = e.clientX - lastX; lastX = e.clientX;
             dragX += dx * 0.005; dragVel = dx * 0.005;
           } else {
+            const now = performance.now();
+            if (now - lastRay < 50) return;
+            lastRay = now;
             toNdc(e);
             ray.setFromCamera(ndc, camera);
-            const hits = ray.intersectObjects(sats.map(s => s.userData.halo));
+            const hits = ray.intersectObjects(satHalos());
             const g = hits.length ? hits[0].object.parent : null;
             if (g !== hovered) { hovered = g; el.style.cursor = g ? 'pointer' : 'grab'; }
           }
@@ -259,8 +264,16 @@
       new ResizeObserver(resize).observe(this);
 
       const clock = new THREE.Clock();
+      let raf = 0;
+      let onScreen = true;
       const loop = () => {
-        if (!this.isConnected) { renderer.dispose(); window.removeEventListener('pointermove', onMove); return; }
+        raf = 0;
+        if (!this.isConnected) {
+          renderer.dispose();
+          window.removeEventListener('pointermove', onMove);
+          return;
+        }
+        if (document.hidden || !onScreen) return;
         const t = clock.getElapsedTime();
         mx += (tx - mx) * 0.04; my += (ty - my) * 0.04;
         if (!ambient && !dragging) { dragX += dragVel; dragVel *= 0.95; }
@@ -268,9 +281,15 @@
         camera.position.x = mx * 1.2; camera.position.y = -my * 0.8;
         camera.lookAt(0, 0, 0);
         renderer.render(scene, camera);
-        requestAnimationFrame(loop);
+        raf = requestAnimationFrame(loop);
       };
-      loop();
+      const kick = () => { if (!raf && this.isConnected && !document.hidden && onScreen) raf = requestAnimationFrame(loop); };
+      document.addEventListener('visibilitychange', kick);
+      new IntersectionObserver(([entry]) => {
+        onScreen = !!entry && entry.isIntersecting;
+        if (onScreen) kick();
+      }, { threshold: 0.01 }).observe(this);
+      kick();
     }
   }
   if (!customElements.get('hero-3d')) customElements.define('hero-3d', Hero3D);

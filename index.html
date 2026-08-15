@@ -45,7 +45,7 @@ a:hover{color:#f2cf82}
     <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="6">
       <button onClick="{{ n.go }}" style="background:none;border:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;padding:4px 0;color: {{ n.color }}; border-bottom: {{ n.underline }}">{{ n.label }}</button>
     </sc-for>
-    <button type="button" data-sfx-toggle onClick="{{ toggleSound }}" aria-pressed="false" title="Enable immersive sound" style="background:none;border:1px solid #3d3728;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;padding:7px 12px;border-radius:3px;color:#9a917d" style-hover="border-color:#e8b64c;color:#e8b64c">SOUND OFF</button>
+    <button type="button" data-sfx-toggle onClick="{{ toggleSound }}" aria-pressed="true" title="Mute sound" style="background:none;border:1px solid #3d3728;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;padding:7px 12px;border-radius:3px;color:#9a917d" style-hover="border-color:#e8b64c;color:#e8b64c">SOUND ON</button>
     <a href="mailto:sajudhamza@gmail.com" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#0d0c0a;background:#e8b64c;padding:9px 16px;border-radius:3px;font-weight:700" style-hover="background:#f2cf82;color:#0d0c0a">CONTACT</a>
   </div>
 </nav>
@@ -58,7 +58,7 @@ a:hover{color:#f2cf82}
     <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:140px 40px 170px;width:100%;pointer-events:none">
       <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#e8b64c;margin-bottom:22px;animation:rise 0.7s ease both">ARTIFICIAL INTELLIGENCE · DATA ENGINEERING · RESEARCH</div>
       <h1 style="font-size:clamp(44px,6.5vw,84px);font-weight:800;line-height:1.02;margin:0 0 18px;letter-spacing:-0.02em;animation:rise 0.7s 0.1s ease both">Sajud Hamza<br>Elinjulliparambil</h1>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(16px,2vw,22px);color:#c9bfa4;height:32px;margin-bottom:26px;animation:rise 0.7s 0.2s ease both">{{ roleText }}<span style="color:#e8b64c;animation:blink 1s step-end infinite">_</span></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(16px,2vw,22px);color:#c9bfa4;height:32px;margin-bottom:26px;animation:rise 0.7s 0.2s ease both"><span id="role-typewriter"></span><span style="color:#e8b64c;animation:blink 1s step-end infinite">_</span></div>
       <p style="max-width:640px;font-size:17px;line-height:1.7;color:#b5ab92;font-weight:300;margin:0 0 38px;animation:rise 0.7s 0.3s ease both;text-wrap:pretty">I build AI systems with national-scale consequences — screening platforms that keep American workplaces and schools safe, data pipelines guarding the retirement savings of millions, and clinical-trial infrastructure on FDA approval pathways.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;pointer-events:auto;animation:rise 0.7s 0.4s ease both">
         <button onClick="{{ goResearch }}" style="cursor:pointer;background:#e8b64c;color:#0d0c0a;border:none;padding:15px 28px;border-radius:3px;font-family:'Sora',sans-serif;font-weight:700;font-size:15px" style-hover="background:#f2cf82">Explore the research →</button>
@@ -491,7 +491,6 @@ class Component extends DCLogic {
     authed: typeof sessionStorage !== 'undefined' && sessionStorage.getItem('isAuthenticated') === 'true',
     pw: '', pwError: '',
     data: null,
-    roleText: '',
     tq: [], tIdx: 0, tScore: 0, tSelected: -1, tDone: false,
     pubYear: 'ALL', closedFolders: {}
   };
@@ -505,7 +504,7 @@ class Component extends DCLogic {
     });
     this._roles = ['Senior Data Engineer', 'AI & ML Researcher', 'Ph.D. Candidate in Computer Science', 'Published Author — 20+ papers', 'International Award Judge', 'Inventor — 2 UK Patents'];
     this._ri = 0; this._ci = 0; this._del = false;
-    this._tick = setInterval(() => this._type(), 65);
+    this._tick = setInterval(() => this._type(), 110);
     if (window.PortfolioSFX) {
       window.PortfolioSFX.bindUnlock();
       window.PortfolioSFX.syncToggle();
@@ -524,8 +523,8 @@ class Component extends DCLogic {
       this._ci--;
       if (this._ci === 0) { this._del = false; this._ri = (this._ri + 1) % this._roles.length; }
     }
-    const txt = word.slice(0, this._ci);
-    if (txt !== this.state.roleText) this.setState({ roleText: txt });
+    const el = document.getElementById('role-typewriter');
+    if (el) el.textContent = word.slice(0, this._ci);
   }
 
   _sample(arr, n) {
@@ -612,7 +611,6 @@ class Component extends DCLogic {
       isPatents: s.page === 'patents', isTestimonials: s.page === 'testimonials', isVault: s.page === 'vault',
       goHome: () => this._go('home'), goResearch: () => this._go('research'), goVault: () => this._go('vault'),
       toggleSound: () => { if (window.PortfolioSFX) window.PortfolioSFX.toggleMute(); },
-      roleText: s.roleText,
       particleDensity: String(this.props.particleDensity ?? 1),
       showTrivia: this.props.showTrivia ?? true,
       stats: [
