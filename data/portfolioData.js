@@ -516,7 +516,7 @@ export const protectedFiles = [
       {
         name: "i-20 2020 Apr",
         type: "PDF",
-        url: "/protected_files/i-20/i20-OPT.pdf"
+        url: "/protected_files/i-20/I20-Opt.pdf"
       },
       {
         name: "i-20 2020 Aug",
@@ -536,7 +536,7 @@ export const protectedFiles = [
       {
         name: "i-20 2022 Oct",
         type: "PDF",
-        url: "/protected_files/i-20/2022 i-20 Travel Signature.pdf"
+        url: "/protected_files/i-20/2022 I-20 Travel Signature.pdf"
       },
       {
         name: "i-20 2023 Apr",
@@ -569,6 +569,11 @@ export const protectedFiles = [
         url: "/protected_files/i-20/CPT Approved Summer 2024 Form I-20.pdf"
       },
       {
+        name: "i-20 2024 Oct",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Fall 2024 Form I-20.pdf"
+      },
+      {
         name: "i-20 2024 Dec",
         type: "PDF",
         url: "/protected_files/i-20/CPT Approved Winter 2024 Form I-20.pdf"
@@ -583,6 +588,21 @@ export const protectedFiles = [
         type: "PDF",
         url: "/protected_files/i-20/CPT Approved Summer 2025 Form I-20.pdf"
       },
+      {
+        name: "i-20 2025 Sept",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Fall 25 Form I-20.pdf"
+      },
+      {
+        name: "i-20 2026 Jan",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Spring 26 Form I-20.pdf"
+      },
+      {
+        name: "i-20 2026 May",
+        type: "PDF",
+        url: "/protected_files/i-20/CPT Approved Summer 2026 Form I-20.pdf"
+      }
     ]
   },
   {
@@ -601,7 +621,7 @@ export const protectedFiles = [
       {
         name: "Growth Hacker Membership proof",
         type: "PNG",
-        url: "/protected_files/Judging & Membership/Growth Hackers Member.PNG"
+        url: "/protected_files/Judging & Membership/Growth Hackers Member.png"
       },
       {
         name: "Future Engineers Awards Certificate",
@@ -626,12 +646,12 @@ export const protectedFiles = [
       {
         name: "Titan Panel Proof",
         type: "PNG",
-        url: "/protected_files/Judging & Membership/Titan Judge Panel.PNG"
+        url: "/protected_files/Judging & Membership/Titan Judge Panel.png"
       },
       {
         name: "Vation Ventures Acknowledgement",
         type: "PNG",
-        url: "/protected_files/Judging & Membership/Vation Ventures Technology Prectitioners.PNG"
+        url: "/protected_files/Judging & Membership/Vation Ventures Technology Prectitioners.png"
       },
     ]
   },
@@ -692,6 +712,16 @@ export const protectedFiles = [
         name: "W-2 2024",
         type: "PDF",
         url: "/protected_files/W-2's/W-2 2024.pdf"
+      },
+      {
+        name: "W-2 2025",
+        type: "PDF",
+        url: "/protected_files/W-2's/W-2 2025.pdf"
+      },
+      {
+        name: "W-2 2025 Pace",
+        type: "PDF",
+        url: "/protected_files/W-2's/W-2 2025 Pace.pdf"
       }
     ]
   }
